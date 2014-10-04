@@ -1,0 +1,116 @@
+tile.blazeBrick.name=Blaze Brick
+tile.blazeQChiseled.name=Chiseled Blaze Quartz
+tile.blazeCobble.name=Blaze Cobblestone
+tile.blazeLog.name=Blaze Log
+tile.blazePlank.name=Blaze Plank
+tile.blazeQuartz.name=Blaze Quartz
+tile.blazeSmooth.name=Blaze Stone
+tile.blazeChiseled.name=Chiseled Blaze Brick
+tile.blazePillar.name=Blaze Pillar
+tile.blazeLamp.name=Blaze Lamp
+tile.blazePaver.name=Blaze Paver
+
+tile.boneBrick.name=Bone Brick
+tile.boneCobble.name=Bone Cobblestone
+tile.boneLog.name=Bone Log
+tile.bonePlank.name=Bone Plank
+tile.boneSmooth.name=Bone Stone
+tile.boneChiseled.name=Chiseled Bone Brick
+tile.boneLamp.name=Bone Lamp
+tile.bonePaver.name=Bone Paver
+
+tile.burntBrick.name=Burnt Bricks
+tile.burntChiseledQ.name=Chiseled Burnt Quartz
+tile.burntCobble.name=Burnt Cobblestone
+tile.burntLog.name=Burnt Log
+tile.burntPlank.name=Burnt Plank
+tile.burntQuartz.name=Burnt Quartz
+tile.burntSmooth.name=Burnt Stone
+tile.burntChiseled.name=Chiseled Burnt Bricks
+tile.burntPillar.name=Burnt Pillar
+tile.burntPaver.name=Burnt Paver
+
+tile.enderBrick.name=Ender Brick
+tile.enderQChiseled.name=Chiseled Ender Quartz
+tile.enderCobble.name=Ender Cobblestone
+tile.enderLog.name=Ender Log
+tile.enderPlank.name=Ender Plank
+tile.enderQuartz.name=Ender Quartz
+tile.enderSmooth.name=Ender Stone
+tile.enderChiseled.name=Chiseled Ender Brick
+tile.enderPillar.name=Ender Pillar
+tile.enderLamp.name=Ender Lamp
+tile.enderPaver.name=Ender Paver
+
+tile.fleshBrick.name=Flesh Brick
+tile.fleshCobble.name=Flesh Cobblestone
+tile.fleshLog.name=Flesh Log
+tile.fleshPlank.name=Flesh Plank
+tile.fleshSmooth.name=Flesh Stone
+tile.fleshChiseled.name=Chiseled Flesh Brick
+tile.fleshPaver.name=Flesh Paver
+
+tile.icyBrick.name=Icy Brick
+tile.icyQChiseled.name=Chiseled Icy Quartz
+tile.icyCobble.name=Icy Cobblestone
+tile.icyLog.name=Icy Log
+tile.icyPlank.name=Icy Plank
+tile.icyQuartz.name=Icy Quartz
+tile.icySmooth.name=Icy Stone
+tile.icyChiseled.name=Chiseled Icy Brick
+tile.icyPillar.name=Icy Pillar
+tile.icyLamp.name=Icy Lamp
+tile.icyPaver.name=Icy Paver
+
+tile.leatherBrick.name=Leather Brick
+tile.leatherCobble.name=Leather Cobblestone
+tile.leatherLog.name=Leather Log
+tile.leatherPlank.name=Leather Plank
+tile.leatherSmooth.name=Leather Stone
+tile.leatherChiseled.name=Chiseled Leather Brick
+tile.leatherPaver.name=Leather Paver
+
+tile.slimyBrick.name=Slimy Brick
+tile.slimyQChiseled.name=Chiseled Slimy Quartz
+tile.slimyCobble.name=Slimy Cobblestone
+tile.slimyLog.name=Slimy Log
+tile.slimyPlank.name=Slimy Plank
+tile.slimyQuartz.name=Slimy Quartz
+tile.slimySmooth.name=Slimy Stone
+tile.slimyChiseled.name=Chiseled Slimy Brick
+tile.slimyPillar.name=Slimy Pillar
+tile.slimyLamp.name=Slimy Lamp
+tile.slimyPaver.name=Slimy Paver
+
+tile.snowyBrick.name=Snowy Brick
+tile.snowyCobble.name=Snowy Cobblestone
+tile.snowyLog.name=Snowy Log
+tile.snowyPlank.name=Snowy Plank
+tile.snowySmooth.name=Snowy Stone
+tile.snowyChiseled.name=Chiseled Snowy Brick
+tile.snowyLamp.name=Snowy Lamp
+tile.snowyPaver.name=Snowy Paver
+
+tile.blazeGlass.name=Blaze Glass
+tile.boneGlass.name=Bone Glass
+tile.burntGlass.name=Burnt Glass
+tile.enderGlass.name=Ender Glass
+tile.fleshGlass.name=Flesh Glass
+tile.icyGlass.name=Icy Glass
+tile.leatherGlass.name=Leather Glass
+tile.slimyGlass.name=Slimy Glass
+tile.snowyGlass.name=Snowy Glass
+tile.darkGlass.name=Dark Glass
+
+tile.blazeGlassPane.name=Blaze Glass Pane
+tile.boneGlassPane.name=Bone Glass Pane
+tile.burntGlassPane.name=Burnt Glass Pane
+tile.enderGlassPane.name=Ender Glass Pane
+tile.fleshGlassPane.name=Flesh Glass Pane
+tile.icyGlassPane.name=Icy Glass Pane
+tile.leatherGlassPane.name=Leather Glass Pane
+tile.slimyGlassPane.name=Slimy Glass Pane
+tile.snowyGlassPane.name=Snowy Glass Pane
+tile.darkGlassPane.name=Dark Glass Pane
+
+itemGroup.Santa's Decor=Santa's Decor
