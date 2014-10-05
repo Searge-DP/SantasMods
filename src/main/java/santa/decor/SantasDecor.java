@@ -25,11 +25,14 @@ public class SantasDecor {
     @Mod.EventHandler
     void foreplay(FMLPreInitializationEvent event){
 
-        System.out.println("[Santa's Decor] Stuff should be working fine.");
+
+        Config.load(event);
 
         BlockHandler.meet();
         BlockHandler.date();
         BlockHandler.useMove();
+
+        System.out.println("[Santa's Decor] Stuff should be working fine.");
     }
 
     @Mod.EventHandler
