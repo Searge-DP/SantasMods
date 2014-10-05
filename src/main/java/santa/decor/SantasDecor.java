@@ -33,13 +33,13 @@ public class SantasDecor {
         BlockHandler.useMove();
 
         System.out.println("[Santa's Decor] Stuff should be working fine.");
+        System.out.println("[Santa] Hi Peter. How you doin bby?");
     }
 
     @Mod.EventHandler
     void fornication(FMLInitializationEvent event){
         proxy.initRenderers();
         proxy.initSounds();
-        System.out.println("[Santa] Hi Peter. How you doin bby?");
 
 
     }
