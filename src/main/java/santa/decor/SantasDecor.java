@@ -39,7 +39,7 @@ public class SantasDecor {
     void fornication(FMLInitializationEvent event){
         proxy.initRenderers();
         proxy.initSounds();
-        System.out.println("Hi Peter. How you doin bby?");
+        System.out.println("[Santa] Hi Peter. How you doin bby?");
 
 
     }
