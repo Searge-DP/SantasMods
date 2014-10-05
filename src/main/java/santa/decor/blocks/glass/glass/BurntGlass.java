@@ -40,7 +40,6 @@ public class BurntGlass extends Block {
     }
 
     @Override
-    @SideOnly(Side.CLIENT)
     public boolean isOpaqueCube(){
         return false;
     }

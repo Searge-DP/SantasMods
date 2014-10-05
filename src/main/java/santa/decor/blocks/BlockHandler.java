@@ -133,6 +133,7 @@ public class BlockHandler {
     public static Block leatherGlassPane;
     public static Block snowyGlassPane;
 
+
     public static void meet(){
         boneBrick = new BoneBrick();
         boneChiseled = new ChiseledBoneBrick();
@@ -240,6 +241,7 @@ public class BlockHandler {
         leatherGlassPane = new LeatherGlassPane();
         snowyGlassPane = new SnowyGlassPane();*/
     }
+
 
     public static void date(){
         GameRegistry.registerBlock(boneBrick, BlockInfo.BONEBRICK_KEY);
@@ -350,6 +352,7 @@ public class BlockHandler {
         GameRegistry.registerBlock(snowyGlassPane, BlockInfo.SNOWGLASSPANE_KEY);
         GameRegistry.registerBlock(blazeGlassPane, BlockInfo.BLAZEGLASSPANE_KEY);*/
     }
+
 
     public static void useMove(){
         GameRegistry.addRecipe(new ItemStack(boneBrick, 4), new Object[] {"XX", "XX", Character.valueOf('X'), boneSmooth });

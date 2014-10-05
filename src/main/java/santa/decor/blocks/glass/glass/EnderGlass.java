@@ -41,7 +41,6 @@ public class EnderGlass extends Block {
     }
 
     @Override
-    @SideOnly(Side.CLIENT)
     public boolean isOpaqueCube(){
         return false;
     }

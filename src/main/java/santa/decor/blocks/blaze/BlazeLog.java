@@ -8,6 +8,7 @@ import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.util.IIcon;
+import net.minecraft.world.IBlockAccess;
 import santa.decor.SantasDecor;
 import santa.decor.blocks.BlockInfo;
 
@@ -44,5 +45,10 @@ public class BlazeLog extends BlockRotatedPillar {
     @Override
     protected IIcon getTopIcon(int i){
         return endIcon;
+    }
+
+    @Override
+    public boolean canSustainLeaves(IBlockAccess world, int x, int y, int z){
+        return true;
     }
 }

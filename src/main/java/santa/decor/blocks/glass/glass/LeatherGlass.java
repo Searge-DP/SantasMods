@@ -41,7 +41,6 @@ public class LeatherGlass extends Block {
     }
 
     @Override
-    @SideOnly(Side.CLIENT)
     public boolean isOpaqueCube(){
         return false;
     }
