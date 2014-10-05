@@ -14,7 +14,7 @@ import cpw.mods.fml.common.Mod.EventHandler;
  * Created by elijahfoster-wysocki on 7/14/14.
  */
 
-@Mod(modid = "santasdecor", name = "Santa's Decor", version = "0.5.2")
+@Mod(modid = "santasdecor", name = "Santa's Decor", version = "0.5.3")
 public class SantasDecor {
 
     @SidedProxy(clientSide="santa.decor.proxies.ClientProxy", serverSide="santa.decor.proxies.CommonProxy")
