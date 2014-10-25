@@ -1,6 +1,9 @@
 package santa.resurrection.block;
 
+import net.minecraft.entity.item.EntityFireworkRocket;
+import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
+import net.minecraft.world.World;
 import santa.resurrection.LogHelper;
 
 /**
@@ -8,6 +11,7 @@ import santa.resurrection.LogHelper;
  */
 public class TileEntityTrophy extends TileEntity {
 
+    EntityFireworkRocket rocket = (new EntityFireworkRocket(this.worldObj));
     private int levels = -1;
 
     public TileEntityTrophy(){
@@ -26,6 +30,7 @@ public class TileEntityTrophy extends TileEntity {
         int z = this.zCoord;
         int i = this.levels;
 
+
         if (this.worldObj.getBlock(x, y, z).equals(BlockHandler.trophy)) {
             if (this.worldObj.getBlock(x + 1, y, z).equals(BlockHandler.trophy)) {
                 if (this.worldObj.getBlock(x - 1, y, z).equals(BlockHandler.trophy)) {
@@ -38,6 +43,7 @@ public class TileEntityTrophy extends TileEntity {
                                             if (this.worldObj.getBlock(x, y + 1, z).equals(BlockHandler.trophy)){
                                                 this.worldObj.setTileEntity(x, y, z, new TileEntityTrophyMulti());
                                                 LogHelper.info("Multiblock formed.");
+                                                this.worldObj.spawnEntityInWorld(rocket);
                                             }
                                         }
                                     }
