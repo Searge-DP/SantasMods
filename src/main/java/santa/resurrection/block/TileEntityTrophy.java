@@ -25,27 +25,24 @@ public class TileEntityTrophy extends TileEntity {
         int z = this.zCoord;
         int i = this.levels;
 
-        if (this.worldObj.isRemote)
+        if (this.worldObj.getBlock(x + 1, y, z).equals(BlockHandler.trophy))
         {
-            if (this.worldObj.getBlock(x + 1, y, z).equals(BlockHandler.trophy))
+            if (this.worldObj.getBlock(x, y, z + 1).equals(BlockHandler.trophy))
             {
-                if (this.worldObj.getBlock(x, y, z + 1).equals(BlockHandler.trophy))
+                if (this.worldObj.getBlock(x + 1, y, z + 1).equals(BlockHandler.trophy))
                 {
-                    if (this.worldObj.getBlock(x + 1, y, z + 1).equals(BlockHandler.trophy))
+                    if (this.worldObj.getBlock(x - 1, y, z + 1).equals(BlockHandler.trophy))
                     {
-                        if (this.worldObj.getBlock(x - 1, y, z + 1).equals(BlockHandler.trophy))
+                        if (this.worldObj.getBlock(x, y + 1, z).equals(BlockHandler.trophy))
                         {
-                            if (this.worldObj.getBlock(x, y + 1, z).equals(BlockHandler.trophy))
+                            if (this.worldObj.getBlock(x + 1, y + 1, z).equals(BlockHandler.trophy))
                             {
-                                if (this.worldObj.getBlock(x + 1, y + 1, z).equals(BlockHandler.trophy))
+                                if (this.worldObj.getBlock(x, y + 1, z + 1).equals(BlockHandler.trophy))
                                 {
-                                    if (this.worldObj.getBlock(x, y + 1, z + 1).equals(BlockHandler.trophy))
+                                    if (this.worldObj.getBlock(x + 1, y + 1, z + 1).equals(BlockHandler.trophy))
                                     {
-                                        if (this.worldObj.getBlock(x + 1, y + 1, z + 1).equals(BlockHandler.trophy))
-                                        {
-                                            if (this.worldObj.getBlock(x - 1, y + 1, z + 1).equals(BlockHandler.trophy)){
-                                                this.worldObj.setTileEntity(x, y, z, new TileEntityTrophyMulti());
-                                            }
+                                        if (this.worldObj.getBlock(x - 1, y + 1, z + 1).equals(BlockHandler.trophy)){
+                                            this.worldObj.setTileEntity(x, y, z, new TileEntityTrophyMulti());
                                         }
                                     }
                                 }
