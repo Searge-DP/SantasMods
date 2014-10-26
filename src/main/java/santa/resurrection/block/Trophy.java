@@ -24,7 +24,7 @@ public class Trophy extends BlockContainer {
 
     @Override
     public TileEntity createNewTileEntity(World var1, int var2){
-        return new TileEntityTrophyMulti();
+        return new TileEntityTrophy();
     }
 
 

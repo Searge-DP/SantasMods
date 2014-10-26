@@ -11,7 +11,6 @@ import santa.resurrection.LogHelper;
  */
 public class TileEntityTrophy extends TileEntity {
 
-    EntityFireworkRocket rocket = (new EntityFireworkRocket(this.worldObj));
     private int levels = -1;
 
     public TileEntityTrophy(){
@@ -43,7 +42,6 @@ public class TileEntityTrophy extends TileEntity {
                                             if (this.worldObj.getBlock(x, y + 1, z).equals(BlockHandler.trophy)){
                                                 this.worldObj.setTileEntity(x, y, z, new TileEntityTrophyMulti());
                                                 LogHelper.info("Multiblock formed.");
-                                                this.worldObj.spawnEntityInWorld(rocket);
                                             }
                                         }
                                     }

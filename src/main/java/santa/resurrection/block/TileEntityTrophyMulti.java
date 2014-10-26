@@ -1,5 +1,6 @@
 package santa.resurrection.block;
 
+import net.minecraft.entity.item.EntityFireworkRocket;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.tileentity.TileEntity;
 
@@ -17,6 +18,7 @@ public class TileEntityTrophyMulti extends TileEntity {
     @Override
     public  void updateEntity(){
         super.updateEntity();
+
     }
 
     public void reset(){
@@ -32,7 +34,7 @@ public class TileEntityTrophyMulti extends TileEntity {
 
     @Override
     public void writeToNBT(NBTTagCompound nbt){
-        nbt.setString("id", "TileEntityCombustionGeneratorMulti");
+        nbt.setString("id", "TileEntityTrophyMulti");
         nbt.setInteger("x", this.xCoord);
         nbt.setInteger("y", this.yCoord);
         nbt.setInteger("z", this.zCoord);
