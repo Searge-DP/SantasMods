@@ -23,4 +23,9 @@ public class FreedomTab extends CreativeTabs {
         return ItemHandler.flag;
     }
 
+    @Override
+    public boolean hasSearchBar(){
+        return true;
+    }
+
 }

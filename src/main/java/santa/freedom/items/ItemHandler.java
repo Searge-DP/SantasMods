@@ -5,6 +5,7 @@ import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemFood;
 import net.minecraft.item.ItemStack;
+import santa.freedom.Config;
 
 /**
  * Created by elijahfoster-wysocki on 7/20/14.
@@ -34,10 +35,22 @@ public class ItemHandler {
         GameRegistry.registerItem(flag, ItemInfo.FLAG_KEY);
         GameRegistry.registerItem(freedomBucket, ItemInfo.BUCKET_KEY);
         GameRegistry.registerItem(americanFlavor, ItemInfo.FLAVOR_KEY);
-        GameRegistry.registerItem(friedChickenBucket, ItemInfo.FRIEDCHICKEN_KEY);
-        GameRegistry.registerItem(dewMTN, ItemInfo.MTNDEW_KEY);
-        GameRegistry.registerItem(freedomBread, ItemInfo.BREAD_KEY);
-        GameRegistry.registerItem(freedomPie, ItemInfo.PIE_KEY);
+
+        if (Config.enableFriedChicken) {
+            GameRegistry.registerItem(friedChickenBucket, ItemInfo.FRIEDCHICKEN_KEY);
+        }
+
+        if (Config.enableDew) {
+            GameRegistry.registerItem(dewMTN, ItemInfo.MTNDEW_KEY);
+        }
+
+        if (Config.enableBread) {
+            GameRegistry.registerItem(freedomBread, ItemInfo.BREAD_KEY);
+        }
+
+        if (Config.enablePie) {
+            GameRegistry.registerItem(freedomPie, ItemInfo.PIE_KEY);
+        }
     }
 
     public static void useMove(){
@@ -60,24 +73,32 @@ public class ItemHandler {
                 'X', Items.sugar, 'Z', flag
         });
 
-        GameRegistry.addShapelessRecipe(new ItemStack(friedChickenBucket, 1), new Object[]{
-                new ItemStack(Items.cooked_chicken), new ItemStack(freedomBucket)
-        });
+        if (Config.enableFriedChicken) {
+            GameRegistry.addShapelessRecipe(new ItemStack(friedChickenBucket, 1), new Object[]{
+                    new ItemStack(Items.cooked_chicken), new ItemStack(freedomBucket)
+            });
+        }
 
-        GameRegistry.addRecipe(new ItemStack(dewMTN, 1), new Object[]{
-                "XXX",
-                "XZX",
-                "XXX",
-                'X', Items.sugar, 'Z', freedomBucket
-        });
+        if (Config.enableDew) {
+            GameRegistry.addRecipe(new ItemStack(dewMTN, 1), new Object[]{
+                    "XXX",
+                    "XZX",
+                    "XXX",
+                    'X', Items.sugar, 'Z', freedomBucket
+            });
+        }
 
-        GameRegistry.addShapelessRecipe(new ItemStack(freedomBread, 1), new Object[]{
-                new ItemStack(Items.bread), new ItemStack(americanFlavor)
-        });
+        if (Config.enableBread) {
+            GameRegistry.addShapelessRecipe(new ItemStack(freedomBread, 1), new Object[]{
+                    new ItemStack(Items.bread), new ItemStack(americanFlavor)
+            });
+        }
 
-        GameRegistry.addShapelessRecipe(new ItemStack(freedomPie, 1), new Object[]{
-                new ItemStack(Items.pumpkin_pie), new ItemStack(americanFlavor)
-        });
+        if (Config.enablePie) {
+            GameRegistry.addShapelessRecipe(new ItemStack(freedomPie, 1), new Object[]{
+                    new ItemStack(Items.pumpkin_pie), new ItemStack(americanFlavor)
+            });
+        }
 
     }
 

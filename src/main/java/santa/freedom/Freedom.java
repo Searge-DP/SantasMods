@@ -12,7 +12,7 @@ import santa.freedom.proxies.CommonProxy;
 /**
  * Created by elijahfoster-wysocki on 7/20/14.
  */
-@Mod(modid="santafreedom", name="Freedom", version="1.7.7.8")
+@Mod(modid="santafreedom", name="Freedom", version="1779")
 public class Freedom
 {
 
@@ -25,11 +25,23 @@ public class Freedom
     void foreplay(FMLPreInitializationEvent event)
     {
 
-        System.out.println("wooooooooo freedom! guns and shit!");
+        Config.load(event);
+
+        if (Config.consoleSpam) {
+            System.out.println("wooooooooo freedom! guns and shit!");
+        }
     }
     @Mod.EventHandler
     void fornication(FMLInitializationEvent event) {
-        System.out.println("freedom has been obtained! prepare to inject mountain dew and fried butter into your face!");
+        if (Config.consoleSpam) {
+            System.out.println("freedom has been obtained! prepare to inject mountain dew and fried butter into your face!");
+        }
+
+        if (Config.consoleSpam && !Config.enableDew){
+            System.out.println("Are you kidding me? No Dew? Shame on you!");
+        } else if (Config.consoleSpam){
+            System.out.println("I am proud of you.");
+        }
 
         proxy.initRenderers();
         proxy.initSounds();
