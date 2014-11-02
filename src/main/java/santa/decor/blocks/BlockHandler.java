@@ -15,15 +15,20 @@ import santa.decor.blocks.ender.*;
 import santa.decor.blocks.flesh.*;
 import santa.decor.blocks.ice.*;
 import santa.decor.blocks.leather.*;
+//import santa.decor.blocks.misc.Pumpkin;
 import santa.decor.blocks.slime.*;
 import santa.decor.blocks.snow.*;
 import santa.decor.blocks.glass.glass.*;
+import santa.decor.blocks.porked.*;
+import santa.decor.blocks.crying.*;
 //import santa.decor.blocks.glass.panes.*;
 
 /**
  * Created by elijahfoster-wysocki on 7/14/14.
  */
 public class BlockHandler {
+
+    //public static Block pumpkin;
 
     public static Block boneBrick;
     public static Block boneChiseled;
@@ -112,6 +117,28 @@ public class BlockHandler {
     public static Block burntPlank;
     public static Block burntPaver;
 
+    public static Block cryingSmooth;
+    public static Block cryingCobble;
+    public static Block cryingBrick;
+    public static Block cryingChiseled;
+    public static Block cryingQuartz;
+    public static Block cryingQChiseled;
+    public static Block cryingPillar;
+    public static Block cryingLog;
+    public static Block cryingPlank;
+    public static Block cryingPaver;
+
+    public static Block porkedSmooth;
+    public static Block porkedCobble;
+    public static Block porkedBrick;
+    public static Block porkedChiseled;
+    public static Block porkedQuartz;
+    public static Block porkedQChiseled;
+    public static Block porkedPillar;
+    public static Block porkedLog;
+    public static Block porkedPlank;
+    public static Block porkedPaver;
+
     public static Block darkGlass;
     public static Block blazeGlass;
     public static Block boneGlass;
@@ -122,7 +149,10 @@ public class BlockHandler {
     public static Block icyGlass;
     public static Block leatherGlass;
     public static Block snowyGlass;
+    public static Block cryingGlass;
+    public static Block porkedGlass;
 
+    //nyi
     public static Block darkGlassPane;
     public static Block blazeGlassPane;
     public static Block boneGlassPane;
@@ -133,9 +163,13 @@ public class BlockHandler {
     public static Block icyGlassPane;
     public static Block leatherGlassPane;
     public static Block snowyGlassPane;
+    public static Block cryingGlassPane;
+    public static Block porkedGlassPane;
 
 
     public static void meet(){
+        //pumpkin = new Pumpkin();
+
         boneBrick = new BoneBrick();
         boneChiseled = new ChiseledBoneBrick();
         boneCobble = new BoneCobblestone();
@@ -151,6 +185,7 @@ public class BlockHandler {
         fleshLog = new FleshLog();
         fleshPlank = new FleshPlank();
         fleshPaver = new FleshPaver();
+        fleshGlass = new FleshGlass();
 
         icyBrick = new IcyBrick();
         icyChiseled = new ChiseledIcyBrick();
@@ -162,6 +197,7 @@ public class BlockHandler {
         icyQChiseled = new IcyChiseledQuartz();
         icyPillar = new IcyPillar();
         icyPaver = new IcyPaver();
+        icyGlass = new IcyGlass();
 
         blazeBrick = new BlazeBrick();
         blazeChiseled = new ChiseledBlazeBrick();
@@ -173,6 +209,8 @@ public class BlockHandler {
         blazePlank = new BlazePlank();
         blazePillar = new BlazePillar();
         blazePaver = new BlazePaver();
+        blazeGlass = new BlazeGlass();
+        boneGlass = new BoneGlass();
 
         leatherBrick = new LeatherBrick();
         leatherChiseled = new ChiseledLeatherBrick();
@@ -181,6 +219,7 @@ public class BlockHandler {
         leatherLog = new LeatherLog();
         leatherPlank = new LeatherPlank();
         leatherPaver = new LeatherPaver();
+        leatherGlass = new LeatherGlass();
 
         snowyBrick = new SnowyBrick();
         snowyChiseled = new ChiseledSnowyBrick();
@@ -189,6 +228,7 @@ public class BlockHandler {
         snowyLog = new SnowyLog();
         snowyPlank = new SnowyPlank();
         snowyPaver = new SnowyPaver();
+        snowyGlass = new SnowyGlass();
 
         slimyBrick = new SlimyBrick();
         slimyChiseled = new ChiseledSlimyBrick();
@@ -200,6 +240,7 @@ public class BlockHandler {
         slimyQChiseled = new SlimyChiseledQuartz();
         slimyPillar = new SlimyPillar();
         slimyPaver = new SlimyPaver();
+        slimyGlass = new SlimyGlass();
 
         enderBrick = new EnderBrick();
         enderChiseled = new ChiseledEnderBrick();
@@ -211,6 +252,7 @@ public class BlockHandler {
         enderPlank = new EnderPlank();
         enderPillar = new EnderPillar();
         enderPaver = new EnderPaver();
+        enderGlass = new EnderGlass();
 
         burntSmooth = new BurntStone();
         burntCobble = new BurntCobble();
@@ -222,29 +264,65 @@ public class BlockHandler {
         burntLog = new BurntLog();
         burntPlank = new BurntPlank();
         burntPaver = new BurntPaver();
-
-        blazeGlass = new BlazeGlass();
-        boneGlass = new BoneGlass();
-        fleshGlass = new FleshGlass();
-        slimyGlass = new SlimyGlass();
-        enderGlass = new EnderGlass();
         burntGlass = new BurntGlass();
-        icyGlass = new IcyGlass();
-        leatherGlass = new LeatherGlass();
-        snowyGlass = new SnowyGlass();
 
-        /*blazeGlassPane = new BlazeGlassPane();
+        cryingSmooth = new CryingStone();
+        cryingCobble = new CryingCobblestone();
+        cryingBrick = new CryingBrick();
+        cryingChiseled = new ChiseledCryingBrick();
+        cryingQuartz = new CryingQuartz();
+        cryingQChiseled = new CryingChiseledQuartz();
+        cryingPillar = new CryingPillar();
+        cryingLog = new CryingLog();
+        cryingPlank = new CryingPlank();
+        cryingPaver = new CryingPaver();
+        cryingGlass = new CryingGlass();
+
+        porkedSmooth = new PorkedStone();
+        porkedCobble = new PorkedCobblestone();
+        porkedBrick = new PorkedBrick();
+        porkedChiseled = new ChiseledPorkedBrick();
+        porkedQuartz = new PorkedQuartz();
+        porkedQChiseled = new PorkedChiseledQuartz();
+        porkedPillar = new PorkedPillar();
+        porkedLog = new PorkedLog();
+        porkedPlank = new PorkedPlank();
+        porkedPaver = new PorkedPaver();
+        porkedGlass = new PorkedGlass();
+
+
+
+
+
+
+
+
+        /*
+        blazeGlassPane = new BlazeGlassPane();
         boneGlassPane = new BoneGlassPane();
         fleshGlassPane = new FleshGlassPane();
         slimyGlassPane = new SlimyGlassPane();
         enderGlassPane = new EnderGlassPane();
         icyGlassPane = new IcyGlassPane();
         leatherGlassPane = new LeatherGlassPane();
-        snowyGlassPane = new SnowyGlassPane();*/
+        snowyGlassPane = new SnowyGlassPane();
+        cryingGlassPane = new CryingGlassPane();
+        porkedGlassPnae = new PorkedGlassPane();
+        */
     }
 
 
     public static void date(){
+        /*
+        if (Config.enablePumpkin){
+            GameRegistry.registerBlock(pumpkin, BlockInfo.PUMPKIN_KEY);
+        }
+        */
+
+        if (Config.enableCrying){
+
+        }
+
         if (Config.enableBone) {
             GameRegistry.registerBlock(boneBrick, BlockInfo.BONEBRICK_KEY);
             GameRegistry.registerBlock(boneChiseled, BlockInfo.BONECHISELED_KEY);
@@ -253,6 +331,7 @@ public class BlockHandler {
             GameRegistry.registerBlock(boneLog, BlockInfo.BONELOG_KEY);
             GameRegistry.registerBlock(bonePlank, BlockInfo.BONEPLANK_KEY);
             GameRegistry.registerBlock(bonePaver, BlockInfo.BONEPAVER_KEY);
+            GameRegistry.registerBlock(boneGlass, BlockInfo.BONEGLASS_KEY);
         }
 
         if (Config.enableFlesh) {
@@ -263,6 +342,7 @@ public class BlockHandler {
             GameRegistry.registerBlock(fleshLog, BlockInfo.FLESHLOG_KEY);
             GameRegistry.registerBlock(fleshPlank, BlockInfo.FLESHPLANK_KEY);
             GameRegistry.registerBlock(fleshPaver, BlockInfo.FLESHPAVER_KEY);
+            GameRegistry.registerBlock(fleshGlass, BlockInfo.FLESHGLASS_KEY);
         }
 
         if (Config.enableIce) {
@@ -276,6 +356,7 @@ public class BlockHandler {
             GameRegistry.registerBlock(icyQChiseled, BlockInfo.ICECHISELEDQ_KEY);
             GameRegistry.registerBlock(icyPillar, BlockInfo.ICEPILLAR_KEY);
             GameRegistry.registerBlock(icyPaver, BlockInfo.ICEPAVER_KEY);
+            GameRegistry.registerBlock(icyGlass, BlockInfo.ICEGLASS_KEY);
         }
 
         if (Config.enableBlaze) {
@@ -289,6 +370,7 @@ public class BlockHandler {
             GameRegistry.registerBlock(blazePlank, BlockInfo.BLAZEPLANK_KEY);
             GameRegistry.registerBlock(blazePillar, BlockInfo.BLAZEPILLAR_KEY);
             GameRegistry.registerBlock(blazePaver, BlockInfo.BLAZEPAVER_KEY);
+            GameRegistry.registerBlock(blazeGlass, BlockInfo.BLAZEGLASS_KEY);
         }
 
         if (Config.enableLeather) {
@@ -299,6 +381,7 @@ public class BlockHandler {
             GameRegistry.registerBlock(leatherLog, BlockInfo.LEATHERLOG_KEY);
             GameRegistry.registerBlock(leatherPlank, BlockInfo.LEATHERPLANK_KEY);
             GameRegistry.registerBlock(leatherPaver, BlockInfo.LEATHERPAVER_KEY);
+            GameRegistry.registerBlock(leatherGlass, BlockInfo.LEATHERGLASS_KEY);
         }
 
         if (Config.enableSnow) {
@@ -309,6 +392,7 @@ public class BlockHandler {
             GameRegistry.registerBlock(snowyLog, BlockInfo.SNOWLOG_KEY);
             GameRegistry.registerBlock(snowyPlank, BlockInfo.SNOWPLANK_KEY);
             GameRegistry.registerBlock(snowyPaver, BlockInfo.SNOWPAVER_KEY);
+            GameRegistry.registerBlock(snowyGlass, BlockInfo.SNOWGLASS_KEY);
         }
 
         if (Config.enableSlime) {
@@ -322,6 +406,7 @@ public class BlockHandler {
             GameRegistry.registerBlock(slimyPlank, BlockInfo.SLIMEPLANK_KEY);
             GameRegistry.registerBlock(slimyPillar, BlockInfo.SLIMEPILLAR_KEY);
             GameRegistry.registerBlock(slimyPaver, BlockInfo.SLIMEPAVER_KEY);
+            GameRegistry.registerBlock(slimyGlass, BlockInfo.SLIMEGLASS_KEY);
         }
 
         if (Config.enableEnder) {
@@ -335,6 +420,7 @@ public class BlockHandler {
             GameRegistry.registerBlock(enderPlank, BlockInfo.ENDERPLANK_KEY);
             GameRegistry.registerBlock(enderPillar, BlockInfo.ENDERPILLAR_KEY);
             GameRegistry.registerBlock(enderPaver, BlockInfo.ENDERPAVER_KEY);
+            GameRegistry.registerBlock(enderGlass, BlockInfo.ENDERGLASS_KEY);
         }
 
         if (Config.enableBurnt) {
@@ -348,18 +434,35 @@ public class BlockHandler {
             GameRegistry.registerBlock(burntLog, BlockInfo.BURNTLOG_KEY);
             GameRegistry.registerBlock(burntPlank, BlockInfo.BURNTPLANK_KEY);
             GameRegistry.registerBlock(burntPaver, BlockInfo.BURNTPAVER_KEY);
+            GameRegistry.registerBlock(burntGlass, BlockInfo.BURNTGLASS_KEY);
         }
 
-        if (Config.enableGlass) {
-            GameRegistry.registerBlock(blazeGlass, BlockInfo.BLAZEGLASS_KEY);
-            GameRegistry.registerBlock(boneGlass, BlockInfo.BONEGLASS_KEY);
-            GameRegistry.registerBlock(fleshGlass, BlockInfo.FLESHGLASS_KEY);
-            GameRegistry.registerBlock(slimyGlass, BlockInfo.SLIMEGLASS_KEY);
-            GameRegistry.registerBlock(enderGlass, BlockInfo.ENDERGLASS_KEY);
-            GameRegistry.registerBlock(burntGlass, BlockInfo.BURNTGLASS_KEY);
-            GameRegistry.registerBlock(icyGlass, BlockInfo.ICEGLASS_KEY);
-            GameRegistry.registerBlock(leatherGlass, BlockInfo.LEATHERGLASS_KEY);
-            GameRegistry.registerBlock(snowyGlass, BlockInfo.SNOWGLASS_KEY);
+        if (Config.enableCrying){
+            GameRegistry.registerBlock(cryingSmooth, BlockInfo.CRYINGSTONE_KEY);
+            GameRegistry.registerBlock(cryingCobble, BlockInfo.CRYINGCOBBLE_KEY);
+            GameRegistry.registerBlock(cryingBrick, BlockInfo.CRYINGBRICK_KEY);
+            GameRegistry.registerBlock(cryingChiseled, BlockInfo.CRYINGCHISELED_KEY);
+            GameRegistry.registerBlock(cryingQuartz, BlockInfo.CRYINGQUARTZ_KEY);
+            GameRegistry.registerBlock(cryingQChiseled, BlockInfo.CRYINGCHISELEDQ_KEY);
+            GameRegistry.registerBlock(cryingPillar, BlockInfo.CRYINGPILLAR_KEY);
+            GameRegistry.registerBlock(cryingLog, BlockInfo.CRYINGLOG_KEY);
+            GameRegistry.registerBlock(cryingPlank, BlockInfo.CRYINGPLANK_KEY);
+            GameRegistry.registerBlock(cryingPaver, BlockInfo.CRYINGPAVER_KEY);
+            GameRegistry.registerBlock(cryingGlass, BlockInfo.CRYINGGLASS_KEY);
+        }
+
+        if (Config.enablePorked){
+            GameRegistry.registerBlock(porkedSmooth, BlockInfo.PORKEDSTONE_KEY);
+            GameRegistry.registerBlock(porkedCobble, BlockInfo.PORKEDCOBBLE_KEY);
+            GameRegistry.registerBlock(porkedBrick, BlockInfo.PORKEDBRICK_KEY);
+            GameRegistry.registerBlock(porkedChiseled, BlockInfo.PORKEDCHISELED_KEY);
+            GameRegistry.registerBlock(porkedQuartz, BlockInfo.PORKEDQUARTZ_KEY);
+            GameRegistry.registerBlock(porkedQChiseled, BlockInfo.PORKEDCHISELEDQ_KEY);
+            GameRegistry.registerBlock(porkedPillar, BlockInfo.PORKEDPILLAR_KEY);
+            GameRegistry.registerBlock(porkedLog, BlockInfo.PORKEDLOG_KEY);
+            GameRegistry.registerBlock(porkedPlank, BlockInfo.PORKEDPLANK_KEY);
+            GameRegistry.registerBlock(porkedPaver, BlockInfo.PORKEDPAVER_KEY);
+            GameRegistry.registerBlock(porkedGlass, BlockInfo.PORKEDGLASS_KEY);
         }
 
         /*
@@ -385,6 +488,7 @@ public class BlockHandler {
             GameRegistry.addShapelessRecipe(new ItemStack(bonePlank, 4), new Object[]{new ItemStack(boneLog)});
             GameRegistry.addRecipe(new ItemStack(boneSmooth, 8), new Object[]{"XXX", "XZX", "XXX", Character.valueOf('X'), Blocks.stone, Character.valueOf('Z'), Items.bone});
             GameRegistry.addShapelessRecipe(new ItemStack(bonePaver, 1), new Object[]{new ItemStack(boneBrick)});
+            GameRegistry.addRecipe(new ItemStack(boneGlass, 8), new Object[]{"XXX", "XZX", "XXX", Character.valueOf('X'), Blocks.glass, Character.valueOf('Z'), Items.bone});
         }
 
         //flesh
@@ -396,6 +500,7 @@ public class BlockHandler {
             GameRegistry.addShapelessRecipe(new ItemStack(fleshPlank, 4), new Object[]{new ItemStack(fleshLog)});
             GameRegistry.addRecipe(new ItemStack(fleshSmooth, 8), new Object[]{"XXX", "XZX", "XXX", Character.valueOf('X'), Blocks.stone, Character.valueOf('Z'), Items.rotten_flesh});
             GameRegistry.addShapelessRecipe(new ItemStack(fleshPaver, 1), new Object[]{new ItemStack(fleshBrick)});
+            GameRegistry.addRecipe(new ItemStack(fleshGlass, 8), new Object[]{"XXX", "XZX", "XXX", Character.valueOf('X'), Blocks.glass, Character.valueOf('Z'), Items.rotten_flesh});
         }
 
         //ice
@@ -410,6 +515,7 @@ public class BlockHandler {
             GameRegistry.addRecipe(new ItemStack(icyQChiseled, 4), new Object[]{"XX", "XX", Character.valueOf('X'), icyQuartz});
             GameRegistry.addRecipe(new ItemStack(icyPillar, 2), new Object[]{"X", "X", Character.valueOf('X'), icyQuartz});
             GameRegistry.addShapelessRecipe(new ItemStack(icyPaver, 1), new Object[]{new ItemStack(icyBrick)});
+            GameRegistry.addRecipe(new ItemStack(icyGlass, 8), new Object[]{"XXX", "XZX", "XXX", Character.valueOf('X'), Blocks.glass, Character.valueOf('Z'), Blocks.ice});
         }
 
         //snow
@@ -421,6 +527,7 @@ public class BlockHandler {
             GameRegistry.addShapelessRecipe(new ItemStack(snowyPlank, 4), new Object[]{new ItemStack(snowyLog)});
             GameRegistry.addRecipe(new ItemStack(snowySmooth, 8), new Object[]{"XXX", "XZX", "XXX", Character.valueOf('X'), Blocks.stone, Character.valueOf('Z'), Items.snowball});
             GameRegistry.addShapelessRecipe(new ItemStack(snowyPaver, 1), new Object[]{new ItemStack(snowyBrick)});
+            GameRegistry.addRecipe(new ItemStack(snowyGlass, 8), new Object[]{"XXX", "XZX", "XXX", Character.valueOf('X'), Blocks.glass, Character.valueOf('Z'), Items.snowball});
         }
 
         //leather
@@ -432,6 +539,7 @@ public class BlockHandler {
             GameRegistry.addShapelessRecipe(new ItemStack(leatherPlank, 4), new Object[]{new ItemStack(leatherLog)});
             GameRegistry.addRecipe(new ItemStack(leatherSmooth, 8), new Object[]{"XXX", "XZX", "XXX", Character.valueOf('X'), Blocks.stone, Character.valueOf('Z'), Items.leather});
             GameRegistry.addShapelessRecipe(new ItemStack(leatherPaver, 1), new Object[]{new ItemStack(leatherBrick)});
+            GameRegistry.addRecipe(new ItemStack(leatherGlass, 8), new Object[]{"XXX", "XZX", "XXX", Character.valueOf('X'), Blocks.glass, Character.valueOf('Z'), Items.leather});
         }
 
         //blaze
@@ -446,24 +554,26 @@ public class BlockHandler {
             GameRegistry.addRecipe(new ItemStack(blazeQChiseled, 4), new Object[]{"XX", "XX", Character.valueOf('X'), blazeQuartz});
             GameRegistry.addRecipe(new ItemStack(blazePillar, 2), new Object[]{"X", "X", Character.valueOf('X'), blazeQuartz});
             GameRegistry.addShapelessRecipe(new ItemStack(blazePaver, 1), new Object[]{new ItemStack(blazeBrick)});
+            GameRegistry.addRecipe(new ItemStack(blazeGlass, 8), new Object[]{"XXX", "XZX", "XXX", Character.valueOf('X'), Blocks.glass, Character.valueOf('Z'), Items.blaze_rod});
         }
 
-        //slime
-        if (Config.enableSlime) {
-            GameRegistry.addRecipe(new ItemStack(slimyBrick, 4), new Object[]{"XX", "XX", Character.valueOf('X'), slimySmooth});
-            GameRegistry.addRecipe(new ItemStack(slimyCobble, 8), new Object[]{"XXX", "XZX", "XXX", Character.valueOf('X'), Blocks.cobblestone, Character.valueOf('Z'), Items.slime_ball});
-            GameRegistry.addRecipe(new ItemStack(slimyChiseled, 4), new Object[]{"XX", "XX", Character.valueOf('X'), slimyBrick});
-            GameRegistry.addRecipe(new ItemStack(slimyLog, 8), new Object[]{"XXX", "XZX", "XXX", Character.valueOf('X'), Blocks.log, Character.valueOf('Z'), Items.slime_ball});
-            GameRegistry.addShapelessRecipe(new ItemStack(slimyPlank, 4), new Object[]{new ItemStack(slimyLog)});
-            GameRegistry.addRecipe(new ItemStack(slimySmooth, 8), new Object[]{"XXX", "XZX", "XXX", Character.valueOf('X'), Blocks.stone, Character.valueOf('Z'), Items.slime_ball});
-            GameRegistry.addRecipe(new ItemStack(slimyQuartz, 8), new Object[]{"XXX", "XZX", "XXX", Character.valueOf('X'), Blocks.quartz_block, Character.valueOf('Z'), Items.slime_ball});
-            GameRegistry.addRecipe(new ItemStack(slimyQChiseled, 4), new Object[]{"XX", "XX", Character.valueOf('X'), slimyQuartz});
-            GameRegistry.addRecipe(new ItemStack(slimyPillar, 2), new Object[]{"X", "X", Character.valueOf('X'), slimyQuartz});
-            GameRegistry.addShapelessRecipe(new ItemStack(slimyPaver, 1), new Object[]{new ItemStack(slimyBrick)});
+        //porked
+        if (Config.enablePorked) {
+            GameRegistry.addRecipe(new ItemStack(porkedBrick, 4), new Object[]{"XX", "XX", Character.valueOf('X'), porkedSmooth});
+            GameRegistry.addRecipe(new ItemStack(porkedCobble, 8), new Object[]{"XXX", "XZX", "XXX", Character.valueOf('X'), Blocks.cobblestone, Character.valueOf('Z'), Items.porkchop});
+            GameRegistry.addRecipe(new ItemStack(porkedChiseled, 4), new Object[]{"XX", "XX", Character.valueOf('X'), porkedBrick});
+            GameRegistry.addRecipe(new ItemStack(porkedLog, 8), new Object[]{"XXX", "XZX", "XXX", Character.valueOf('X'), Blocks.log, Character.valueOf('Z'), Items.porkchop});
+            GameRegistry.addShapelessRecipe(new ItemStack(porkedPlank, 4), new Object[]{new ItemStack(porkedLog)});
+            GameRegistry.addRecipe(new ItemStack(porkedSmooth, 8), new Object[]{"XXX", "XZX", "XXX", Character.valueOf('X'), Blocks.stone, Character.valueOf('Z'), Items.porkchop});
+            GameRegistry.addRecipe(new ItemStack(porkedQuartz, 8), new Object[]{"XXX", "XZX", "XXX", Character.valueOf('X'), Blocks.quartz_block, Character.valueOf('Z'), Items.porkchop});
+            GameRegistry.addRecipe(new ItemStack(porkedQChiseled, 4), new Object[]{"XX", "XX", Character.valueOf('X'), porkedQuartz});
+            GameRegistry.addRecipe(new ItemStack(porkedPillar, 2), new Object[]{"X", "X", Character.valueOf('X'), porkedQuartz});
+            GameRegistry.addShapelessRecipe(new ItemStack(porkedPaver, 1), new Object[]{new ItemStack(porkedBrick)});
+            GameRegistry.addRecipe(new ItemStack(porkedGlass, 8), new Object[]{"XXX", "XZX", "XXX", Character.valueOf('X'), Blocks.glass, Character.valueOf('Z'), Items.porkchop});
         }
 
-        //ender
-        if (Config.enableEnder) {
+        //ender 24
+        if (Config.enableEnder && Config.enderBalance) {
             GameRegistry.addRecipe(new ItemStack(enderBrick, 4), new Object[]{"XX", "XX", Character.valueOf('X'), enderSmooth});
             GameRegistry.addRecipe(new ItemStack(enderCobble, 24), new Object[]{"XXX", "XZX", "XXX", Character.valueOf('X'), Blocks.cobblestone, Character.valueOf('Z'), Items.ender_pearl});
             GameRegistry.addRecipe(new ItemStack(enderChiseled, 4), new Object[]{"XX", "XX", Character.valueOf('X'), enderBrick});
@@ -474,6 +584,22 @@ public class BlockHandler {
             GameRegistry.addRecipe(new ItemStack(enderQChiseled, 4), new Object[]{"XX", "XX", Character.valueOf('X'), enderQuartz});
             GameRegistry.addRecipe(new ItemStack(enderPillar, 2), new Object[]{"X", "X", Character.valueOf('X'), enderQuartz});
             GameRegistry.addShapelessRecipe(new ItemStack(enderPaver, 1), new Object[]{new ItemStack(enderBrick)});
+            GameRegistry.addRecipe(new ItemStack(enderGlass, 24), new Object[]{"XXX", "XZX", "XXX", Character.valueOf('X'), Blocks.glass, Character.valueOf('Z'), Items.ender_pearl});
+        }
+
+        //ender 8
+        if (Config.enableEnder && !Config.enderBalance){
+            GameRegistry.addRecipe(new ItemStack(enderBrick, 4), new Object[]{"XX", "XX", Character.valueOf('X'), enderSmooth});
+            GameRegistry.addRecipe(new ItemStack(enderCobble, 8), new Object[]{"XXX", "XZX", "XXX", Character.valueOf('X'), Blocks.cobblestone, Character.valueOf('Z'), Items.ender_pearl});
+            GameRegistry.addRecipe(new ItemStack(enderChiseled, 4), new Object[]{"XX", "XX", Character.valueOf('X'), enderBrick});
+            GameRegistry.addRecipe(new ItemStack(enderLog, 8), new Object[]{"XXX", "XZX", "XXX", Character.valueOf('X'), Blocks.log, Character.valueOf('Z'), Items.ender_pearl});
+            GameRegistry.addShapelessRecipe(new ItemStack(enderPlank, 4), new Object[]{new ItemStack(enderLog)});
+            GameRegistry.addRecipe(new ItemStack(enderSmooth, 8), new Object[]{"XXX", "XZX", "XXX", Character.valueOf('X'), Blocks.stone, Character.valueOf('Z'), Items.ender_pearl});
+            GameRegistry.addRecipe(new ItemStack(enderQuartz, 8), new Object[]{"XXX", "XZX", "XXX", Character.valueOf('X'), Blocks.quartz_block, Character.valueOf('Z'), Items.ender_pearl});
+            GameRegistry.addRecipe(new ItemStack(enderQChiseled, 4), new Object[]{"XX", "XX", Character.valueOf('X'), enderQuartz});
+            GameRegistry.addRecipe(new ItemStack(enderPillar, 2), new Object[]{"X", "X", Character.valueOf('X'), enderQuartz});
+            GameRegistry.addShapelessRecipe(new ItemStack(enderPaver, 1), new Object[]{new ItemStack(enderBrick)});
+            GameRegistry.addRecipe(new ItemStack(enderGlass, 8), new Object[]{"XXX", "XZX", "XXX", Character.valueOf('X'), Blocks.glass, Character.valueOf('Z'), Items.ender_pearl});
         }
 
         //burnt
@@ -488,19 +614,37 @@ public class BlockHandler {
             GameRegistry.addRecipe(new ItemStack(burntCobble, 8), new Object[]{"XXX", "XZX", "XXX", Character.valueOf('X'), Blocks.cobblestone, Character.valueOf('Z'), Items.coal});
             GameRegistry.addRecipe(new ItemStack(burntLog, 8), new Object[]{"XXX", "XZX", "XXX", Character.valueOf('X'), Blocks.log, Character.valueOf('Z'), Items.coal});
             GameRegistry.addShapelessRecipe(new ItemStack(burntPaver, 1), new Object[]{new ItemStack(burntBrick)});
+            GameRegistry.addRecipe(new ItemStack(burntGlass, 8), new Object[]{"XXX", "XZX", "XXX", Character.valueOf('X'), Blocks.glass, Character.valueOf('Z'), Items.coal});
         }
 
-        //glass
-        if (Config.enableGlass) {
-            GameRegistry.addRecipe(new ItemStack(blazeGlass, 8), new Object[]{"XXX", "XZX", "XXX", Character.valueOf('X'), Blocks.glass, Character.valueOf('Z'), Items.blaze_rod});
-            GameRegistry.addRecipe(new ItemStack(fleshGlass, 8), new Object[]{"XXX", "XZX", "XXX", Character.valueOf('X'), Blocks.glass, Character.valueOf('Z'), Items.rotten_flesh});
-            GameRegistry.addRecipe(new ItemStack(boneGlass, 8), new Object[]{"XXX", "XZX", "XXX", Character.valueOf('X'), Blocks.glass, Character.valueOf('Z'), Items.bone});
-            GameRegistry.addRecipe(new ItemStack(slimyGlass, 8), new Object[]{"XXX", "XZX", "XXX", Character.valueOf('X'), Blocks.glass, Character.valueOf('Z'), Items.slime_ball});
-            GameRegistry.addRecipe(new ItemStack(enderGlass, 24), new Object[]{"XXX", "XZX", "XXX", Character.valueOf('X'), Blocks.glass, Character.valueOf('Z'), Items.ender_pearl});
-            GameRegistry.addRecipe(new ItemStack(burntGlass, 8), new Object[]{"XXX", "XZX", "XXX", Character.valueOf('X'), Blocks.glass, Character.valueOf('Z'), Items.coal});
-            GameRegistry.addRecipe(new ItemStack(icyGlass, 8), new Object[]{"XXX", "XZX", "XXX", Character.valueOf('X'), Blocks.glass, Character.valueOf('Z'), Blocks.ice});
-            GameRegistry.addRecipe(new ItemStack(leatherGlass, 8), new Object[]{"XXX", "XZX", "XXX", Character.valueOf('X'), Blocks.glass, Character.valueOf('Z'), Items.leather});
-            GameRegistry.addRecipe(new ItemStack(snowyGlass, 8), new Object[]{"XXX", "XZX", "XXX", Character.valueOf('X'), Blocks.glass, Character.valueOf('Z'), Items.snowball});
+        //crying 12
+        if (Config.enableCrying && Config.cryingBalance) {
+            GameRegistry.addRecipe(new ItemStack(cryingBrick, 4), new Object[]{"XX", "XX", Character.valueOf('X'), cryingSmooth});
+            GameRegistry.addRecipe(new ItemStack(cryingCobble, 12), new Object[]{"XXX", "XZX", "XXX", Character.valueOf('X'), Blocks.cobblestone, Character.valueOf('Z'), Items.ghast_tear});
+            GameRegistry.addRecipe(new ItemStack(cryingChiseled, 4), new Object[]{"XX", "XX", Character.valueOf('X'), cryingBrick});
+            GameRegistry.addRecipe(new ItemStack(cryingLog, 12), new Object[]{"XXX", "XZX", "XXX", Character.valueOf('X'), Blocks.log, Character.valueOf('Z'), Items.ghast_tear});
+            GameRegistry.addShapelessRecipe(new ItemStack(cryingPlank, 4), new Object[]{new ItemStack(cryingLog)});
+            GameRegistry.addRecipe(new ItemStack(cryingSmooth, 12), new Object[]{"XXX", "XZX", "XXX", Character.valueOf('X'), Blocks.stone, Character.valueOf('Z'), Items.ghast_tear});
+            GameRegistry.addRecipe(new ItemStack(cryingQuartz, 12), new Object[]{"XXX", "XZX", "XXX", Character.valueOf('X'), Blocks.quartz_block, Character.valueOf('Z'), Items.ghast_tear});
+            GameRegistry.addRecipe(new ItemStack(cryingQChiseled, 4), new Object[]{"XX", "XX", Character.valueOf('X'), cryingQuartz});
+            GameRegistry.addRecipe(new ItemStack(cryingPillar, 2), new Object[]{"X", "X", Character.valueOf('X'), cryingQuartz});
+            GameRegistry.addShapelessRecipe(new ItemStack(cryingPaver, 1), new Object[]{new ItemStack(cryingBrick)});
+            GameRegistry.addRecipe(new ItemStack(cryingGlass, 12), new Object[]{"XXX", "XZX", "XXX", Character.valueOf('X'), Blocks.glass, Character.valueOf('Z'), Items.ghast_tear});
+        }
+
+        //crying 8
+        if (Config.enableCrying && !Config.cryingBalance){
+            GameRegistry.addRecipe(new ItemStack(cryingBrick, 4), new Object[]{"XX", "XX", Character.valueOf('X'), cryingSmooth});
+            GameRegistry.addRecipe(new ItemStack(cryingCobble, 8), new Object[]{"XXX", "XZX", "XXX", Character.valueOf('X'), Blocks.cobblestone, Character.valueOf('Z'), Items.ghast_tear});
+            GameRegistry.addRecipe(new ItemStack(cryingChiseled, 4), new Object[]{"XX", "XX", Character.valueOf('X'), cryingBrick});
+            GameRegistry.addRecipe(new ItemStack(cryingLog, 8), new Object[]{"XXX", "XZX", "XXX", Character.valueOf('X'), Blocks.log, Character.valueOf('Z'), Items.ghast_tear});
+            GameRegistry.addShapelessRecipe(new ItemStack(cryingPlank, 4), new Object[]{new ItemStack(cryingLog)});
+            GameRegistry.addRecipe(new ItemStack(cryingSmooth, 8), new Object[]{"XXX", "XZX", "XXX", Character.valueOf('X'), Blocks.stone, Character.valueOf('Z'), Items.ghast_tear});
+            GameRegistry.addRecipe(new ItemStack(cryingQuartz, 8), new Object[]{"XXX", "XZX", "XXX", Character.valueOf('X'), Blocks.quartz_block, Character.valueOf('Z'), Items.ghast_tear});
+            GameRegistry.addRecipe(new ItemStack(cryingQChiseled, 4), new Object[]{"XX", "XX", Character.valueOf('X'), cryingQuartz});
+            GameRegistry.addRecipe(new ItemStack(cryingPillar, 2), new Object[]{"X", "X", Character.valueOf('X'), cryingQuartz});
+            GameRegistry.addShapelessRecipe(new ItemStack(cryingPaver, 1), new Object[]{new ItemStack(cryingBrick)});
+            GameRegistry.addRecipe(new ItemStack(cryingGlass, 8), new Object[]{"XXX", "XZX", "XXX", Character.valueOf('X'), Blocks.glass, Character.valueOf('Z'), Items.ghast_tear});
         }
 
         /*GameRegistry.addRecipe(new ItemStack(fleshGlassPane, 16), new Object[]{ "XXX", "XXX", Character.valueOf('X'), fleshGlass});

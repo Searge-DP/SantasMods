@@ -23,4 +23,9 @@ public class SantasDecorTab extends CreativeTabs {
         return Item.getItemFromBlock(BlockHandler.slimyBrick);
     }
 
+    @Override
+    public boolean hasSearchBar(){
+        return true;
+    }
+
 }

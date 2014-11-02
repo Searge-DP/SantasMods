@@ -13,6 +13,8 @@ import java.io.IOException;
  */
 public class Config {
 
+    public static boolean enablePumpkin;
+
     public static boolean enableBlaze;
     public static boolean enableBone;
     public static boolean enableBurnt;
@@ -22,7 +24,15 @@ public class Config {
     public static boolean enableLeather;
     public static boolean enableSlime;
     public static boolean enableSnow;
-    public static boolean enableGlass;
+    public static boolean enableCrying;
+    public static boolean enablePorked;
+
+    public static boolean enderBalance;
+    public static boolean cryingBalance;
+
+    public static void things(){
+
+    }
 
     public static void load(FMLPreInitializationEvent event){
         File configDir = ReflectionHelper.getPrivateValue(FMLPreInitializationEvent.class, event, 2);
@@ -40,7 +50,7 @@ public class Config {
         config.load();
 
         //Block Family
-        config.addCustomCategoryComment("Block Family", "Disabling these disables everything in that family apart from glass. Glass is its own toggleable option. For further tweaking, use MineTweaker.");
+        config.addCustomCategoryComment("Block Family", "Disabling these disables everything in that family. For further tweaking, use MineTweaker.");
         enableBlaze = config.get("Block Family", "Toggle the Blaze family", true).getBoolean(true);
         enableBone = config.get("Block Family", "Toggle the Bone family", true).getBoolean(true);
         enableBurnt = config.get("Block Family", "Toggle the Burnt family", true).getBoolean(true);
@@ -50,10 +60,17 @@ public class Config {
         enableLeather = config.get("Block Family", "Toggle the Leather family", true).getBoolean(true);
         enableSlime = config.get("Block Family", "Toggle the Slime family", true).getBoolean(true);
         enableSnow = config.get("Block Family", "Toggle the Snow family", true).getBoolean(true);
+        enableCrying = config.get("Block Family", "Toggle the Crying family", true).getBoolean(true);
+        enablePorked = config.get("Block Family", "Toggle the Porked family", true).getBoolean(true);
 
         //Other
-        config.addCustomCategoryComment("Other blocks", "Disabling these does not affect the other parts of each block family. To disable each individual block, use MineTweaker.");
-        enableGlass = config.get("Other blocks", "Toggle the stained glass", true).getBoolean(true);
+        config.addCustomCategoryComment("Other blocks", "Toggling blocks that are not considered to be in any block family.");
+        enablePumpkin = config.get("Other blocks", "Toggle the prettier jack o lantern block [NYI]", false).getBoolean(false);
+
+        //Tweaking
+        config.addCustomCategoryComment("Tweaking", "Things that can be used to tweak stuff, without enabling/disabling them.");
+        enderBalance = config.get("Tweaking", "Ender blocks output 8 like everything else. This should be used in packs where ender pearls are abundant, or farmable.", false).getBoolean(false);
+        cryingBalance = config.get("Tweaking", "Crying blocks output 8 like everything else. This should be used in packs where ghast tears are abundant, or farmable.", false).getBoolean(false);
 
         config.save();
     }

@@ -5,6 +5,14 @@ package santa.decor.blocks;
  */
 public class BlockInfo {
 
+    public static final String PUMPKIN_UNLOCALIZED_NAME = "jackolanterngr8";
+    public static final String PUMPKIN = "jackolanterngr8";
+    public static final String PUMPKIN_KEY = "jackolanterngr8";
+
+
+
+
+
     public static final String BONEBRICK_UNLOCALIZED_NAME = "boneBrick";
     public static final String BONEBRICK = "bone_brick";
     public static final String BONEBRICK_KEY = "bone_brick";
@@ -336,6 +344,93 @@ public class BlockInfo {
 
 
 
+    public static final String PORKEDBRICK_UNLOCALIZED_NAME = "porkedBrick";
+    public static final String PORKEDBRICK = "porked_brick";
+    public static final String PORKEDBRICK_KEY = "porked_brick";
+
+    public static final String PORKEDCOBBLE_UNLOCALIZED_NAME = "porkedCobble";
+    public static final String PORKEDCOBBLE = "porked_cobble";
+    public static final String PORKEDCOBBLE_KEY = "porked_cobble";
+
+    public static final String PORKEDLOG_UNLOCALIZED_NAME = "porkedLog";
+    public static final String PORKEDLOG = "porked_log";
+    public static final String PORKEDLOG_KEY = "porked_log";
+
+    public static final String PORKEDPLANK_UNLOCALIZED_NAME = "porkedPlank";
+    public static final String PORKEDPLANK = "porked_plank";
+    public static final String PORKEDPLANK_KEY = "porked_plank";
+
+    public static final String PORKEDSTONE_UNLOCALIZED_NAME = "porkedSmooth";
+    public static final String PORKEDSTONE = "porked_stone";
+    public static final String PORKEDSTONE_KEY = "porked_stone";
+
+    public static final String PORKEDCHISELED_UNLOCALIZED_NAME = "porkedChiseled";
+    public static final String PORKEDCHISELED = "porked_chiseled";
+    public static final String PORKEDCHISELED_KEY = "porked_chiseled";
+
+    public static final String PORKEDCHISELEDQ_UNLOCALIZED_NAME = "porkedQChiseled";
+    public static final String PORKEDCHISELEDQ = "porked_chiseled_quartz";
+    public static final String PORKEDCHISELEDQ_KEY = "porked_chiseled_quartz";
+
+    public static final String PORKEDQUARTZ_UNLOCALIZED_NAME = "porkedQuartz";
+    public static final String PORKEDQUARTZ = "porked_quartz";
+    public static final String PORKEDQUARTZ_KEY = "porked_quartz";
+
+    public static final String PORKEDPILLAR_UNLOCALIZED_NAME = "porkedPillar";
+    public static final String PORKEDPILLAR = "porked_pillar";
+    public static final String PORKEDPILLAR_KEY = "porked_pillar";
+
+    public static final String PORKEDPAVER_UNLOCALIZED_NAME = "porkedPaver";
+    public static final String PORKEDPAVER = "porked_paver";
+    public static final String PORKEDPAVER_KEY = "porked_paver";
+
+
+
+    public static final String CRYINGBRICK_UNLOCALIZED_NAME = "cryingBrick";
+    public static final String CRYINGBRICK = "crying_brick";
+    public static final String CRYINGBRICK_KEY = "crying_brick";
+
+    public static final String CRYINGCOBBLE_UNLOCALIZED_NAME = "cryingCobble";
+    public static final String CRYINGCOBBLE = "crying_cobble";
+    public static final String CRYINGCOBBLE_KEY = "crying_cobble";
+
+    public static final String CRYINGLOG_UNLOCALIZED_NAME = "cryingLog";
+    public static final String CRYINGLOG = "crying_log";
+    public static final String CRYINGLOG_KEY = "crying_log";
+
+    public static final String CRYINGPLANK_UNLOCALIZED_NAME = "cryingPlank";
+    public static final String CRYINGPLANK = "crying_plank";
+    public static final String CRYINGPLANK_KEY = "crying_plank";
+
+    public static final String CRYINGSTONE_UNLOCALIZED_NAME = "cryingSmooth";
+    public static final String CRYINGSTONE = "crying_stone";
+    public static final String CRYINGSTONE_KEY = "crying_stone";
+
+    public static final String CRYINGCHISELED_UNLOCALIZED_NAME = "cryingChiseled";
+    public static final String CRYINGCHISELED = "crying_chiseled";
+    public static final String CRYINGCHISELED_KEY = "crying_chiseled";
+
+    public static final String CRYINGCHISELEDQ_UNLOCALIZED_NAME = "cryingQChiseled";
+    public static final String CRYINGCHISELEDQ = "crying_chiseled_quartz";
+    public static final String CRYINGCHISELEDQ_KEY = "crying_chiseled_quartz";
+
+    public static final String CRYINGQUARTZ_UNLOCALIZED_NAME = "cryingQuartz";
+    public static final String CRYINGQUARTZ = "crying_quartz";
+    public static final String CRYINGQUARTZ_KEY = "crying_quartz";
+
+    public static final String CRYINGPILLAR_UNLOCALIZED_NAME = "cryingPillar";
+    public static final String CRYINGPILLAR = "crying_pillar";
+    public static final String CRYINGPILLAR_KEY = "crying_pillar";
+
+    public static final String CRYINGPAVER_UNLOCALIZED_NAME = "cryingPaver";
+    public static final String CRYINGPAVER = "crying_paver";
+    public static final String CRYINGPAVER_KEY = "crying_paver";
+
+
+
+
+
+
     public static final String BONEGLASS_UNLOCALIZED_NAME = "boneGlass";
     public static final String BONEGLASS = "bone_glass";
     public static final String BONEGLASS_KEY = "bone_glass";
@@ -375,6 +470,16 @@ public class BlockInfo {
     public static final String BLAZEGLASS_UNLOCALIZED_NAME = "blazeGlass";
     public static final String BLAZEGLASS = "blaze_glass";
     public static final String BLAZEGLASS_KEY = "blaze_glass";
+
+    public static final String CRYINGGLASS_UNLOCALIZED_NAME = "cryingGlass";
+    public static final String CRYINGGLASS = "crying_glass";
+    public static final String CRYINGGLASS_KEY = "crying_glass";
+
+    public static final String PORKEDGLASS_UNLOCALIZED_NAME = "porkedGlass";
+    public static final String PORKEDGLASS = "porked_glass";
+    public static final String PORKEDGLASS_KEY = "porked_glass";
+
+
 
 
 

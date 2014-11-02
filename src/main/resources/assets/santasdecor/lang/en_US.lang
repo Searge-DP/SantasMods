@@ -91,6 +91,30 @@ tile.snowyChiseled.name=Chiseled Snowy Brick
 tile.snowyLamp.name=Snowy Lamp
 tile.snowyPaver.name=Snowy Paver
 
+tile.cryingBrick.name=Crying Brick
+tile.cryingQChiseled.name=Chiseled Crying Quartz
+tile.cryingCobble.name=Crying Cobblestone
+tile.cryingLog.name=Crying Log
+tile.cryingPlank.name=Crying Plank
+tile.cryingQuartz.name=Crying Quartz
+tile.cryingSmooth.name=Crying Stone
+tile.cryingChiseled.name=Chiseled Crying Brick
+tile.cryingPillar.name=Crying Pillar
+tile.cryingLamp.name=Crying Lamp
+tile.cryingPaver.name=Crying Paver
+
+tile.porkedBrick.name=Porked Brick
+tile.porkedQChiseled.name=Chiseled Porked Quartz
+tile.porkedCobble.name=Porked Cobblestone
+tile.porkedLog.name=Porked Log
+tile.porkedPlank.name=Porked Plank
+tile.porkedQuartz.name=Porked Quartz
+tile.porkedSmooth.name=Porked Stone
+tile.porkedChiseled.name=Chiseled Porked Brick
+tile.porkedPillar.name=Porked Pillar
+tile.porkedLamp.name=Porked Lamp
+tile.porkedPaver.name=Porked Paver
+
 tile.blazeGlass.name=Blaze Glass
 tile.boneGlass.name=Bone Glass
 tile.burntGlass.name=Burnt Glass
@@ -101,6 +125,8 @@ tile.leatherGlass.name=Leather Glass
 tile.slimyGlass.name=Slimy Glass
 tile.snowyGlass.name=Snowy Glass
 tile.darkGlass.name=Dark Glass
+tile.cryingGlass.name=Crying Glass
+tile.porkedGlass.name=Porked Glass
 
 tile.blazeGlassPane.name=Blaze Glass Pane
 tile.boneGlassPane.name=Bone Glass Pane
@@ -112,5 +138,7 @@ tile.leatherGlassPane.name=Leather Glass Pane
 tile.slimyGlassPane.name=Slimy Glass Pane
 tile.snowyGlassPane.name=Snowy Glass Pane
 tile.darkGlassPane.name=Dark Glass Pane
+tile.cryingGlassPane.name=Crying Glass Pane
+tile.porkedGlassPane.name=Porked Glass Pane
 
 itemGroup.Santa's Decor=Santa's Decor
