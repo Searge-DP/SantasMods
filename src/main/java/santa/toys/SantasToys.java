@@ -14,7 +14,7 @@ import santa.toys.proxies.Common;
 /**
  * Created by elijahfoster-wysocki on 7/28/14.
  */
-@Mod(modid = "santastoys", name = "Santa's Toys", version = "0.4")
+@Mod(modid = "santastoys", name = "Santa's Toys", version = "0.6")
 public class SantasToys {
 
     @Mod.Instance("santastoys")
