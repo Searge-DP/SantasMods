@@ -39,6 +39,7 @@ public enum FoodList implements IItemContainer{
     Brandy_Coffee,
     Shin_Shin_Coffee,
     Russian_Coffee,
+    Absinthe,
 
     //non-alcohol drinks
     Pumpkin_Spice_Latte,
