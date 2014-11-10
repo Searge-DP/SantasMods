@@ -37,6 +37,7 @@ A short guide to creating proper issues.
 4. Version numbers
 
 There are a set of labels you can use to help me properly fix the problem:
+
 1. decor: If the problem relates to Santa's Decor
 2. freedom: If the problem relates to Freedom
 3. greg: If the problem relates to any of my Greg mods
