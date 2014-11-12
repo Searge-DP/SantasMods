@@ -5,6 +5,8 @@ import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import net.minecraft.creativetab.CreativeTabs;
+import santa.gregfood.fluid.*;
+import santa.gregfood.item.*;
 
 /**
  * @author SatanicSanta
@@ -17,6 +19,8 @@ public class GregFood {
 
     @Mod.EventHandler
     public void preInit(FMLPreInitializationEvent event){
+        new MetaItem();
+        new Fluids().run();
         Config.load(event);
     }
 

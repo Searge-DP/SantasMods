@@ -3,14 +3,13 @@ package santa.gregfood.fluid;
 import gregtech.GT_Mod;
 import gregtech.api.enums.ItemList;
 import santa.gregfood.item.FoodList;
-import santa.gregfood.item.MetaItem;
 
 /**
  * @author SatanicSanta
  */
-public class Fluids {
+public class Fluids implements Runnable{
 
-    public void addFluids(){
+    public void run(){
         GT_Mod.gregtechproxy.addFluid("potion.whiskey", "Whiskey", null, 1, 275, FoodList.Whiskey.get(1L, new Object[0]), ItemList.Bottle_Empty.get(1L, new Object[0]), 250);
         GT_Mod.gregtechproxy.addFluid("potion.perry", "Perry", null, 1, 295, FoodList.Perry.get(1L, new Object[0]), ItemList.Bottle_Empty.get(1L, new Object[0]), 250);
         GT_Mod.gregtechproxy.addFluid("potion.ciderMixed", "Mixed Berry Cider", null, 1, 295, FoodList.Mixed_Berry_Cider.get(1L, new Object[0]), ItemList.Bottle_Empty.get(1L, new Object[0]), 250);

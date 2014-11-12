@@ -19,3 +19,4 @@ gradlew.bat
 codestyle.xml
 SantasMods.iml
 libs/
+src/api/
