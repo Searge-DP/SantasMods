@@ -26,11 +26,12 @@ public class GregFood {
 
     @Mod.EventHandler
     public void init(FMLInitializationEvent event){
-
+        new FluidRecipes().run();
     }
 
     @Mod.EventHandler
     public void post(FMLPostInitializationEvent event){
 
+        System.out.println("Seriously, in a second when Greg tells you to wait before killing MC, WAIT. It will finish, it just may take a while. He's doing OreDict stuff and there's really no way around it. (Also his tileentity ores don't cause lag, stop saying otherwise.)");
     }
 }
