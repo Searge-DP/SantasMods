@@ -22,13 +22,13 @@ import static gregtech.api.enums.ItemList.Crop_Drop_Chilly;
  */
 public class FluidRecipes implements Runnable {
 
-    public static IGT_RecipeAdder recipe;
+    public static IGT_RecipeAdder recipe = GregTech_API.sRecipeAdder;
     public static GT_OreDictUnificator ore;
 
     public void run(){
 
         //fermenter
-        recipe.addFermentingRecipe(FluidRegistry.getFluidStack("potion.juicePear", 50), FluidRegistry.getFluidStack("potion.perry", 50), 1024, false);
+        GregTech_API.sRecipeAdder.addFermentingRecipe(FluidRegistry.getFluidStack("potion.juicePear", 50), FluidRegistry.getFluidStack("potion.perry", 50), 1024, false);
 
         //distiller
         recipe.addDistilleryRecipe(ItemList.Circuit_Integrated.getWithDamage(0L, 1L, new Object[0]), FluidRegistry.getFluidStack("potion.wheatyjuice", 50), FluidRegistry.getFluidStack("potion.whiskey", 50), 16, 16, false);

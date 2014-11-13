@@ -19,9 +19,9 @@ public class GregFood {
 
     @Mod.EventHandler
     public void preInit(FMLPreInitializationEvent event){
+        Config.load(event);
         new MetaItem();
         new Fluids().run();
-        Config.load(event);
     }
 
     @Mod.EventHandler
