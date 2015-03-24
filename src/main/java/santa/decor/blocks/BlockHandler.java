@@ -8,151 +8,52 @@ import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 
 import santa.decor.Config;
-import santa.decor.blocks.blaze.*;
-import santa.decor.blocks.bone.*;
-import santa.decor.blocks.burnt.*;
-import santa.decor.blocks.ender.*;
-import santa.decor.blocks.flesh.*;
-import santa.decor.blocks.ice.*;
-import santa.decor.blocks.leather.*;
-//import santa.decor.blocks.misc.Pumpkin;
-import santa.decor.blocks.slime.*;
-import santa.decor.blocks.snow.*;
-import santa.decor.blocks.glass.glass.*;
-import santa.decor.blocks.porked.*;
-import santa.decor.blocks.crying.*;
-//import santa.decor.blocks.glass.panes.*;
 
 /**
  * Created by elijahfoster-wysocki on 7/14/14.
  */
 public class BlockHandler {
 
+    public static final String[] familiesMain = {
+            "blaze",   //0
+            "bone",    //1
+            "burnt",   //2
+            "crying",  //3
+            "ender",   //4
+            "flesh",   //5
+            "ice",     //6
+            "leather", //7
+            "porked",  //8
+            "slime",   //9
+            "snow"     //10
+    };
+
+    public static final String[] familiesQuartz = {
+            "blaze",  //0
+            "burnt",  //1
+            "crying", //2
+            "ender",  //3
+            "ice",    //4
+            "porked", //5
+            "slime"   //6
+    };
+
     //public static Block pumpkin;
 
-    public static Block boneBrick;
-    public static Block boneChiseled;
-    public static Block boneCobble;
-    public static Block boneSmooth;
-    public static Block boneLog;
-    public static Block bonePlank;
-    public static Block bonePaver;
 
-    public static Block fleshBrick;
-    public static Block fleshChiseled;
-    public static Block fleshCobble;
-    public static Block fleshSmooth;
-    public static Block fleshLog;
-    public static Block fleshPlank;
-    public static Block fleshPaver;
+    public static Block brick;
+    public static Block chiseled;
+    public static Block cobblestone;
+    public static Block log;
+    public static Block paver;
+    public static Block plank;
+    public static Block quartz;
+    public static Block quartzChiseled;
+    public static Block quartzPillar;
+    public static Block stone;
+    public static Block glass;
 
-    public static Block icyBrick;
-    public static Block icyChiseled;
-    public static Block icyCobble;
-    public static Block icySmooth;
-    public static Block icyLog;
-    public static Block icyPlank;
-    public static Block icyQuartz;
-    public static Block icyQChiseled;
-    public static Block icyPillar;
-    public static Block icyPaver;
-
-    public static Block blazeBrick;
-    public static Block blazeChiseled;
-    public static Block blazeCobble;
-    public static Block blazeSmooth;
-    public static Block blazeQuartz;
-    public static Block blazeQChiseled;
-    public static Block blazePillar;
-    public static Block blazeLog;
-    public static Block blazePlank;
-    public static Block blazePaver;
-
-    public static Block leatherBrick;
-    public static Block leatherChiseled;
-    public static Block leatherCobble;
-    public static Block leatherSmooth;
-    public static Block leatherLog;
-    public static Block leatherPlank;
-    public static Block leatherPaver;
-
-    public static Block snowyBrick;
-    public static Block snowyChiseled;
-    public static Block snowyCobble;
-    public static Block snowySmooth;
-    public static Block snowyLog;
-    public static Block snowyPlank;
-    public static Block snowyPaver;
-
-    public static Block slimyBrick;
-    public static Block slimyChiseled;
-    public static Block slimyCobble;
-    public static Block slimySmooth;
-    public static Block slimyQuartz;
-    public static Block slimyQChiseled;
-    public static Block slimyPillar;
-    public static Block slimyLog;
-    public static Block slimyPlank;
-    public static Block slimyPaver;
-
-    public static Block enderBrick;
-    public static Block enderChiseled;
-    public static Block enderCobble;
-    public static Block enderSmooth;
-    public static Block enderQuartz;
-    public static Block enderQChiseled;
-    public static Block enderPillar;
-    public static Block enderLog;
-    public static Block enderPlank;
-    public static Block enderPaver;
-
-    public static Block burntSmooth;
-    public static Block burntCobble;
-    public static Block burntBrick;
-    public static Block burntChiseled;
-    public static Block burntQuartz;
-    public static Block burntQChiseled;
-    public static Block burntPillar;
-    public static Block burntLog;
-    public static Block burntPlank;
-    public static Block burntPaver;
-
-    public static Block cryingSmooth;
-    public static Block cryingCobble;
-    public static Block cryingBrick;
-    public static Block cryingChiseled;
-    public static Block cryingQuartz;
-    public static Block cryingQChiseled;
-    public static Block cryingPillar;
-    public static Block cryingLog;
-    public static Block cryingPlank;
-    public static Block cryingPaver;
-
-    public static Block porkedSmooth;
-    public static Block porkedCobble;
-    public static Block porkedBrick;
-    public static Block porkedChiseled;
-    public static Block porkedQuartz;
-    public static Block porkedQChiseled;
-    public static Block porkedPillar;
-    public static Block porkedLog;
-    public static Block porkedPlank;
-    public static Block porkedPaver;
-
-    public static Block darkGlass;
-    public static Block blazeGlass;
-    public static Block boneGlass;
-    public static Block fleshGlass;
-    public static Block slimyGlass;
-    public static Block enderGlass;
-    public static Block burntGlass;
-    public static Block icyGlass;
-    public static Block leatherGlass;
-    public static Block snowyGlass;
-    public static Block cryingGlass;
-    public static Block porkedGlass;
-
-    //nyi
+    /*nyi
     public static Block darkGlassPane;
     public static Block blazeGlassPane;
     public static Block boneGlassPane;
@@ -165,305 +66,27 @@ public class BlockHandler {
     public static Block snowyGlassPane;
     public static Block cryingGlassPane;
     public static Block porkedGlassPane;
+    */
 
 
-    public static void meet(){
-        //pumpkin = new Pumpkin();
-
-        boneBrick = new BoneBrick();
-        boneChiseled = new ChiseledBoneBrick();
-        boneCobble = new BoneCobblestone();
-        boneSmooth = new BoneStone();
-        boneLog = new BoneLog();
-        bonePlank = new BonePlank();
-        bonePaver = new BonePaver();
-
-        fleshBrick = new FleshBrick();
-        fleshChiseled = new ChiseledFleshBrick();
-        fleshCobble = new FleshCobblestone();
-        fleshSmooth = new FleshStone();
-        fleshLog = new FleshLog();
-        fleshPlank = new FleshPlank();
-        fleshPaver = new FleshPaver();
-        fleshGlass = new FleshGlass();
-
-        icyBrick = new IcyBrick();
-        icyChiseled = new ChiseledIcyBrick();
-        icyCobble = new IcyCobblestone();
-        icySmooth = new IcyStone();
-        icyLog = new IcyLog();
-        icyPlank = new IcyPlank();
-        icyQuartz = new IcyQuartz();
-        icyQChiseled = new IcyChiseledQuartz();
-        icyPillar = new IcyPillar();
-        icyPaver = new IcyPaver();
-        icyGlass = new IcyGlass();
-
-        blazeBrick = new BlazeBrick();
-        blazeChiseled = new ChiseledBlazeBrick();
-        blazeCobble = new BlazeCobblestone();
-        blazeSmooth = new BlazeStone();
-        blazeQuartz = new BlazeQuartz();
-        blazeQChiseled = new BlazeChiseledQuartz();
-        blazeLog = new BlazeLog();
-        blazePlank = new BlazePlank();
-        blazePillar = new BlazePillar();
-        blazePaver = new BlazePaver();
-        blazeGlass = new BlazeGlass();
-        boneGlass = new BoneGlass();
-
-        leatherBrick = new LeatherBrick();
-        leatherChiseled = new ChiseledLeatherBrick();
-        leatherCobble = new LeatherCobblestone();
-        leatherSmooth = new LeatherStone();
-        leatherLog = new LeatherLog();
-        leatherPlank = new LeatherPlank();
-        leatherPaver = new LeatherPaver();
-        leatherGlass = new LeatherGlass();
-
-        snowyBrick = new SnowyBrick();
-        snowyChiseled = new ChiseledSnowyBrick();
-        snowyCobble = new SnowyCobblestone();
-        snowySmooth = new SnowyStone();
-        snowyLog = new SnowyLog();
-        snowyPlank = new SnowyPlank();
-        snowyPaver = new SnowyPaver();
-        snowyGlass = new SnowyGlass();
-
-        slimyBrick = new SlimyBrick();
-        slimyChiseled = new ChiseledSlimyBrick();
-        slimyCobble = new SlimyCobblestone();
-        slimySmooth = new SlimyStone();
-        slimyLog = new SlimyLog();
-        slimyPlank = new SlimyPlank();
-        slimyQuartz = new SlimyQuartz();
-        slimyQChiseled = new SlimyChiseledQuartz();
-        slimyPillar = new SlimyPillar();
-        slimyPaver = new SlimyPaver();
-        slimyGlass = new SlimyGlass();
-
-        enderBrick = new EnderBrick();
-        enderChiseled = new ChiseledEnderBrick();
-        enderCobble = new EnderCobblestone();
-        enderSmooth = new EnderStone();
-        enderQuartz = new EnderQuartz();
-        enderQChiseled = new EnderChiseledQuartz();
-        enderLog = new EnderLog();
-        enderPlank = new EnderPlank();
-        enderPillar = new EnderPillar();
-        enderPaver = new EnderPaver();
-        enderGlass = new EnderGlass();
-
-        burntSmooth = new BurntStone();
-        burntCobble = new BurntCobble();
-        burntBrick = new BurntBrick();
-        burntChiseled = new BurntChiseled();
-        burntQuartz = new BurntQuartz();
-        burntQChiseled = new BurntChiseledQuartz();
-        burntPillar = new BurntPillar();
-        burntLog = new BurntLog();
-        burntPlank = new BurntPlank();
-        burntPaver = new BurntPaver();
-        burntGlass = new BurntGlass();
-
-        cryingSmooth = new CryingStone();
-        cryingCobble = new CryingCobblestone();
-        cryingBrick = new CryingBrick();
-        cryingChiseled = new ChiseledCryingBrick();
-        cryingQuartz = new CryingQuartz();
-        cryingQChiseled = new CryingChiseledQuartz();
-        cryingPillar = new CryingPillar();
-        cryingLog = new CryingLog();
-        cryingPlank = new CryingPlank();
-        cryingPaver = new CryingPaver();
-        cryingGlass = new CryingGlass();
-
-        porkedSmooth = new PorkedStone();
-        porkedCobble = new PorkedCobblestone();
-        porkedBrick = new PorkedBrick();
-        porkedChiseled = new ChiseledPorkedBrick();
-        porkedQuartz = new PorkedQuartz();
-        porkedQChiseled = new PorkedChiseledQuartz();
-        porkedPillar = new PorkedPillar();
-        porkedLog = new PorkedLog();
-        porkedPlank = new PorkedPlank();
-        porkedPaver = new PorkedPaver();
-        porkedGlass = new PorkedGlass();
-
-
-
-
-
-
-
-
-        /*
-        blazeGlassPane = new BlazeGlassPane();
-        boneGlassPane = new BoneGlassPane();
-        fleshGlassPane = new FleshGlassPane();
-        slimyGlassPane = new SlimyGlassPane();
-        enderGlassPane = new EnderGlassPane();
-        icyGlassPane = new IcyGlassPane();
-        leatherGlassPane = new LeatherGlassPane();
-        snowyGlassPane = new SnowyGlassPane();
-        cryingGlassPane = new CryingGlassPane();
-        porkedGlassPnae = new PorkedGlassPane();
-        */
-    }
-
-
-    public static void date(){
+    public static void registerBlocks(){
         /*
         if (Config.enablePumpkin){
             GameRegistry.registerBlock(pumpkin, BlockInfo.PUMPKIN_KEY);
         }
         */
 
-        if (Config.enableCrying){
-
-        }
-
-        if (Config.enableBone) {
-            GameRegistry.registerBlock(boneBrick, BlockInfo.BONEBRICK_KEY);
-            GameRegistry.registerBlock(boneChiseled, BlockInfo.BONECHISELED_KEY);
-            GameRegistry.registerBlock(boneCobble, BlockInfo.BONECOBBLE_KEY);
-            GameRegistry.registerBlock(boneSmooth, BlockInfo.BONESTONE_KEY);
-            GameRegistry.registerBlock(boneLog, BlockInfo.BONELOG_KEY);
-            GameRegistry.registerBlock(bonePlank, BlockInfo.BONEPLANK_KEY);
-            GameRegistry.registerBlock(bonePaver, BlockInfo.BONEPAVER_KEY);
-            GameRegistry.registerBlock(boneGlass, BlockInfo.BONEGLASS_KEY);
-        }
-
-        if (Config.enableFlesh) {
-            GameRegistry.registerBlock(fleshBrick, BlockInfo.FLESHBRICK_KEY);
-            GameRegistry.registerBlock(fleshChiseled, BlockInfo.FLESHCHISELED_KEY);
-            GameRegistry.registerBlock(fleshCobble, BlockInfo.FLESHCOBBLE_KEY);
-            GameRegistry.registerBlock(fleshSmooth, BlockInfo.FLESHSTONE_KEY);
-            GameRegistry.registerBlock(fleshLog, BlockInfo.FLESHLOG_KEY);
-            GameRegistry.registerBlock(fleshPlank, BlockInfo.FLESHPLANK_KEY);
-            GameRegistry.registerBlock(fleshPaver, BlockInfo.FLESHPAVER_KEY);
-            GameRegistry.registerBlock(fleshGlass, BlockInfo.FLESHGLASS_KEY);
-        }
-
-        if (Config.enableIce) {
-            GameRegistry.registerBlock(icyBrick, BlockInfo.ICEBRICK_KEY);
-            GameRegistry.registerBlock(icyChiseled, BlockInfo.ICECHISELED_KEY);
-            GameRegistry.registerBlock(icyCobble, BlockInfo.ICECOBBLE_KEY);
-            GameRegistry.registerBlock(icySmooth, BlockInfo.ICESTONE_KEY);
-            GameRegistry.registerBlock(icyLog, BlockInfo.ICELOG_KEY);
-            GameRegistry.registerBlock(icyPlank, BlockInfo.ICEPLANK_KEY);
-            GameRegistry.registerBlock(icyQuartz, BlockInfo.ICEQUARTZ_KEY);
-            GameRegistry.registerBlock(icyQChiseled, BlockInfo.ICECHISELEDQ_KEY);
-            GameRegistry.registerBlock(icyPillar, BlockInfo.ICEPILLAR_KEY);
-            GameRegistry.registerBlock(icyPaver, BlockInfo.ICEPAVER_KEY);
-            GameRegistry.registerBlock(icyGlass, BlockInfo.ICEGLASS_KEY);
-        }
-
-        if (Config.enableBlaze) {
-            GameRegistry.registerBlock(blazeBrick, BlockInfo.BLAZEBRICK_KEY);
-            GameRegistry.registerBlock(blazeChiseled, BlockInfo.BLAZECHISELED_KEY);
-            GameRegistry.registerBlock(blazeCobble, BlockInfo.BLAZECOBBLE_KEY);
-            GameRegistry.registerBlock(blazeSmooth, BlockInfo.BLAZESTONE_KEY);
-            GameRegistry.registerBlock(blazeQuartz, BlockInfo.BLAZEQUARTZ_KEY);
-            GameRegistry.registerBlock(blazeQChiseled, BlockInfo.BLAZECHISELEDQ_KEY);
-            GameRegistry.registerBlock(blazeLog, BlockInfo.BLAZELOG_KEY);
-            GameRegistry.registerBlock(blazePlank, BlockInfo.BLAZEPLANK_KEY);
-            GameRegistry.registerBlock(blazePillar, BlockInfo.BLAZEPILLAR_KEY);
-            GameRegistry.registerBlock(blazePaver, BlockInfo.BLAZEPAVER_KEY);
-            GameRegistry.registerBlock(blazeGlass, BlockInfo.BLAZEGLASS_KEY);
-        }
-
-        if (Config.enableLeather) {
-            GameRegistry.registerBlock(leatherBrick, BlockInfo.LEATHERBRICK_KEY);
-            GameRegistry.registerBlock(leatherChiseled, BlockInfo.LEATHERCHISELED_KEY);
-            GameRegistry.registerBlock(leatherCobble, BlockInfo.LEATHERCOBBLE_KEY);
-            GameRegistry.registerBlock(leatherSmooth, BlockInfo.LEATHERSTONE_KEY);
-            GameRegistry.registerBlock(leatherLog, BlockInfo.LEATHERLOG_KEY);
-            GameRegistry.registerBlock(leatherPlank, BlockInfo.LEATHERPLANK_KEY);
-            GameRegistry.registerBlock(leatherPaver, BlockInfo.LEATHERPAVER_KEY);
-            GameRegistry.registerBlock(leatherGlass, BlockInfo.LEATHERGLASS_KEY);
-        }
-
-        if (Config.enableSnow) {
-            GameRegistry.registerBlock(snowyBrick, BlockInfo.SNOWBRICK_KEY);
-            GameRegistry.registerBlock(snowyChiseled, BlockInfo.SNOWCHISELED_KEY);
-            GameRegistry.registerBlock(snowyCobble, BlockInfo.SNOWCOBBLE_KEY);
-            GameRegistry.registerBlock(snowySmooth, BlockInfo.SNOWSTONE_KEY);
-            GameRegistry.registerBlock(snowyLog, BlockInfo.SNOWLOG_KEY);
-            GameRegistry.registerBlock(snowyPlank, BlockInfo.SNOWPLANK_KEY);
-            GameRegistry.registerBlock(snowyPaver, BlockInfo.SNOWPAVER_KEY);
-            GameRegistry.registerBlock(snowyGlass, BlockInfo.SNOWGLASS_KEY);
-        }
-
-        if (Config.enableSlime) {
-            GameRegistry.registerBlock(slimyBrick, BlockInfo.SLIMEBRICK_KEY);
-            GameRegistry.registerBlock(slimyChiseled, BlockInfo.SLIMECHISELED_KEY);
-            GameRegistry.registerBlock(slimyCobble, BlockInfo.SLIMECOBBLE_KEY);
-            GameRegistry.registerBlock(slimySmooth, BlockInfo.SLIMESTONE_KEY);
-            GameRegistry.registerBlock(slimyQuartz, BlockInfo.SLIMEQUARTZ_KEY);
-            GameRegistry.registerBlock(slimyQChiseled, BlockInfo.SLIMECHISELEDQ_KEY);
-            GameRegistry.registerBlock(slimyLog, BlockInfo.SLIMELOG_KEY);
-            GameRegistry.registerBlock(slimyPlank, BlockInfo.SLIMEPLANK_KEY);
-            GameRegistry.registerBlock(slimyPillar, BlockInfo.SLIMEPILLAR_KEY);
-            GameRegistry.registerBlock(slimyPaver, BlockInfo.SLIMEPAVER_KEY);
-            GameRegistry.registerBlock(slimyGlass, BlockInfo.SLIMEGLASS_KEY);
-        }
-
-        if (Config.enableEnder) {
-            GameRegistry.registerBlock(enderBrick, BlockInfo.ENDERBRICK_KEY);
-            GameRegistry.registerBlock(enderChiseled, BlockInfo.ENDERCHISELED_KEY);
-            GameRegistry.registerBlock(enderCobble, BlockInfo.ENDERCOBBLE_KEY);
-            GameRegistry.registerBlock(enderSmooth, BlockInfo.ENDERSTONE_KEY);
-            GameRegistry.registerBlock(enderQuartz, BlockInfo.ENDERQUARTZ_KEY);
-            GameRegistry.registerBlock(enderQChiseled, BlockInfo.ENDERCHISELEDQ_KEY);
-            GameRegistry.registerBlock(enderLog, BlockInfo.ENDERLOG_KEY);
-            GameRegistry.registerBlock(enderPlank, BlockInfo.ENDERPLANK_KEY);
-            GameRegistry.registerBlock(enderPillar, BlockInfo.ENDERPILLAR_KEY);
-            GameRegistry.registerBlock(enderPaver, BlockInfo.ENDERPAVER_KEY);
-            GameRegistry.registerBlock(enderGlass, BlockInfo.ENDERGLASS_KEY);
-        }
-
-        if (Config.enableBurnt) {
-            GameRegistry.registerBlock(burntSmooth, BlockInfo.BURNTSTONE_KEY);
-            GameRegistry.registerBlock(burntCobble, BlockInfo.BURNTCOBBLE_KEY);
-            GameRegistry.registerBlock(burntBrick, BlockInfo.BURNTBRICK_KEY);
-            GameRegistry.registerBlock(burntChiseled, BlockInfo.BURNTCHISELED_KEY);
-            GameRegistry.registerBlock(burntQuartz, BlockInfo.BURNTQUARTZ_KEY);
-            GameRegistry.registerBlock(burntQChiseled, BlockInfo.BURNTCHISELEDQ_KEY);
-            GameRegistry.registerBlock(burntPillar, BlockInfo.BURNTPILLAR_KEY);
-            GameRegistry.registerBlock(burntLog, BlockInfo.BURNTLOG_KEY);
-            GameRegistry.registerBlock(burntPlank, BlockInfo.BURNTPLANK_KEY);
-            GameRegistry.registerBlock(burntPaver, BlockInfo.BURNTPAVER_KEY);
-            GameRegistry.registerBlock(burntGlass, BlockInfo.BURNTGLASS_KEY);
-        }
-
-        if (Config.enableCrying){
-            GameRegistry.registerBlock(cryingSmooth, BlockInfo.CRYINGSTONE_KEY);
-            GameRegistry.registerBlock(cryingCobble, BlockInfo.CRYINGCOBBLE_KEY);
-            GameRegistry.registerBlock(cryingBrick, BlockInfo.CRYINGBRICK_KEY);
-            GameRegistry.registerBlock(cryingChiseled, BlockInfo.CRYINGCHISELED_KEY);
-            GameRegistry.registerBlock(cryingQuartz, BlockInfo.CRYINGQUARTZ_KEY);
-            GameRegistry.registerBlock(cryingQChiseled, BlockInfo.CRYINGCHISELEDQ_KEY);
-            GameRegistry.registerBlock(cryingPillar, BlockInfo.CRYINGPILLAR_KEY);
-            GameRegistry.registerBlock(cryingLog, BlockInfo.CRYINGLOG_KEY);
-            GameRegistry.registerBlock(cryingPlank, BlockInfo.CRYINGPLANK_KEY);
-            GameRegistry.registerBlock(cryingPaver, BlockInfo.CRYINGPAVER_KEY);
-            GameRegistry.registerBlock(cryingGlass, BlockInfo.CRYINGGLASS_KEY);
-        }
-
-        if (Config.enablePorked){
-            GameRegistry.registerBlock(porkedSmooth, BlockInfo.PORKEDSTONE_KEY);
-            GameRegistry.registerBlock(porkedCobble, BlockInfo.PORKEDCOBBLE_KEY);
-            GameRegistry.registerBlock(porkedBrick, BlockInfo.PORKEDBRICK_KEY);
-            GameRegistry.registerBlock(porkedChiseled, BlockInfo.PORKEDCHISELED_KEY);
-            GameRegistry.registerBlock(porkedQuartz, BlockInfo.PORKEDQUARTZ_KEY);
-            GameRegistry.registerBlock(porkedQChiseled, BlockInfo.PORKEDCHISELEDQ_KEY);
-            GameRegistry.registerBlock(porkedPillar, BlockInfo.PORKEDPILLAR_KEY);
-            GameRegistry.registerBlock(porkedLog, BlockInfo.PORKEDLOG_KEY);
-            GameRegistry.registerBlock(porkedPlank, BlockInfo.PORKEDPLANK_KEY);
-            GameRegistry.registerBlock(porkedPaver, BlockInfo.PORKEDPAVER_KEY);
-            GameRegistry.registerBlock(porkedGlass, BlockInfo.PORKEDGLASS_KEY);
-        }
+        brick = GameRegistry.registerBlock(new Brick(), "brick");
+        chiseled = GameRegistry.registerBlock(new Chiseled(), "chiseled");
+        cobblestone = GameRegistry.registerBlock(new Cobblestone(), "cobblestone");
+        log = GameRegistry.registerBlock(new Log(), "log");
+        paver = GameRegistry.registerBlock(new Paver(), "paver");
+        plank = GameRegistry.registerBlock(new Plank(), "plank");
+        quartz = GameRegistry.registerBlock(new Quartz(), "quartz");
+        quartzChiseled = GameRegistry.registerBlock(new QuartzChiseled(), "quartzChiseled");
+        quartzPillar = GameRegistry.registerBlock(new QuartzPillar(), "quartzPillar");
+        stone = GameRegistry.registerBlock(new Stone(), "stone");
+        glass = GameRegistry.registerBlock(new Glass(), "glass");
 
         /*
         GameRegistry.registerBlock(boneGlassPane, BlockInfo.BONEGLASSPANE_KEY);
