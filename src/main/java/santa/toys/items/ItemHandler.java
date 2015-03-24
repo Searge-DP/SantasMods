@@ -1,14 +1,19 @@
 package santa.toys.items;
 
 import cpw.mods.fml.common.registry.GameRegistry;
+import net.minecraft.block.BlockDispenser;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.tileentity.TileEntity;
+import net.minecraft.tileentity.TileEntityDispenser;
 import santa.toys.Config;
+import santa.toys.entity.DispenserBehaviorEnder;
+import santa.toys.entity.DispenserBehaviorNether;
 
 /**
- * Created by elijahfoster-wysocki on 7/28/14.
+ * @author SatanicSanta
  */
 public class ItemHandler {
     public static Item match;
@@ -16,7 +21,7 @@ public class ItemHandler {
     public static Item netherBlaster;
     public static Item saplingBlaster;
 
-    public static void meet(){
+    public static void meet() {
         if (Config.enableMatch) {
             match = new Match();
         }
@@ -25,37 +30,37 @@ public class ItemHandler {
             enderBlaster = new EnderBlaster();
         }
 
-        if (Config.enableNetherBlaster){
-            if (Config.enableEnderBlaster){
+        if (Config.enableNetherBlaster) {
+            if (Config.enableEnderBlaster) {
                 netherBlaster = new NetherStarBlaster();
             }
         }
 
-        if (Config.enableSaplingBlaster){
+        if (Config.enableSaplingBlaster) {
             saplingBlaster = new SaplingBlaster();
         }
 
     }
 
-    public static void date(){
+    public static void date() {
         if (Config.enableMatch) {
             GameRegistry.registerItem(match, ItemInfo.MATCH_KEY);
         }
         if (Config.enableEnderBlaster) {
             GameRegistry.registerItem(enderBlaster, ItemInfo.ENDER_KEY);
         }
-        if (Config.enableNetherBlaster){
-            if (Config.enableEnderBlaster){
+        if (Config.enableNetherBlaster) {
+            if (Config.enableEnderBlaster) {
                 GameRegistry.registerItem(netherBlaster, ItemInfo.NETHER_KEY);
             }
         }
 
-        if (Config.enableSaplingBlaster){
+        if (Config.enableSaplingBlaster) {
             GameRegistry.registerItem(saplingBlaster, ItemInfo.SAPLING_KEY);
         }
     }
 
-    public static void useMove(){
+    public static void useMove() {
 
         if (Config.enableMatch) {
             GameRegistry.addRecipe(new ItemStack(match, 1), new Object[]{
@@ -82,7 +87,7 @@ public class ItemHandler {
             });
         }
 
-        if (Config.enableSaplingBlaster){
+        if (Config.enableSaplingBlaster) {
             GameRegistry.addRecipe(new ItemStack(saplingBlaster, 1), new Object[]{
                     "XFZ",
                     "XGE",
@@ -90,8 +95,13 @@ public class ItemHandler {
                     'X', Items.iron_ingot, 'Z', Items.diamond, 'E', Blocks.sapling, 'F', Blocks.sticky_piston, 'G', Blocks.stone_button, 'Y', Blocks.obsidian
             });
         }
-
     }
 
+    public static void registerBehaviors() {
+        TileEntity te = new TileEntityDispenser();
+
+        BlockDispenser.dispenseBehaviorRegistry.putObject(enderBlaster, new DispenserBehaviorEnder());
+        BlockDispenser.dispenseBehaviorRegistry.putObject(netherBlaster, new DispenserBehaviorNether());
+    }
 }
 

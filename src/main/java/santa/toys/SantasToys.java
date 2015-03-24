@@ -5,14 +5,19 @@ import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
+import net.minecraft.block.BlockDispenser;
 import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.item.ItemStack;
 import santa.toys.blocks.BlockHandler;
+import santa.toys.entity.DispenserBehaviorEnder;
+import santa.toys.entity.DispenserBehaviorNether;
+import santa.toys.items.EnderBlaster;
 import santa.toys.items.ItemHandler;
 import santa.toys.proxies.Client;
 import santa.toys.proxies.Common;
 
 /**
- * Created by elijahfoster-wysocki on 7/28/14.
+ * @author SatanicSanta
  */
 @Mod(modid = "santastoys", name = "Santa's Toys", version = "0.4")
 public class SantasToys {
@@ -26,7 +31,7 @@ public class SantasToys {
     public static CreativeTabs tabSantasToys = new SantasToysTab("Santa's Toys");
 
     @Mod.EventHandler
-    void foreplay(FMLPreInitializationEvent event){
+    void preInit(FMLPreInitializationEvent event) {
 
         Config.load(event);
 
@@ -34,10 +39,12 @@ public class SantasToys {
         BlockHandler.date();
         BlockHandler.useMove();
 
+        ItemHandler.registerBehaviors();
+
     }
 
     @Mod.EventHandler
-    void intercourse(FMLInitializationEvent event){
+    void init(FMLInitializationEvent event) {
 
         ItemHandler.meet();
         ItemHandler.useMove();
@@ -50,15 +57,7 @@ public class SantasToys {
 
 
     @Mod.EventHandler
-    void cuddling(FMLPostInitializationEvent event){
-
-    }
-
-    /* TODO
-    Make a config file that can be used to disable each individual feature. (Will come in 0.4)
-    Make the dispenser shoot the entities rather than the item itself (Will come in 0.5)
-    Powered Carts, takes solid fuel to go faster than normal carts. same speed as normal carts if it has no fuel.(0.5)
-     */
+    void postInit(FMLPostInitializationEvent event) {}
 
 }
 
