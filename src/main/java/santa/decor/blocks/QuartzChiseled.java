@@ -5,8 +5,13 @@ import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IIconRegister;
+import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.IIcon;
 import santa.decor.SantasDecor;
+
+import java.util.List;
 
 /**
  * @author SatanicSanta
@@ -40,6 +45,14 @@ public class QuartzChiseled extends Block {
             return topIcon;
         } else {
             return sideIcon;
+        }
+    }
+
+    @Override
+    @SideOnly(Side.CLIENT)
+    public void getSubBlocks(Item item, CreativeTabs tabs, List subBlocks) {
+        for (int i = 0; i < BlockHandler.familiesQuartz.length; i++) {
+            subBlocks.add(new ItemStack(this, 1, i));
         }
     }
 }

@@ -6,8 +6,13 @@ import net.minecraft.block.Block;
 import net.minecraft.block.BlockRotatedPillar;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IIconRegister;
+import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.IIcon;
 import santa.decor.SantasDecor;
+
+import java.util.List;
 
 /**
  * @author SatanicSanta
@@ -19,7 +24,6 @@ public class Log extends BlockRotatedPillar {
 
     public Log() {
         super(Material.wood);
-        
         this.setHardness(2.0F);
         this.setStepSound(Block.soundTypeWood);
         this.setCreativeTab(SantasDecor.tabSantasDecor);
@@ -55,5 +59,11 @@ public class Log extends BlockRotatedPillar {
         return null;
     }
 
-
+    @Override
+    @SideOnly(Side.CLIENT)
+    public void getSubBlocks(Item item, CreativeTabs tabs, List subBlocks) {
+        for (int i = 0; i < BlockHandler.familiesMain.length; i++) {
+            subBlocks.add(new ItemStack(this, 1, i));
+        }
+    }
 }

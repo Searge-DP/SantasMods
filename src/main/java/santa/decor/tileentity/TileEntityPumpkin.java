@@ -7,7 +7,5 @@ import net.minecraft.tileentity.TileEntity;
  */
 public class TileEntityPumpkin extends TileEntity {
 
-    public TileEntityPumpkin(){
-
-    }
+    public TileEntityPumpkin() {}
 }

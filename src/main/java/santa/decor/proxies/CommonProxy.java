@@ -5,10 +5,10 @@ package santa.decor.proxies;
  */
 public class CommonProxy {
 
-    public void initRenderers(){
+    public void initRenderers() {
 
     }
-    public void initSounds(){
+    public void initSounds() {
 
     }
 }

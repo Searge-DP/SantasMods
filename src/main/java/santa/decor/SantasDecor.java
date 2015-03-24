@@ -32,31 +32,20 @@ public class SantasDecor {
     }
 
     @Mod.EventHandler
-    void pre(FMLPreInitializationEvent event){
-
-
+    void pre(FMLPreInitializationEvent event) {
         Config.load(event);
 
         BlockHandler.registerBlocks();
-        BlockHandler.useMove();
-
-        registerTE(TileEntityPumpkin.class, "jackolanterngr8");
-
-        System.out.println("[Santa's Decor] Stuff should be working fine.");
-        System.out.println("[Santa] Hi Peter. How you doin bby?");
+        BlockHandler.registerRecipes();
     }
 
     @Mod.EventHandler
-    void init(FMLInitializationEvent event){
+    void init(FMLInitializationEvent event) {
         proxy.initRenderers();
         proxy.initSounds();
 
-        pumpkinRenderID = RenderingRegistry.getNextAvailableRenderId();
-
     }
 
     @Mod.EventHandler
-    void postInit(FMLPostInitializationEvent event){
-        System.out.println("[Santa's Decor] Stuff is definitely working fine.");
-    }
+    void postInit(FMLPostInitializationEvent event) {}
 }

@@ -14,11 +14,11 @@ import java.awt.image.BufferedImage;
  */
 public class Common {
 
-    public int sphereID(){
+    public int sphereID() {
         return 0;
     }
 
-    public void renderingRegistry(){
+    public void renderingRegistry() {
 
     }
 }

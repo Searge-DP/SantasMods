@@ -23,7 +23,7 @@ import java.util.ArrayList;
 public class RenderPumpkin extends TileEntitySpecialRenderer {
 
     @Override
-    public void renderTileEntityAt(TileEntity te, double dos, double tres, double cuatro, float morePoop){
+    public void renderTileEntityAt(TileEntity te, double dos, double tres, double cuatro, float morePoop) {
         TileEntityPumpkin pumpkinte = (TileEntityPumpkin) te;
 
         GL11.glPushMatrix();

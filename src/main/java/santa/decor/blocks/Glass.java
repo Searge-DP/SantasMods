@@ -4,9 +4,14 @@ import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
+import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.Facing;
 import net.minecraft.world.IBlockAccess;
 import santa.decor.SantasDecor;
+
+import java.util.List;
 
 /**
  * @author SatanicSanta
@@ -18,12 +23,14 @@ public class Glass extends Block {
         this.setCreativeTab(SantasDecor.tabSantasDecor);
         this.setHardness(0.3F);
         this.setStepSound(Block.soundTypeGlass);
+        this.setBlockTextureName(textureName);
     }
 
-    private void setBlockTextureName() {
+    private String setTextureName() {
         for (int i = 0; i < BlockHandler.familiesMain.length; i++) {
-            this.setBlockTextureName("santasdecor:glass_" + BlockHandler.familiesMain[i]);
+            return textureName = ("santasdecor:glass_" + BlockHandler.familiesMain[i]);
         }
+        return null;
     }
 
     @Override
@@ -59,5 +66,13 @@ public class Glass extends Block {
         }
 
         return block == this ? false : super.shouldSideBeRendered(world, x, y, z, side);
+    }
+
+    @Override
+    @SideOnly(Side.CLIENT)
+    public void getSubBlocks(Item item, CreativeTabs tabs, List subBlocks) {
+        for (int i = 0; i < BlockHandler.familiesMain.length; i++) {
+            subBlocks.add(new ItemStack(this, 1, i));
+        }
     }
 }

@@ -1,29 +1,20 @@
 package santa.decor.blocks;
 
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
+import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
 import santa.decor.SantasDecor;
+
+import java.util.List;
 
 /**
  * @author SatanicSanta
  */
 public class Cobblestone extends Block {
-
-    private static final String[] families = {
-            "blaze",   //0
-            "bone",    //1
-            "burnt",   //2
-            "crying",  //3
-            "ender",   //4
-            "flesh",   //5
-            "ice",     //6
-            "leather", //7
-            "porked",  //8
-            "slime",   //9
-            "snow"     //10
-    };
-
-    private String[] textureName;
 
     public Cobblestone() {
         super(Material.rock);
@@ -31,12 +22,21 @@ public class Cobblestone extends Block {
         this.setHardness(2.0F);
         this.setResistance(1.0F);
         this.setStepSound(Block.soundTypeStone);
+        this.setBlockTextureName(textureName);
     }
 
-    private void setTextureName() {
-        for (int i = 0; i < families.length; i++) {
-            textureName[i] = "santasdecor:cobblestone_" + families[i];
-            this.setBlockTextureName(textureName[i]);
+    private String setTextureName() {
+        for (int i = 0; i < BlockHandler.familiesMain.length; i++) {
+            return textureName = "santasdecor:cobblestone_" + BlockHandler.familiesMain[i];
+        }
+        return null;
+    }
+
+    @Override
+    @SideOnly(Side.CLIENT)
+    public void getSubBlocks(Item item, CreativeTabs tabs, List subBlocks) {
+        for (int i = 0; i < BlockHandler.familiesMain.length; i++) {
+            subBlocks.add(new ItemStack(this, 1, i));
         }
     }
 }
