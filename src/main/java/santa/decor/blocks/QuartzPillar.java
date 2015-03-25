@@ -19,8 +19,8 @@ import java.util.List;
  */
 public class QuartzPillar extends BlockRotatedPillar {
 
-    private IIcon topIcon;
-    private IIcon sideIcon;
+    private IIcon[] topIcon;
+    private IIcon[] sideIcon;
 
     public QuartzPillar() {
         super(Material.rock);
@@ -33,20 +33,29 @@ public class QuartzPillar extends BlockRotatedPillar {
     @Override
     @SideOnly(Side.CLIENT)
     public void registerBlockIcons(IIconRegister ir) {
+        sideIcon = new IIcon[BlockHandler.familiesMain.length];
+        topIcon = new IIcon[BlockHandler.familiesMain.length];
+        
         for (int i = 0; i < BlockHandler.familiesQuartz.length; i++) {
-            topIcon = ir.registerIcon("santasdecor:pillartop_" + BlockHandler.familiesQuartz[i]);
-            sideIcon = ir.registerIcon("santasdecor:pillar_" + BlockHandler.familiesQuartz[i]);
+            topIcon[i] = ir.registerIcon("santasdecor:pillartop_" + BlockHandler.familiesQuartz[i]);
+            sideIcon[i] = ir.registerIcon("santasdecor:pillar_" + BlockHandler.familiesQuartz[i]);
         }
     }
 
     @Override
-    public IIcon getSideIcon(int i) {
-        return sideIcon;
+    public IIcon getSideIcon(int par1) {
+        for (int i = 0; i < BlockHandler.familiesQuartz.length; i++) {
+            return sideIcon[i];
+        }
+        return null;
     }
 
     @Override
-    public IIcon getTopIcon(int i) {
-        return topIcon;
+    public IIcon getTopIcon(int par1) {
+        for (int i = 0; i < BlockHandler.familiesQuartz.length; i++) {
+            return topIcon[i];
+        }
+        return null;
     }
 
     @Override

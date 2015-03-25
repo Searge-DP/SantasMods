@@ -11,9 +11,9 @@ import santa.decor.tileentity.TileEntityPumpkin;
 /**
  * @author SatanicSanta
  */
-public class Pumpkin extends Block{
+public class Pumpkin extends Block {
 
-    public Pumpkin(){
+    public Pumpkin() {
         super(Material.wood);
         this.setBlockName(BlockInfo.PUMPKIN_UNLOCALIZED_NAME);
         this.setCreativeTab(SantasDecor.tabSantasDecor);
@@ -23,19 +23,17 @@ public class Pumpkin extends Block{
     }
 
     @Override
-    public TileEntity createTileEntity(World world, int shit){
+    public TileEntity createTileEntity(World world, int meta){
         return new TileEntityPumpkin();
     }
 
     @Override
-    public boolean isOpaqueCube(){
+    public boolean isOpaqueCube() {
         return false;
     }
 
     @Override
-    public boolean renderAsNormalBlock(){
+    public boolean renderAsNormalBlock() {
         return false;
     }
-
-
 }

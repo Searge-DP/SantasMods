@@ -8,7 +8,7 @@ import net.minecraft.item.ItemStack;
 import santa.decor.blocks.BlockHandler;
 
 /**
- * Created by elijahfoster-wysocki on 7/29/14.
+ * @author SatanicSanta
  */
 public class SantasDecorTab extends CreativeTabs {
 

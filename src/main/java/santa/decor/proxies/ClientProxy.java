@@ -1,7 +1,7 @@
 package santa.decor.proxies;
 
 /**
- * Created by elijahfoster-wysocki on 7/14/14.
+ * @author SatanicSanta
  */
 public class ClientProxy extends CommonProxy{
 

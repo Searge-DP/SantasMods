@@ -15,7 +15,7 @@ import cpw.mods.fml.common.Mod.EventHandler;
 import santa.decor.tileentity.TileEntityPumpkin;
 
 /**
- * Created by elijahfoster-wysocki on 7/14/14.
+ * @author SatanicSanta
  */
 
 @Mod(modid = "santasdecor", name = "Santa's Decor", version = "0.7")

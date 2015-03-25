@@ -9,7 +9,7 @@ import java.io.File;
 import java.io.IOException;
 
 /**
- * Created by elijahfoster-wysocki on 10/5/14.
+ * @author SatanicSanta
  */
 public class Config {
 

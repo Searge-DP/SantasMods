@@ -2,13 +2,11 @@ package santa.decor.blocks;
 
 import cpw.mods.fml.common.registry.GameRegistry;
 
-import cpw.mods.fml.common.registry.LanguageRegistry;
 import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 
-import org.apache.commons.lang3.text.WordUtils;
 import santa.decor.Config;
 
 /**

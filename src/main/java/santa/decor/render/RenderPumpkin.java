@@ -22,12 +22,13 @@ import java.util.ArrayList;
  */
 public class RenderPumpkin extends TileEntitySpecialRenderer {
 
+    //I'm not exactly sure what each argument does.
     @Override
-    public void renderTileEntityAt(TileEntity te, double dos, double tres, double cuatro, float morePoop) {
+    public void renderTileEntityAt(TileEntity te, double par1, double par2, double par3, float par4) {
         TileEntityPumpkin pumpkinte = (TileEntityPumpkin) te;
 
         GL11.glPushMatrix();
-        GL11.glTranslatef((float) dos, (float) tres, (float) cuatro);
+        GL11.glTranslatef((float) par1, (float) par2, (float) par3);
         GL11.glCallList(Client.sphereID);
         GL11.glPopMatrix();
     }

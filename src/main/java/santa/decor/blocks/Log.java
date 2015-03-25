@@ -43,18 +43,18 @@ public class Log extends BlockRotatedPillar {
 
     @Override
     @SideOnly(Side.CLIENT)
-    public IIcon getSideIcon(int i) {
-        for (int it = 0; i < BlockHandler.familiesMain.length; i++) {
-            return sideTexture[it];
+    public IIcon getSideIcon(int par1) {
+        for (int i = 0; i < BlockHandler.familiesMain.length; i++) {
+            return sideTexture[i];
         }
         return null;
     }
 
     @Override
     @SideOnly(Side.CLIENT)
-    public IIcon getTopIcon(int i) {
-        for (int it = 0; i < BlockHandler.familiesMain.length; i++) {
-            return topTexture[it];
+    public IIcon getTopIcon(int par1) {
+        for (int i = 0; i < BlockHandler.familiesMain.length; i++) {
+            return topTexture[i];
         }
         return null;
     }
