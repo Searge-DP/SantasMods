@@ -68,7 +68,6 @@ public class BlockHandler {
     public static Block porkedGlassPane;
     */
 
-
     public static void registerBlocks() {
         /*
         if (Config.enablePumpkin){
@@ -76,7 +75,7 @@ public class BlockHandler {
         }
         */
 
-        brick = GameRegistry.registerBlock(new Brick(), "brick").setBlockName("brick");
+        brick = new Brick();
         chiseled = GameRegistry.registerBlock(new Chiseled(), "chiseled").setBlockName("chiseled");
         cobblestone = GameRegistry.registerBlock(new Cobblestone(), "cobblestone").setBlockName("cobblestone");
         log = GameRegistry.registerBlock(new Log(), "log").setBlockName("log");
