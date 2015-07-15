@@ -6,9 +6,14 @@ import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IIconRegister;
+import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.IIcon;
 import santa.decor.SantasDecor;
 import santa.decor.blocks.items.ItemBlockBrick;
+
+import java.util.List;
 
 /**
  * @author SatanicSanta
@@ -24,11 +29,11 @@ public class Brick extends Block {
         this.setResistance(10.0F);
         this.setStepSound(Block.soundTypeStone);
         this.setBlockName("brick");
-        GameRegistry.registerBlock(this, ItemBlockBrick.class, "brick");
     }
 
     @Override
     public void registerBlockIcons(IIconRegister ir) {
+        texture = new IIcon[BlockHandler.familiesMain.length];
         for (int i = 0; i < texture.length; i++) {
             textureName = "santasdecor:brick_" + BlockHandler.familiesMain[i];
             texture[i] = ir.registerIcon(textureName);
@@ -79,5 +84,13 @@ public class Brick extends Block {
     @Override
     public int damageDropped(int meta){
         return meta;
+    }
+
+    @Override
+    @SideOnly(Side.CLIENT)
+    public void getSubBlocks(Item item, CreativeTabs tab, List list) {
+        for (int i = 0; i < texture.length; i++) {
+            list.add(new ItemStack(item, 1, i));
+        }
     }
 }

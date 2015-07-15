@@ -24,18 +24,18 @@ public class Log extends BlockRotatedPillar {
 
     public Log() {
         super(Material.wood);
-        this.setHardness(2.0F);
-        this.setStepSound(Block.soundTypeWood);
         this.setCreativeTab(SantasDecor.tabSantasDecor);
+        this.setHardness(1.5F);
+        this.setResistance(10.0F);
+        this.setStepSound(Block.soundTypeStone);
+        this.setBlockName("log");
     }
 
     @Override
-    @SideOnly(Side.CLIENT)
     public void registerBlockIcons(IIconRegister ir) {
         sideTexture = new IIcon[BlockHandler.familiesMain.length];
         topTexture = new IIcon[BlockHandler.familiesMain.length];
-
-        for (int i = 0; i < BlockHandler.familiesMain.length; i++) {
+        for (int i = 0; i < sideTexture.length; i++) {
             sideTexture[i] = ir.registerIcon("santasdecor:log_" + BlockHandler.familiesMain[i]);
             topTexture[i] = ir.registerIcon("santasdecor:logtop_" + BlockHandler.familiesMain[i]);
         }
@@ -60,10 +60,15 @@ public class Log extends BlockRotatedPillar {
     }
 
     @Override
+    public int damageDropped(int meta){
+        return meta;
+    }
+
+    @Override
     @SideOnly(Side.CLIENT)
-    public void getSubBlocks(Item item, CreativeTabs tabs, List subBlocks) {
+    public void getSubBlocks(Item item, CreativeTabs tab, List list) {
         for (int i = 0; i < BlockHandler.familiesMain.length; i++) {
-            subBlocks.add(new ItemStack(this, 1, i));
+            list.add(new ItemStack(item, 1, i));
         }
     }
 }

@@ -18,8 +18,8 @@ import java.util.List;
  */
 public class QuartzChiseled extends Block {
 
-    private IIcon topIcon;
-    private IIcon sideIcon;
+    private IIcon[] topTexture;
+    private IIcon[] sideTexture;
 
     public QuartzChiseled() {
         super(Material.rock);
@@ -27,14 +27,17 @@ public class QuartzChiseled extends Block {
         this.setHardness(1.5F);
         this.setResistance(10.0F);
         this.setStepSound(Block.soundTypeStone);
+        this.setBlockName("qchiseled");
     }
 
     @Override
     @SideOnly(Side.CLIENT)
     public void registerBlockIcons(IIconRegister ir) {
+        topTexture = new IIcon[BlockHandler.familiesQuartz.length];
+        sideTexture = new IIcon[BlockHandler.familiesQuartz.length];
         for (int i = 0; i < BlockHandler.familiesQuartz.length; i++) {
-            topIcon = ir.registerIcon("santasdecor:qchiseledtop_" + BlockHandler.familiesQuartz[i]);
-            sideIcon = ir.registerIcon("santasdecor:qchiseled_" + BlockHandler.familiesQuartz[i]);
+            topTexture[i] = ir.registerIcon("santasdecor:qchiseledtop_" + BlockHandler.familiesQuartz[i]);
+            sideTexture[i] = ir.registerIcon("santasdecor:qchiseled_" + BlockHandler.familiesQuartz[i]);
         }
     }
 
@@ -42,9 +45,9 @@ public class QuartzChiseled extends Block {
     @SideOnly(Side.CLIENT)
     public IIcon getIcon(int side, int meta) {
         if (side == 0) {
-            return topIcon;
+            return topTexture[meta];
         } else {
-            return sideIcon;
+            return sideTexture[meta];
         }
     }
 

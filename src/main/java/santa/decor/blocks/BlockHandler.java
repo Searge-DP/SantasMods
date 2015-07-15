@@ -8,6 +8,7 @@ import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 
 import santa.decor.Config;
+import santa.decor.blocks.items.*;
 
 /**
  * @author SatanicSanta
@@ -75,8 +76,8 @@ public class BlockHandler {
         }
         */
 
-        brick = new Brick();
-        chiseled = GameRegistry.registerBlock(new Chiseled(), "chiseled").setBlockName("chiseled");
+        brick = GameRegistry.registerBlock(new Brick(), ItemBlockBrick.class, "brick").setBlockName("brick");
+        chiseled = GameRegistry.registerBlock(new Chiseled(), ItemBlockChiseled.class, "chiseled").setBlockName("chiseled");
         cobblestone = GameRegistry.registerBlock(new Cobblestone(), "cobblestone").setBlockName("cobblestone");
         log = GameRegistry.registerBlock(new Log(), "log").setBlockName("log");
         paver = GameRegistry.registerBlock(new Paver(), "paver").setBlockName("paver");
