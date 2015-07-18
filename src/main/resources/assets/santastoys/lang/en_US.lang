@@ -1,8 +1,13 @@
 item.match.name=Match
 item.enderBlaster.name=Ender Blaster
 item.netherBlaster.name=Nether Blaster
+item.pouchBig.name=Big ol' Pouch
+item.pouchLil.name=Lil Pouch
 
 tile.damnBlock.name=Block of Damn Giving
 tile.heavyLight.name=Heavy Light
+
+inventory.bigpouch.name=Big ol' Pouch
+inventory.lilpouch.name=Lil Pouch
 
 itemGroup.Santa's Toys=Santa's Toys

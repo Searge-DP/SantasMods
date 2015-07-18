@@ -5,6 +5,7 @@ import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
+import cpw.mods.fml.common.network.NetworkRegistry;
 import net.minecraft.creativetab.CreativeTabs;
 import santa.toys.blocks.BlockHandler;
 import santa.toys.items.ItemHandler;
@@ -45,6 +46,7 @@ public class SantasToys {
 
         proxy.initRenderers();
         proxy.initSounds(); //I don't actually have sounds, but in case I do in the future, there's this already there.
+        NetworkRegistry.INSTANCE.registerGuiHandler(this, new Common());
     }
 
 
