@@ -15,7 +15,7 @@ public class Config {
 
     public static boolean enableEnderBlaster;
     public static boolean enableNetherBlaster;
-    public static boolean enableSaplingBlaster;
+    //public static boolean enableSaplingBlaster;
     public static boolean enableMatch;
     public static boolean enableGiveADamn;
     public static boolean enableGlowstone;
@@ -44,7 +44,7 @@ public class Config {
 
         enableEnderBlaster = config.get("Feature", "Toggle the Ender Blaster. Disabling this will disable the Nether Blaster", true).getBoolean(true);
         enableNetherBlaster = config.get("Feature", "Toggle the Nether Blaster. This is useless if the Ender Blaster is already disabled", true).getBoolean(true);
-        enableSaplingBlaster = config.get("Feature", "Toggle the Sapling Blaster", true).getBoolean(true);
+        //enableSaplingBlaster = config.get("Feature", "Toggle the Sapling Blaster", true).getBoolean(true);
         enableMatch = config.get("Feature", "Toggle the Match", true).getBoolean(true);
         enableGiveADamn = config.get("Feature", "Toggle the Give a Damn Block", true).getBoolean(true);
         enableGlowstone = config.get("Feature", "Toggle the Heavy Light", true).getBoolean(true);

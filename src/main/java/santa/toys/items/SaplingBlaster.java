@@ -13,7 +13,7 @@ import java.util.List;
 /**
  * @author SatanicSanta
  */
-public class SaplingBlaster extends Item {
+public class SaplingBlaster /*extends Item*/ {/*
 
     public SaplingBlaster() {
         super();
@@ -35,4 +35,4 @@ public class SaplingBlaster extends Item {
     public void addInformation(ItemStack par1ItemStack, EntityPlayer par2EntityPlayer, List par3List, boolean par4) {
         par3List.add("Used to kill cows because cows.");
     }
-}
+*/}

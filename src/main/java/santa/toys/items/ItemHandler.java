@@ -14,7 +14,7 @@ public class ItemHandler {
     public static Item match;
     public static Item enderBlaster;
     public static Item netherBlaster;
-    public static Item saplingBlaster;
+    //public static Item saplingBlaster;
 
     public static void meet(){
         if (Config.enableMatch) {
@@ -30,11 +30,11 @@ public class ItemHandler {
                 netherBlaster = new NetherStarBlaster();
             }
         }
-
+/*
         if (Config.enableSaplingBlaster){
             saplingBlaster = new SaplingBlaster();
         }
-
+*/
     }
 
     public static void date(){
@@ -49,10 +49,11 @@ public class ItemHandler {
                 GameRegistry.registerItem(netherBlaster, ItemInfo.NETHER_KEY);
             }
         }
-
+/*
         if (Config.enableSaplingBlaster){
             GameRegistry.registerItem(saplingBlaster, ItemInfo.SAPLING_KEY);
         }
+*/
     }
 
     public static void useMove(){
@@ -81,7 +82,7 @@ public class ItemHandler {
                     'X', Items.nether_star, 'Z', enderBlaster
             });
         }
-
+/*
         if (Config.enableSaplingBlaster){
             GameRegistry.addRecipe(new ItemStack(saplingBlaster, 1), new Object[]{
                     "XFZ",
@@ -90,7 +91,7 @@ public class ItemHandler {
                     'X', Items.iron_ingot, 'Z', Items.diamond, 'E', Blocks.sapling, 'F', Blocks.sticky_piston, 'G', Blocks.stone_button, 'Y', Blocks.obsidian
             });
         }
-
+*/
     }
 
 }
