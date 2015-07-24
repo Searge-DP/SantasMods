@@ -54,7 +54,7 @@ public class SpicedSand extends Block {
 
     private void damageEntity(Entity entity, DamageSource damageSource, int damage, World world, PotionEffect potion, int x, int y, int z) {
         entity.setFire(1);
-        entity.attackEntityFrom(damageSource, damage); //Generic to allow for more mobs
+        entity.attackEntityFrom(damageSource, damage);
         ((EntityLivingBase) entity).addPotionEffect(potion);
         world.spawnParticle("largesmoke", x, y, z, 0.0D, 1.0D, 0.0D);
     }
