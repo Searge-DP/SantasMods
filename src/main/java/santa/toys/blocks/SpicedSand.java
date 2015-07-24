@@ -4,6 +4,7 @@ import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
+
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.potion.Potion;
@@ -12,15 +13,19 @@ import net.minecraft.util.AxisAlignedBB;
 import net.minecraft.util.DamageSource;
 import net.minecraft.world.World;
 import santa.toys.Config;
+
+import net.minecraft.potion.Potion;
+import net.minecraft.potion.PotionEffect;
+import net.minecraft.util.DamageSource;
+import net.minecraft.world.World;
 import santa.toys.SantasToys;
 
 /**
  * @author Eli Foster
  */
 public class SpicedSand extends Block {
-
     private static PotionEffect slowness = new PotionEffect(Potion.moveSlowdown.id, 20, 1);
-    private static int damage = Config.damageDealtBySand;
+    private static float damage = (float) Config.damageDealtBySand;
     public SpicedSand() {
         super(Material.sand);
         this.setBlockName(BlockInfo.SAND_UNLOCALIZED_NAME);
@@ -52,7 +57,7 @@ public class SpicedSand extends Block {
         }
     }
 
-    private void damageEntity(Entity entity, DamageSource damageSource, int damage, World world, PotionEffect potion, int x, int y, int z) {
+    private void damageEntity(Entity entity, DamageSource damageSource, float damage, World world, PotionEffect potion, int x, int y, int z) {
         entity.setFire(1);
         entity.attackEntityFrom(damageSource, damage);
         ((EntityLivingBase) entity).addPotionEffect(potion);
