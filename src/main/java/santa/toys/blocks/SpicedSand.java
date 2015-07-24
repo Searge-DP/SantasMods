@@ -58,21 +58,16 @@ public class SpicedSand extends Block {
     }
 
     private void damageEntity(Entity entity, DamageSource damageSource, float damage, World world, int x, int y, int z) {
-        System.out.println("KKKKKKKKKKKKKKKKKK");
         if (entity instanceof EntityLivingBase) {
             if (!world.isRemote) {
-                System.out.println("LLLLLLLLLLLLLL");
                 entity.setFire(1);
                 entity.attackEntityFrom(damageSource, damage);
             }
-
-            System.out.println("ZZZZZZZZZZZZZ");
             world.spawnParticle("largesmoke", x, y, z, 0.0D, 0.0D, 0.0D);
         }
     }
 
     private void poisonEntity(Entity entity, PotionEffect potion, World world) {
-        System.out.println("LLLLLLLLLLLLLLLLL");
         if (entity instanceof EntityLivingBase && !world.isRemote) {
             ((EntityLivingBase) entity).addPotionEffect(potion);
         }
@@ -80,6 +75,7 @@ public class SpicedSand extends Block {
 
     @Override
     public AxisAlignedBB getCollisionBoundingBoxFromPool(World world, int x, int y, int z) {
-        return AxisAlignedBB.getBoundingBox((float) x, y, (float) z, (float) (x + 1), (float) (y + 1), (float) (z + 1));
+        float f = 0.0625F;
+        return AxisAlignedBB.getBoundingBox((double)((float) x + f), (double) y, (double)((float) z + f), (double)((float)(x + 1) - f), (double)((float)(y + 1) - f), (double)((float)(z + 1) - f));
     }
 }
