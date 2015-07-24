@@ -42,26 +42,40 @@ public class SpicedSand extends Block {
 
     @Override
     public void onEntityCollidedWithBlock(World world, int x, int y, int z, Entity entity) {
-        if (!(entity instanceof EntityItem)) {
-            damageEntity(entity, DamageSource.cactus, damage, world, slowness, x, y, z);
-        }
+        System.out.println("HHHHHHHHHHHHHHHHHH");
+        damageEntity(entity, DamageSource.cactus, damage, world, x, y, z);
+        poisonEntity(entity, slowness, world);
     }
 
     @Override
     public boolean onBlockActivated(World world, int x, int y, int z, EntityPlayer player, int par6, float hitX, float hitY, float hitZ) {
         if (player.getCurrentEquippedItem() == null) {
-            damageEntity(player, DamageSource.cactus, damage, world, slowness, x, y, z);
+            damageEntity(player, DamageSource.cactus, damage, world, x, y, z);
             return true;
         } else {
             return false;
         }
     }
 
-    private void damageEntity(Entity entity, DamageSource damageSource, float damage, World world, PotionEffect potion, int x, int y, int z) {
-        entity.setFire(1);
-        entity.attackEntityFrom(damageSource, damage);
-        ((EntityLivingBase) entity).addPotionEffect(potion);
-        world.spawnParticle("largesmoke", x, y, z, 0.0D, 1.0D, 0.0D);
+    private void damageEntity(Entity entity, DamageSource damageSource, float damage, World world, int x, int y, int z) {
+        System.out.println("KKKKKKKKKKKKKKKKKK");
+        if (entity instanceof EntityLivingBase) {
+            if (!world.isRemote) {
+                System.out.println("LLLLLLLLLLLLLL");
+                entity.setFire(1);
+                entity.attackEntityFrom(damageSource, damage);
+            }
+
+            System.out.println("ZZZZZZZZZZZZZ");
+            world.spawnParticle("largesmoke", x, y, z, 0.0D, 0.0D, 0.0D);
+        }
+    }
+
+    private void poisonEntity(Entity entity, PotionEffect potion, World world) {
+        System.out.println("LLLLLLLLLLLLLLLLL");
+        if (entity instanceof EntityLivingBase && !world.isRemote) {
+            ((EntityLivingBase) entity).addPotionEffect(potion);
+        }
     }
 
     @Override
