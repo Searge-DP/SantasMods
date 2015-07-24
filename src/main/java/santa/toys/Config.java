@@ -19,6 +19,8 @@ public class Config {
     public static boolean enableMatch;
     public static boolean enableGiveADamn;
     public static boolean enableGlowstone;
+    public static boolean enableSpicedSand;
+    public static boolean enableSpicedSandGeneration;
     //public static boolean enableMuffler;
 
     public static void load(FMLPreInitializationEvent event){
@@ -44,6 +46,8 @@ public class Config {
         enableMatch = config.get("Feature", "Toggle the Match", true).getBoolean(true);
         enableGiveADamn = config.get("Feature", "Toggle the Give a Damn Block", true).getBoolean(true);
         enableGlowstone = config.get("Feature", "Toggle the Heavy Light", true).getBoolean(true);
+        enableSpicedSand = config.get("Feature", "Toggle the Spiced Sand. Disabling this will also disable the generation of it, even if that is enabled.", true).getBoolean(true);
+        enableSpicedSandGeneration = config.get("World", "Toggle Spiced Sand generation", true).getBoolean(true);
         //enableMuffler = config.get("Enable", "Toggle the Muffler", true).getBoolean(true);
 
         config.save();
