@@ -23,6 +23,8 @@ public class Config {
     public static boolean enableSpicedSandGeneration;
     //public static boolean enableMuffler;
 
+    public static int damageDealtBySand;
+
     public static void load(FMLPreInitializationEvent event){
         File configurationDir = ReflectionHelper.getPrivateValue(FMLPreInitializationEvent.class, event, 2);
         File oldConfigFile = new File(configurationDir, "santastoys.cfg");
@@ -48,6 +50,7 @@ public class Config {
         enableGlowstone = config.get("Feature", "Toggle the Heavy Light", true).getBoolean(true);
         enableSpicedSand = config.get("Feature", "Toggle the Spiced Sand. Disabling this will also disable the generation of it, even if that is enabled.", true).getBoolean(true);
         enableSpicedSandGeneration = config.get("World", "Toggle Spiced Sand generation", true).getBoolean(true);
+        damageDealtBySand = config.get("Balance", "The amount of damage that the Spiced Sand deals", 1).getInt();
         //enableMuffler = config.get("Enable", "Toggle the Muffler", true).getBoolean(true);
 
         config.save();
