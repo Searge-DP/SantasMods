@@ -5,11 +5,13 @@ import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
+import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.creativetab.CreativeTabs;
 import santa.toys.blocks.BlockHandler;
 import santa.toys.items.ItemHandler;
 import santa.toys.proxies.Client;
 import santa.toys.proxies.Common;
+import santa.toys.world.SantasToysGenerator;
 
 /**
  * Created by elijahfoster-wysocki on 7/28/14.
@@ -33,6 +35,8 @@ public class SantasToys {
         BlockHandler.meet();
         BlockHandler.date();
         BlockHandler.useMove();
+
+        GameRegistry.registerWorldGenerator(new SantasToysGenerator(), 1);
 
     }
 

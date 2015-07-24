@@ -13,6 +13,9 @@ public class BlockInfo {
     public static final String HEAVY = "heavy_light";
     public static final String HEAVY_KEY = "heavy_light";
 
+    public static final String SAND_UNLOCALIZED_NAME = "sandSpiced";
+    public static final String SAND_KEY = "spiced_sand";
+
     /*
     public static final String MUFFLER_UNLOCALIZED_NAME = "muffler";
     public static final String MUFFLER = "muffler";
