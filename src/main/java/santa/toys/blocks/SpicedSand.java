@@ -42,7 +42,6 @@ public class SpicedSand extends Block {
 
     @Override
     public void onEntityCollidedWithBlock(World world, int x, int y, int z, Entity entity) {
-        System.out.println("HHHHHHHHHHHHHHHHHH");
         damageEntity(entity, DamageSource.cactus, damage, world, x, y, z);
         poisonEntity(entity, slowness, world);
     }
