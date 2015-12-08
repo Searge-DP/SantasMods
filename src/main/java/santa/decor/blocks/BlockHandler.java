@@ -10,11 +10,7 @@ import net.minecraft.item.ItemStack;
 import santa.decor.Config;
 import santa.decor.blocks.items.*;
 
-/**
- * @author SatanicSanta
- */
 public class BlockHandler {
-
     public static final String[] familiesMain = {
       "blaze",   //0
       "bone",    //1
@@ -190,7 +186,8 @@ public class BlockHandler {
 
         }
 
-        /*GameRegistry.addRecipe(new ItemStack(fleshGlassPane, 16), new Object[]{ "XXX", "XXX", Character.valueOf('X'), fleshGlass});
+        /*
+        GameRegistry.addRecipe(new ItemStack(fleshGlassPane, 16), new Object[]{ "XXX", "XXX", Character.valueOf('X'), fleshGlass});
         GameRegistry.addRecipe(new ItemStack(boneGlassPane, 16), new Object[]{ "XXX", "XXX", Character.valueOf('X'), boneGlass});
         GameRegistry.addRecipe(new ItemStack(slimyGlassPane, 16), new Object[]{ "XXX", "XXX", Character.valueOf('X'), slimyGlass});
         GameRegistry.addRecipe(new ItemStack(enderGlassPane, 16), new Object[]{ "XXX", "XXX", Character.valueOf('X'), enderGlass});
@@ -198,6 +195,7 @@ public class BlockHandler {
         GameRegistry.addRecipe(new ItemStack(icyGlassPane, 16), new Object[]{ "XXX", "XXX", Character.valueOf('X'), icyGlass});
         GameRegistry.addRecipe(new ItemStack(leatherGlassPane, 16), new Object[]{ "XXX", "XXX", Character.valueOf('X'), leatherGlass});
         GameRegistry.addRecipe(new ItemStack(snowyGlassPane, 16), new Object[]{ "XXX", "XXX", Character.valueOf('X'), snowyGlass});
-        GameRegistry.addRecipe(new ItemStack(blazeGlassPane, 16), new Object[]{ "XXX", "XXX", Character.valueOf('X'), blazeGlass});*/
+        GameRegistry.addRecipe(new ItemStack(blazeGlassPane, 16), new Object[]{ "XXX", "XXX", Character.valueOf('X'), blazeGlass});
+        */
     }
 }

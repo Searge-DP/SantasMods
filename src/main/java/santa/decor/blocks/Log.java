@@ -14,11 +14,7 @@ import santa.decor.SantasDecor;
 
 import java.util.List;
 
-/**
- * @author SatanicSanta
- */
 public class Log extends BlockRotatedPillar {
-
     private IIcon[] sideTexture;
     private IIcon[] topTexture;
 

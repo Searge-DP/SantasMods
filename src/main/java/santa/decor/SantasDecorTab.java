@@ -7,11 +7,7 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import santa.decor.blocks.BlockHandler;
 
-/**
- * @author SatanicSanta
- */
 public class SantasDecorTab extends CreativeTabs {
-
     public SantasDecorTab(String tabLabel) {
         super(tabLabel);
     }

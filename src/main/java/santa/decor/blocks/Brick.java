@@ -1,6 +1,5 @@
 package santa.decor.blocks;
 
-import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.block.Block;
@@ -11,15 +10,10 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.IIcon;
 import santa.decor.SantasDecor;
-import santa.decor.blocks.items.ItemBlockBrick;
 
 import java.util.List;
 
-/**
- * @author SatanicSanta
- */
 public class Brick extends Block {
-
     private IIcon[] texture;
 
     public Brick() {

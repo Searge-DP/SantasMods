@@ -4,11 +4,7 @@ import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.entity.Entity;
 
-/**
- * @author SatanicSanta
- */
 public class ModelPumpkin extends ModelBase {
-
     ModelRenderer render;
 
     public ModelPumpkin() {
@@ -18,7 +14,6 @@ public class ModelPumpkin extends ModelBase {
         render.rotateAngleX = -0.4854F;
     }
 
-    //I'm not exactly sure what each individual float does.
     @Override
     public void render(Entity entity, float par1, float par2, float par3, float par4, float par5, float par6) {
         setRotationAngles(par1, par2, par3, par4, par5, par6, entity);

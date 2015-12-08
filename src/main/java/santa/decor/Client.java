@@ -15,11 +15,7 @@ import santa.decor.tileentity.TileEntityPumpkin;
 import java.awt.*;
 import java.awt.image.BufferedImage;
 
-/**
- * @author SatanicSanta
- */
 public class Client extends Common {
-
     public static int sphereID;
 
     @Override

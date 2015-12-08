@@ -8,11 +8,7 @@ import santa.decor.SantasDecor;
 import santa.decor.blocks.BlockInfo;
 import santa.decor.tileentity.TileEntityPumpkin;
 
-/**
- * @author SatanicSanta
- */
 public class Pumpkin extends Block {
-
     public Pumpkin() {
         super(Material.wood);
         this.setBlockName(BlockInfo.PUMPKIN_UNLOCALIZED_NAME);

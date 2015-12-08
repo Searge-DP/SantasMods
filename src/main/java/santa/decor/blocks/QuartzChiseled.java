@@ -13,11 +13,7 @@ import santa.decor.SantasDecor;
 
 import java.util.List;
 
-/**
- * @author SatanicSanta
- */
 public class QuartzChiseled extends Block {
-
     private IIcon[] topTexture;
     private IIcon[] sideTexture;
 

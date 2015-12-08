@@ -13,11 +13,7 @@ import santa.decor.SantasDecor;
 
 import java.util.List;
 
-/**
- * @author SatanicSanta
- */
 public class Paver extends Block {
-
     private IIcon[] texture;
 
     public Paver() {
