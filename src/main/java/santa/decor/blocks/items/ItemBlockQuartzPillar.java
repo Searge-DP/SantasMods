@@ -5,8 +5,8 @@ import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
 import santa.decor.blocks.BlockHandler;
 
-public class ItemBlockGlass extends ItemBlock {
-    public ItemBlockGlass(Block block) {
+public class ItemBlockQuartzPillar extends ItemBlock {
+    public ItemBlockQuartzPillar(Block block) {
         super(block);
         this.setHasSubtypes(true);
     }
@@ -18,6 +18,7 @@ public class ItemBlockGlass extends ItemBlock {
 
     @Override
     public String getUnlocalizedName(ItemStack stack) {
-        return getUnlocalizedName() + "." + BlockHandler.familiesMain.get(stack.getItemDamage());
+        return getUnlocalizedName() + "." + BlockHandler.familiesQuartz.get(stack.getItemDamage());
     }
 }
+

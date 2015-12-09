@@ -31,7 +31,7 @@ public class SantasDecor {
     @Mod.EventHandler
     void pre(FMLPreInitializationEvent event) {
         Config.load(event);
-
+        BlockHandler.initializeFamilies();
         BlockHandler.registerBlocks();
         BlockHandler.registerRecipes();
     }

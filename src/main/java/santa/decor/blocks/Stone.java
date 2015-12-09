@@ -27,9 +27,9 @@ public class Stone extends Block{
 
     @Override
     public void registerBlockIcons(IIconRegister ir) {
-        texture = new IIcon[BlockHandler.familiesMain.length];
+        texture = new IIcon[BlockHandler.familiesMain.size()];
         for (int i = 0; i < texture.length; i++) {
-            textureName = "santasdecor:stone_" + BlockHandler.familiesMain[i];
+            textureName = "santasdecor:stone_" + BlockHandler.familiesMain.get(i);
             texture[i] = ir.registerIcon(textureName);
         }
     }

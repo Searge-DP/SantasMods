@@ -29,11 +29,13 @@ public class QuartzChiseled extends Block {
     @Override
     @SideOnly(Side.CLIENT)
     public void registerBlockIcons(IIconRegister ir) {
-        topTexture = new IIcon[BlockHandler.familiesQuartz.length];
-        sideTexture = new IIcon[BlockHandler.familiesQuartz.length];
-        for (int i = 0; i < BlockHandler.familiesQuartz.length; i++) {
-            topTexture[i] = ir.registerIcon("santasdecor:qchiseledtop_" + BlockHandler.familiesQuartz[i]);
-            sideTexture[i] = ir.registerIcon("santasdecor:qchiseled_" + BlockHandler.familiesQuartz[i]);
+        topTexture = new IIcon[BlockHandler.familiesQuartz.size()];
+        sideTexture = new IIcon[BlockHandler.familiesQuartz.size()];
+        for (int i = 0; i < BlockHandler.familiesQuartz.size(); i++) {
+            topTexture[i] = ir.registerIcon("santasdecor:qchiseledtop_" + BlockHandler
+              .familiesQuartz.get(i));
+            sideTexture[i] = ir.registerIcon("santasdecor:qchiseled_" + BlockHandler
+              .familiesQuartz.get(i));
         }
     }
 
@@ -50,7 +52,7 @@ public class QuartzChiseled extends Block {
     @Override
     @SideOnly(Side.CLIENT)
     public void getSubBlocks(Item item, CreativeTabs tabs, List subBlocks) {
-        for (int i = 0; i < BlockHandler.familiesQuartz.length; i++) {
+        for (int i = 0; i < BlockHandler.familiesQuartz.size(); i++) {
             subBlocks.add(new ItemStack(this, 1, i));
         }
     }

@@ -14,9 +14,12 @@ import santa.decor.SantasDecor;
 
 import java.util.List;
 
-public class QuartzPillar extends BlockRotatedPillar {
-    private IIcon[] topTexture;
-    private IIcon[] sideTexture;
+public class QuartzPillar extends Block {
+    @SideOnly(Side.CLIENT)
+    protected IIcon[] sideTexture = new IIcon[BlockHandler.familiesQuartz.size()];
+
+    @SideOnly(Side.CLIENT)
+    protected IIcon[] topTexture = new IIcon[BlockHandler.familiesQuartz.size()];
 
     public QuartzPillar() {
         super(Material.rock);
@@ -30,35 +33,28 @@ public class QuartzPillar extends BlockRotatedPillar {
     @Override
     @SideOnly(Side.CLIENT)
     public void registerBlockIcons(IIconRegister ir) {
-        sideTexture = new IIcon[BlockHandler.familiesQuartz.length];
-        topTexture = new IIcon[BlockHandler.familiesQuartz.length];
-        
-        for (int i = 0; i < BlockHandler.familiesQuartz.length; i++) {
-            topTexture[i] = ir.registerIcon("santasdecor:pillartop_" + BlockHandler.familiesQuartz[i]);
-            sideTexture[i] = ir.registerIcon("santasdecor:pillar_" + BlockHandler.familiesQuartz[i]);
+        int i = 0;
+        for (String s : BlockHandler.familiesQuartz) {
+            topTexture[i] = ir.registerIcon("santasdecor:pillartop_" + s);
+            sideTexture[i] = ir.registerIcon("santasdecor:pillar_" + s);
+            i++;
         }
     }
 
     @Override
-    public IIcon getSideIcon(int par1) {
-        for (int i = 0; i < BlockHandler.familiesQuartz.length; i++) {
-            return sideTexture[i];
+    @SideOnly(Side.CLIENT)
+    public IIcon getIcon(int side, int meta) {
+        if (side == 0 || side == 1) {
+            return topTexture[meta];
+        } else {
+            return sideTexture[meta];
         }
-        return null;
-    }
-
-    @Override
-    public IIcon getTopIcon(int par1) {
-        for (int i = 0; i < BlockHandler.familiesQuartz.length; i++) {
-            return topTexture[i];
-        }
-        return null;
     }
 
     @Override
     @SideOnly(Side.CLIENT)
     public void getSubBlocks(Item item, CreativeTabs tabs, List subBlocks) {
-        for (int i = 0; i < BlockHandler.familiesQuartz.length; i++) {
+        for (int i = 0; i < BlockHandler.familiesQuartz.size(); i++) {
             subBlocks.add(new ItemStack(this, 1, i));
         }
     }

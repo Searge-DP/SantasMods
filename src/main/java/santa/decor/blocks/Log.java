@@ -10,13 +10,18 @@ import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.IIcon;
+import org.apache.commons.lang3.tuple.MutablePair;
 import santa.decor.SantasDecor;
 
+import java.util.HashMap;
 import java.util.List;
 
-public class Log extends BlockRotatedPillar {
-    private IIcon[] sideTexture;
-    private IIcon[] topTexture;
+public class Log extends Block {
+    @SideOnly(Side.CLIENT)
+    protected IIcon[] sideTexture = new IIcon[BlockHandler.familiesMain.size()];
+
+    @SideOnly(Side.CLIENT)
+    protected IIcon[] topTexture = new IIcon[BlockHandler.familiesMain.size()];
 
     public Log() {
         super(Material.wood);
@@ -29,30 +34,22 @@ public class Log extends BlockRotatedPillar {
 
     @Override
     public void registerBlockIcons(IIconRegister ir) {
-        sideTexture = new IIcon[BlockHandler.familiesMain.length];
-        topTexture = new IIcon[BlockHandler.familiesMain.length];
-        for (int i = 0; i < sideTexture.length; i++) {
-            sideTexture[i] = ir.registerIcon("santasdecor:log_" + BlockHandler.familiesMain[i]);
-            topTexture[i] = ir.registerIcon("santasdecor:logtop_" + BlockHandler.familiesMain[i]);
+        int i = 0;
+        for (String s : BlockHandler.familiesMain) {
+            sideTexture[i] = ir.registerIcon("santasdecor:log_" + s);
+            topTexture[i] = ir.registerIcon("santasdecor:logtop_" + s);
+            i++;
         }
     }
 
     @Override
     @SideOnly(Side.CLIENT)
-    public IIcon getSideIcon(int par1) {
-        for (int i = 0; i < BlockHandler.familiesMain.length; i++) {
-            return sideTexture[i];
+    public IIcon getIcon(int side, int meta) {
+        if (side == 0 || side == 1) {
+            return topTexture[meta];
+        } else {
+            return sideTexture[meta];
         }
-        return null;
-    }
-
-    @Override
-    @SideOnly(Side.CLIENT)
-    public IIcon getTopIcon(int par1) {
-        for (int i = 0; i < BlockHandler.familiesMain.length; i++) {
-            return topTexture[i];
-        }
-        return null;
     }
 
     @Override
@@ -63,7 +60,7 @@ public class Log extends BlockRotatedPillar {
     @Override
     @SideOnly(Side.CLIENT)
     public void getSubBlocks(Item item, CreativeTabs tab, List list) {
-        for (int i = 0; i < BlockHandler.familiesMain.length; i++) {
+        for (int i = 0; i < BlockHandler.familiesMain.size(); i++) {
             list.add(new ItemStack(item, 1, i));
         }
     }

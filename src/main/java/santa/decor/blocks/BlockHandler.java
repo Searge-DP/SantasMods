@@ -7,36 +7,18 @@ import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 
+import net.minecraft.item.crafting.IRecipe;
 import santa.decor.Config;
 import santa.decor.blocks.items.*;
 
-public class BlockHandler {
-    public static final String[] familiesMain = {
-      "blaze",   //0
-      "bone",    //1
-      "burnt",   //2
-      "crying",  //3
-      "ender",   //4
-      "flesh",   //5
-      "ice",     //6
-      "leather", //7
-      "porked",  //8
-      "slime",   //9
-      "snow"     //10
-    };
+import java.util.ArrayList;
 
-    public static final String[] familiesQuartz = {
-      "blaze",  //0
-      "burnt",  //1
-      "crying", //2
-      "ender",  //3
-      "ice",    //4
-      "porked", //5
-      "slime"   //6
-    };
+public class BlockHandler {
+    public static final ArrayList<String> familiesMain = new ArrayList<String>();
+
+    public static final ArrayList<String> familiesQuartz = new ArrayList<String>();
 
     //public static Block pumpkin;
-
 
     public static Block brick;
     public static Block chiseled;
@@ -50,7 +32,7 @@ public class BlockHandler {
     public static Block stone;
     public static Block glass;
 
-    /*nyi
+    /*
     public static Block darkGlassPane;
     public static Block blazeGlassPane;
     public static Block boneGlassPane;
@@ -65,6 +47,65 @@ public class BlockHandler {
     public static Block porkedGlassPane;
     */
 
+    /**
+     * Initializes block families based on the configuration options.
+     */
+    public static void initializeFamilies() {
+        if (Config.enableBlaze) {
+            familiesMain.add("blaze");
+            familiesQuartz.add("blaze");
+        }
+
+        if (Config.enableBone) {
+            familiesMain.add("bone");
+        }
+
+        if (Config.enableBurnt) {
+            familiesMain.add("burnt");
+            familiesQuartz.add("burnt");
+        }
+
+        if (Config.enableCrying) {
+            familiesMain.add("crying");
+            familiesQuartz.add("crying");
+        }
+
+        if (Config.enableEnder) {
+            familiesMain.add("ender");
+            familiesQuartz.add("ender");
+        }
+
+        if (Config.enableFlesh) {
+            familiesMain.add("flesh");
+        }
+
+        if (Config.enableIce) {
+            familiesMain.add("ice");
+            familiesQuartz.add("ice");
+        }
+
+        if (Config.enableLeather) {
+            familiesMain.add("leather");
+        }
+
+        if (Config.enablePorked) {
+            familiesMain.add("porked");
+            familiesQuartz.add("porked");
+        }
+
+        if (Config.enableSlime) {
+            familiesMain.add("slime");
+            familiesQuartz.add("slime");
+        }
+
+        if (Config.enableSnow) {
+            familiesMain.add("snow");
+        }
+    }
+
+    /**
+     * Registers and initializes all blocks.
+     */
     public static void registerBlocks() {
         /*
         if (Config.enablePumpkin){
@@ -72,17 +113,38 @@ public class BlockHandler {
         }
         */
 
-        brick = GameRegistry.registerBlock(new Brick(), ItemBlockBrick.class, "brick").setBlockName("brick");
-        chiseled = GameRegistry.registerBlock(new Chiseled(), ItemBlockChiseled.class, "chiseled").setBlockName("chiseled");
-        cobblestone = GameRegistry.registerBlock(new Cobblestone(), "cobblestone").setBlockName("cobblestone");
-        log = GameRegistry.registerBlock(new Log(), "log").setBlockName("log");
-        paver = GameRegistry.registerBlock(new Paver(), "paver").setBlockName("paver");
-        plank = GameRegistry.registerBlock(new Plank(), "plank").setBlockName("plank");
-        quartz = GameRegistry.registerBlock(new Quartz(), "quartz").setBlockName("quartz");
-        quartzChiseled = GameRegistry.registerBlock(new QuartzChiseled(), "quartzChiseled").setBlockName("quartzChiseled");
-        quartzPillar = GameRegistry.registerBlock(new QuartzPillar(), "quartzPillar").setBlockName("quartzPillar");
-        stone = GameRegistry.registerBlock(new Stone(), "stone").setBlockName("stone");
-        glass = GameRegistry.registerBlock(new Glass(), "glass").setBlockName("glass");
+        brick = new Brick();
+        GameRegistry.registerBlock(brick, ItemBlockBrick.class, "brick");
+
+        chiseled = new Chiseled();
+        GameRegistry.registerBlock(chiseled, ItemBlockChiseled.class, "chiseled");
+
+        cobblestone = new Cobblestone();
+        GameRegistry.registerBlock(cobblestone, ItemBlockCobblestone.class, "cobblestone");
+
+        log = new Log();
+        GameRegistry.registerBlock(log, ItemBlockLog.class, "log");
+
+        paver = new Paver();
+        GameRegistry.registerBlock(paver, ItemBlockPaver.class, "paver");
+
+        plank = new Plank();
+        GameRegistry.registerBlock(plank, ItemBlockPlank.class, "plank");
+
+        quartz = new Quartz();
+        GameRegistry.registerBlock(quartz, ItemBlockQuartz.class, "quartz");
+
+        quartzChiseled = new QuartzChiseled();
+        GameRegistry.registerBlock(quartzChiseled, ItemBlockQuartzChiseled.class, "qchiseled");
+
+        quartzPillar = new QuartzPillar();
+        GameRegistry.registerBlock(quartzPillar, ItemBlockQuartzPillar.class, "pillar");
+
+        stone = new Stone();
+        GameRegistry.registerBlock(stone, ItemBlockStone.class, "stone");
+
+        glass = new Glass();
+        GameRegistry.registerBlock(glass, ItemBlockGlass.class, "glass");
 
         /*
         GameRegistry.registerBlock(boneGlassPane, BlockInfo.BONEGLASSPANE_KEY);
@@ -93,97 +155,144 @@ public class BlockHandler {
         GameRegistry.registerBlock(icyGlassPane, BlockInfo.ICEGLASSPANE_KEY);
         GameRegistry.registerBlock(leatherGlassPane, BlockInfo.LEATHERGLASSPANE_KEY);
         GameRegistry.registerBlock(snowyGlassPane, BlockInfo.SNOWGLASSPANE_KEY);
-        GameRegistry.registerBlock(blazeGlassPane, BlockInfo.BLAZEGLASSPANE_KEY);*/
+        GameRegistry.registerBlock(blazeGlassPane, BlockInfo.BLAZEGLASSPANE_KEY);
+        */
     }
 
+    private static void doMainRecipes(int metadata, ItemStack resource, String familiaName) {
+        doMainRecipes(metadata, resource, familiaName, 8);
+    }
+
+    private static void doMainRecipes(int metadata, ItemStack resource, String familiaName, int balancedOutput) {
+        if (familiesMain.contains(familiaName)) {
+            GameRegistry.addRecipe(new ItemStack(brick, 4, metadata), new Object[]{
+              "XX", "XX", 'X', new ItemStack(stone, 1, metadata).getItem()
+            });
+
+            GameRegistry.addRecipe(new ItemStack(cobblestone, balancedOutput, metadata), new Object[]{
+              "XXX", "XZX", "XXX", 'X', Blocks.cobblestone, 'Z', resource
+            });
+
+            GameRegistry.addRecipe(new ItemStack(chiseled, 4, metadata), new Object[]{
+              "XX", "XX", 'X', new ItemStack(brick, 1, metadata).getItem()
+            });
+
+            GameRegistry.addRecipe(new ItemStack(log, balancedOutput, metadata), new Object[]{
+              "XXX", "XZX", "XXX", 'X', Blocks.log, 'Z', resource
+            });
+
+            GameRegistry.addShapelessRecipe(new ItemStack(plank, 4, metadata), new Object[]{
+              new ItemStack(log, 1, metadata)
+            });
+
+            GameRegistry.addRecipe(new ItemStack(stone, balancedOutput, metadata), new Object[]{
+              "XXX", "XZX", "XXX", 'X', Blocks.stone, 'Z', resource
+            });
+
+            GameRegistry.addShapelessRecipe(new ItemStack(paver, 1, metadata), new Object[]{
+              new ItemStack(brick, 1, metadata)
+            });
+
+            GameRegistry.addRecipe(new ItemStack(glass, 1, metadata), new Object[]{
+              "XXX", "XZX", "XXX", 'X', Blocks.glass, 'Z', resource
+            });
+        }
+    }
+
+    private static void doQuartzRecipes(int metadata, ItemStack resource, String familiaName) {
+        doQuartzRecipes(metadata, resource, familiaName, 8);
+    }
+
+    private static void doQuartzRecipes(int metadata, ItemStack resource, String familiaName, int balancedOutput) {
+        if (familiesQuartz.contains(familiaName)) {
+            GameRegistry.addRecipe(new ItemStack(quartz, balancedOutput, metadata), new Object[]{
+              "XXX", "XZX", "XXX", 'X', Blocks.quartz_block, 'Z', resource
+            });
+
+            GameRegistry.addRecipe(new ItemStack(quartzChiseled, 4, metadata), new Object[]{
+              "XX", "XX", 'X', new ItemStack(quartz, 1, metadata)
+            });
+
+            GameRegistry.addRecipe(new ItemStack(quartzPillar, 2, metadata), new Object[]{
+              "X", "X", 'X', new ItemStack(quartz, 1, metadata)
+            });
+        }
+    }
+
+    /**
+     * Registers and initializes all block and item recipes.
+     */
     public static void registerRecipes() {
         if (Config.enableBone) {
-            GameRegistry.addRecipe(new ItemStack(brick, 4, 1), new Object[] {
-              "XX", "XX", 'X', new ItemStack(stone, 1, 1).getItem()
-            });
-
-            GameRegistry.addRecipe(new ItemStack(cobblestone, 8, 1), new Object[] {
-              "XXX", "XZX", "XXX", 'X', Blocks.cobblestone, 'Z', Items.bone
-            });
-
-            GameRegistry.addRecipe(new ItemStack(chiseled, 4, 1), new Object[] {
-              "XX", "XX", 'X', new ItemStack(brick, 1, 1).getItem()
-            });
-
-            GameRegistry.addRecipe(new ItemStack(log, 8, 1), new Object[] {
-              "XXX", "XZX", "XXX", 'X', Blocks.log, 'Z', Items.bone
-            });
-
-            GameRegistry.addShapelessRecipe(new ItemStack(plank, 4, 1), new Object[]{
-              new ItemStack(log, 1, 1)
-            });
-
-            GameRegistry.addRecipe(new ItemStack(stone, 8, 1), new Object[]{
-              "XXX", "XZX", "XXX", 'X', Blocks.stone, 'Z', Items.bone
-            });
-
-            GameRegistry.addShapelessRecipe(new ItemStack(paver, 1, 1), new Object[]{
-              new ItemStack(brick, 1, 1)
-            });
-
-            GameRegistry.addRecipe(new ItemStack(glass, 1, 1), new Object[] {
-              "XXX", "XZX", "XXX", 'X', Blocks.glass, 'Z', Items.bone
-            });
+            doMainRecipes(familiesMain.indexOf("bone"), new ItemStack(Items.bone), "bone");
         }
 
-        //flesh
         if (Config.enableFlesh) {
-
+            doMainRecipes(familiesMain.indexOf("flesh"), new ItemStack(Items.rotten_flesh),
+              "flesh");
         }
 
-        //ice
         if (Config.enableIce) {
-
+            doMainRecipes(familiesMain.indexOf("ice"), new ItemStack(Blocks.ice), "ice");
+            doQuartzRecipes(familiesQuartz.indexOf("ice"), new ItemStack(Blocks.ice), "ice");
         }
 
-        //snow
         if (Config.enableSnow) {
-
+            doMainRecipes(familiesMain.indexOf("snow"), new ItemStack(Items.snowball), "snow");
         }
 
-        //leather
         if (Config.enableLeather) {
-
+            doMainRecipes(familiesMain.indexOf("leather"), new ItemStack(Items.leather), "leather");
         }
 
-        //blaze
         if (Config.enableBlaze) {
-
+            doMainRecipes(familiesMain.indexOf("blaze"), new ItemStack(Items.blaze_rod), "blaze");
+            doQuartzRecipes(familiesQuartz.indexOf("blaze"), new ItemStack(Items.blaze_rod),
+              "blaze");
         }
 
-        //porked
         if (Config.enablePorked) {
-
+            doMainRecipes(familiesMain.indexOf("porked"), new ItemStack(Items.porkchop), "porked");
+            doQuartzRecipes(familiesQuartz.indexOf("porked"), new ItemStack(Items.porkchop),
+              "porked");
         }
 
-        //ender 24
-        if (Config.enableEnder && Config.enderBalance) {
-
+        if (Config.enableEnder) {
+            int output;
+            if (Config.enderBalance) {
+                output = 24;
+            } else {
+                output = 8;
+            }
+            doMainRecipes(familiesMain.indexOf("ender"), new ItemStack(Items.ender_pearl),
+              "ender", output);
+            doQuartzRecipes(familiesQuartz.indexOf("ender"), new ItemStack(Items.ender_pearl),
+              "ender", output);
         }
 
-        //ender 8
-        if (Config.enableEnder && !Config.enderBalance){
-
-        }
-
-        //burnt
         if (Config.enableBurnt) {
-
+            doMainRecipes(familiesMain.indexOf("burnt"), new ItemStack(Items.coal), "burnt");
+            doQuartzRecipes(familiesQuartz.indexOf("burnt"), new ItemStack(Items.coal), "burnt");
         }
 
         //crying 12
-        if (Config.enableCrying && Config.cryingBalance) {
-
+        if (Config.enableCrying) {
+            int output;
+            if (Config.cryingBalance) {
+                output = 12;
+            } else {
+                output = 8;
+            }
+            doMainRecipes(familiesMain.indexOf("crying"), new ItemStack(Items.ghast_tear),
+              "crying", output);
+            doQuartzRecipes(familiesQuartz.indexOf("crying"), new ItemStack(Items.ghast_tear),
+              "crying", output);
         }
 
-        //crying 8
-        if (Config.enableCrying && !Config.cryingBalance){
-
+        if (Config.enableSlime) {
+            doMainRecipes(familiesMain.indexOf("slime"), new ItemStack(Items.slime_ball), "slime");
+            doQuartzRecipes(familiesQuartz.indexOf("slime"), new ItemStack(Items.slime_ball),
+              "slime");
         }
 
         /*
