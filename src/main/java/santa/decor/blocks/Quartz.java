@@ -14,9 +14,14 @@ import santa.decor.SantasDecor;
 import java.util.List;
 
 public class Quartz extends Block {
-    private IIcon[] topTexture;
-    private IIcon[] bottomTexture;
-    private IIcon[] sideTexture;
+    @SideOnly(Side.CLIENT)
+    private IIcon[] topTexture = new IIcon[BlockHandler.familiesQuartz.size()];
+
+    @SideOnly(Side.CLIENT)
+    private IIcon[] bottomTexture = new IIcon[BlockHandler.familiesQuartz.size()];
+
+    @SideOnly(Side.CLIENT)
+    private IIcon[] sideTexture = new IIcon[BlockHandler.familiesQuartz.size()];
 
     public Quartz() {
         super(Material.rock);
@@ -30,16 +35,12 @@ public class Quartz extends Block {
     @Override
     @SideOnly(Side.CLIENT)
     public void registerBlockIcons(IIconRegister ir) {
-        topTexture = new IIcon[BlockHandler.familiesQuartz.size()];
-        bottomTexture = new IIcon[BlockHandler.familiesQuartz.size()];
-        sideTexture = new IIcon[BlockHandler.familiesQuartz.size()];
-        for (int i = 0; i < BlockHandler.familiesQuartz.size(); i++) {
-            topTexture[i] = ir.registerIcon("santasdecor:quartztop_" + BlockHandler
-              .familiesQuartz.get(i));
-            bottomTexture[i] = ir.registerIcon("santasdecor:quartzbottom_" + BlockHandler
-              .familiesQuartz.get(i));
-            sideTexture[i] = ir.registerIcon("santasdecor:quartzside_" + BlockHandler
-              .familiesQuartz.get(i));
+        int i = 0;
+        for (String s : BlockHandler.familiesMain) {
+            topTexture[i] = ir.registerIcon("santasdecor:quartztop_" + s);
+            bottomTexture[i] = ir.registerIcon("santasdecor:quartzbottom_" + s);
+            sideTexture[i] = ir.registerIcon("santasdecor:quartzside_" + s);
+            i++;
         }
     }
 

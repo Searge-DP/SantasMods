@@ -5,13 +5,12 @@ import net.minecraft.block.material.Material;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.world.World;
 import santa.decor.SantasDecor;
-import santa.decor.blocks.BlockInfo;
 import santa.decor.tileentity.TileEntityPumpkin;
 
 public class Pumpkin extends Block {
     public Pumpkin() {
         super(Material.wood);
-        this.setBlockName(BlockInfo.PUMPKIN_UNLOCALIZED_NAME);
+        this.setBlockName("jackolantern");
         this.setCreativeTab(SantasDecor.tabSantasDecor);
         this.setHardness(1F);
         this.setStepSound(Block.soundTypeWood);

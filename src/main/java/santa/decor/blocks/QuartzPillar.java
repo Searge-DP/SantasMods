@@ -16,10 +16,10 @@ import java.util.List;
 
 public class QuartzPillar extends Block {
     @SideOnly(Side.CLIENT)
-    protected IIcon[] sideTexture = new IIcon[BlockHandler.familiesQuartz.size()];
+    private IIcon[] sideTexture = new IIcon[BlockHandler.familiesQuartz.size()];
 
     @SideOnly(Side.CLIENT)
-    protected IIcon[] topTexture = new IIcon[BlockHandler.familiesQuartz.size()];
+    private IIcon[] topTexture = new IIcon[BlockHandler.familiesQuartz.size()];
 
     public QuartzPillar() {
         super(Material.rock);

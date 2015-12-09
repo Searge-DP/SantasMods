@@ -13,8 +13,9 @@ import santa.decor.SantasDecor;
 
 import java.util.List;
 
-public class Stone extends Block{
-    private IIcon[] texture;
+public class Stone extends Block {
+    @SideOnly(Side.CLIENT)
+    private IIcon[] texture = new IIcon[BlockHandler.familiesMain.size()];
 
     public Stone() {
         super(Material.rock);
@@ -27,10 +28,10 @@ public class Stone extends Block{
 
     @Override
     public void registerBlockIcons(IIconRegister ir) {
-        texture = new IIcon[BlockHandler.familiesMain.size()];
-        for (int i = 0; i < texture.length; i++) {
-            textureName = "santasdecor:stone_" + BlockHandler.familiesMain.get(i);
-            texture[i] = ir.registerIcon(textureName);
+        int i = 0;
+        for (String s : BlockHandler.familiesMain) {
+            texture[i] = ir.registerIcon("santasdecor:stone_" + s);
+            i++;
         }
     }
 

@@ -18,10 +18,10 @@ import java.util.List;
 
 public class Log extends Block {
     @SideOnly(Side.CLIENT)
-    protected IIcon[] sideTexture = new IIcon[BlockHandler.familiesMain.size()];
+    private IIcon[] sideTexture = new IIcon[BlockHandler.familiesMain.size()];
 
     @SideOnly(Side.CLIENT)
-    protected IIcon[] topTexture = new IIcon[BlockHandler.familiesMain.size()];
+    private IIcon[] topTexture = new IIcon[BlockHandler.familiesMain.size()];
 
     public Log() {
         super(Material.wood);

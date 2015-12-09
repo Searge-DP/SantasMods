@@ -14,8 +14,11 @@ import santa.decor.SantasDecor;
 import java.util.List;
 
 public class QuartzChiseled extends Block {
-    private IIcon[] topTexture;
-    private IIcon[] sideTexture;
+    @SideOnly(Side.CLIENT)
+    private IIcon[] topTexture = new IIcon[BlockHandler.familiesQuartz.size()];
+
+    @SideOnly(Side.CLIENT)
+    private IIcon[] sideTexture = new IIcon[BlockHandler.familiesQuartz.size()];
 
     public QuartzChiseled() {
         super(Material.rock);
@@ -29,13 +32,11 @@ public class QuartzChiseled extends Block {
     @Override
     @SideOnly(Side.CLIENT)
     public void registerBlockIcons(IIconRegister ir) {
-        topTexture = new IIcon[BlockHandler.familiesQuartz.size()];
-        sideTexture = new IIcon[BlockHandler.familiesQuartz.size()];
-        for (int i = 0; i < BlockHandler.familiesQuartz.size(); i++) {
-            topTexture[i] = ir.registerIcon("santasdecor:qchiseledtop_" + BlockHandler
-              .familiesQuartz.get(i));
-            sideTexture[i] = ir.registerIcon("santasdecor:qchiseled_" + BlockHandler
-              .familiesQuartz.get(i));
+        int i = 0;
+        for (String s : BlockHandler.familiesMain) {
+            topTexture[i] = ir.registerIcon("santasdecor:qchiseledtop_" + s);
+            sideTexture[i] = ir.registerIcon("santasdecor:qchiseled_" + s);
+            i++;
         }
     }
 
