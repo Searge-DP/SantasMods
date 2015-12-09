@@ -15,20 +15,16 @@ import santa.decor.tileentity.TileEntityPumpkin;
 import java.awt.*;
 import java.awt.image.BufferedImage;
 
-/**
- * @author SatanicSanta
- */
 public class Client extends Common {
-
     public static int sphereID;
 
     @Override
-    public int sphereID(){
+    public int sphereID() {
         return sphereID;
     }
 
     @Override
-    public void renderingRegistry(){
+    public void renderingRegistry() {
         Sphere pumpkin = new Sphere();
         pumpkin.setDrawStyle(GLU.GLU_FILL);
         pumpkin.setNormals(GLU.GLU_SMOOTH);
@@ -44,6 +40,5 @@ public class Client extends Common {
 
         TileEntitySpecialRenderer renderPumpkin = new RenderPumpkin();
         ClientRegistry.bindTileEntitySpecialRenderer(TileEntityPumpkin.class, renderPumpkin);
-
     }
 }

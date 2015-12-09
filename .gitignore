@@ -10,9 +10,9 @@ MinecraftForge-License.txt
 README.txt
 eclipse/
 forge-1.7.10-10.13.0.1180-changelog.txt
-forge-1.7.10-10.13.0.1180-src.iml
-forge-1.7.10-10.13.0.1180-src.ipr
-forge-1.7.10-10.13.0.1180-src.iws
+*.iml
+*.ipr
+*.iws
 gradle/
 gradlew
 gradlew.bat
@@ -20,6 +20,4 @@ codestyle.xml
 SantasMods.iml
 libs/
 src/api/
-SantasMods.ipr
-SantasMods.iws
 out/

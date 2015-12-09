@@ -8,11 +8,7 @@ import org.apache.commons.io.FileUtils;
 import java.io.File;
 import java.io.IOException;
 
-/**
- * Created by elijahfoster-wysocki on 10/5/14.
- */
 public class Config {
-
     public static boolean enablePumpkin;
 
     public static boolean enableBlaze;
@@ -30,10 +26,10 @@ public class Config {
     public static boolean enderBalance;
     public static boolean cryingBalance;
 
-    public static void things(){
-
-    }
-
+    /**
+     * Creates, customizes, and saves the configuration file.
+     * @param event The FMLPreInitializationEvent that this is called during.
+     */
     public static void load(FMLPreInitializationEvent event){
         File configDir = ReflectionHelper.getPrivateValue(FMLPreInitializationEvent.class, event, 2);
         File oldFile = new File(configDir, "SantasDecor.cfg");

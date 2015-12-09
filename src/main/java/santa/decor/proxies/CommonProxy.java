@@ -1,14 +1,13 @@
 package santa.decor.proxies;
 
-/**
- * Created by elijahfoster-wysocki on 7/14/14.
- */
 public class CommonProxy {
+    /**
+     * Renderers are initialized here.
+     */
+    public void initRenderers() {}
 
-    public void initRenderers(){
-
-    }
-    public void initSounds(){
-
-    }
+    /**
+     * Sounds are initialized here.
+     */
+    public void initSounds() {}
 }
