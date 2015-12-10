@@ -36,7 +36,7 @@ public class Quartz extends Block {
     @SideOnly(Side.CLIENT)
     public void registerBlockIcons(IIconRegister ir) {
         int i = 0;
-        for (String s : BlockHandler.familiesMain) {
+        for (String s : BlockHandler.familiesQuartz) {
             topTexture[i] = ir.registerIcon("santasdecor:quartztop_" + s);
             bottomTexture[i] = ir.registerIcon("santasdecor:quartzbottom_" + s);
             sideTexture[i] = ir.registerIcon("santasdecor:quartzside_" + s);

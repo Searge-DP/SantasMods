@@ -27,6 +27,7 @@ public class Plank extends Block {
     }
 
     @Override
+    @SideOnly(Side.CLIENT)
     public void registerBlockIcons(IIconRegister ir) {
         int i = 0;
         for (String s : BlockHandler.familiesMain) {

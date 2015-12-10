@@ -33,7 +33,7 @@ public class QuartzChiseled extends Block {
     @SideOnly(Side.CLIENT)
     public void registerBlockIcons(IIconRegister ir) {
         int i = 0;
-        for (String s : BlockHandler.familiesMain) {
+        for (String s : BlockHandler.familiesQuartz) {
             topTexture[i] = ir.registerIcon("santasdecor:qchiseledtop_" + s);
             sideTexture[i] = ir.registerIcon("santasdecor:qchiseled_" + s);
             i++;
