@@ -11,7 +11,7 @@ import net.minecraft.tileentity.TileEntity;
 import santa.decor.blocks.BlockHandler;
 import santa.decor.proxies.CommonProxy;
 
-@Mod(modid = "santasdecor", name = "Santa's Decor", version = "0.7")
+@Mod(modid = "santasdecor", name = "Santa's Decor", version = "1.0.1")
 public class SantasDecor {
     @SidedProxy(clientSide="santa.decor.proxies.ClientProxy", serverSide="santa.decor.proxies.CommonProxy")
     public static CommonProxy proxy;
