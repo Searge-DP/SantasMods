@@ -1,12 +1,9 @@
 package santa.pants;
 
 import cpw.mods.fml.common.Mod;
-import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
-import santa.pants.ItemHandler;
-import santa.pants.proxies.CommonProxy;
 
 @Mod(modid = "sparklypants", name = "Sparkly Pants", version = "0.2")
 public class SparklyPants {
