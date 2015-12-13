@@ -8,18 +8,14 @@ import net.minecraft.item.ItemStack;
 import santa.freedom.Config;
 
 public class ItemHandler {
-    public static Item flag;
-    public static Item freedomBucket;
-    public static Item americanFlavor;
+    public static Item freedomComponent;
     public static ItemFood friedChickenBucket;
     public static ItemFood dewMTN;
     public static ItemFood freedomBread;
     public static ItemFood freedomPie;
 
     public static void initializeItems() {
-        flag = new Flag();
-        freedomBucket = new FreedomBucket();
-        americanFlavor = new AmericanFlavoring();
+        freedomComponent = new FreedomComponent();
         friedChickenBucket = new FriedChickenBucket(6, 2, false);
         dewMTN = new MTNDew(1, 0, false);
         freedomBread = new FreedomBread(7, 1, false);
@@ -27,9 +23,7 @@ public class ItemHandler {
     }
 
     public static void registerItems() {
-        GameRegistry.registerItem(flag, ItemInfo.FLAG_KEY);
-        GameRegistry.registerItem(freedomBucket, ItemInfo.BUCKET_KEY);
-        GameRegistry.registerItem(americanFlavor, ItemInfo.FLAVOR_KEY);
+        GameRegistry.registerItem(freedomComponent, ItemInfo.COMPONENT_KEY);
 
         if (Config.enableFriedChicken) {
             GameRegistry.registerItem(friedChickenBucket, ItemInfo.FRIEDCHICKEN_KEY);
@@ -49,27 +43,27 @@ public class ItemHandler {
     }
 
     public static void addRecipes() {
-        GameRegistry.addRecipe(new ItemStack(flag, 1), new Object[]{
+        GameRegistry.addRecipe(new ItemStack(freedomComponent, 1, 0), new Object[]{
                 "XYY",
                 "ZZZ",
                 "YYY",
                 'X', new ItemStack(Items.dye, 1, 4), 'Y', new ItemStack(Items.dye, 1, 15), 'Z', new ItemStack(Items.dye, 1, 1)
         });
 
-        GameRegistry.addShapelessRecipe(new ItemStack(freedomBucket, 1), new Object[]{
-                new ItemStack(Items.bucket), new ItemStack(flag)
+        GameRegistry.addShapelessRecipe(new ItemStack(freedomComponent, 1, 2), new Object[]{
+                new ItemStack(Items.bucket), new ItemStack(freedomComponent, 1, 0)
         });
 
-        GameRegistry.addRecipe(new ItemStack(americanFlavor, 1), new Object[]{
+        GameRegistry.addRecipe(new ItemStack(freedomComponent, 1, 1), new Object[]{
                 "XXX",
                 "XZX",
                 "XXX",
-                'X', Items.sugar, 'Z', flag
+                'X', Items.sugar, 'Z', new ItemStack(freedomComponent, 1, 0)
         });
 
         if (Config.enableFriedChicken) {
             GameRegistry.addShapelessRecipe(new ItemStack(friedChickenBucket, 1), new Object[]{
-                    new ItemStack(Items.cooked_chicken), new ItemStack(freedomBucket)
+                    new ItemStack(Items.cooked_chicken), new ItemStack(freedomComponent, 1, 2)
             });
         }
 
@@ -78,19 +72,19 @@ public class ItemHandler {
                     "XXX",
                     "XZX",
                     "XXX",
-                    'X', Items.sugar, 'Z', freedomBucket
+                    'X', Items.sugar, 'Z', new ItemStack(freedomComponent, 1, 2)
             });
         }
 
         if (Config.enableBread) {
             GameRegistry.addShapelessRecipe(new ItemStack(freedomBread, 1), new Object[]{
-                    new ItemStack(Items.bread), new ItemStack(americanFlavor)
+                    new ItemStack(Items.bread), new ItemStack(freedomComponent, 1, 1)
             });
         }
 
         if (Config.enablePie) {
             GameRegistry.addShapelessRecipe(new ItemStack(freedomPie, 1), new Object[]{
-                    new ItemStack(Items.pumpkin_pie), new ItemStack(americanFlavor)
+                    new ItemStack(Items.pumpkin_pie), new ItemStack(freedomComponent, 1, 1)
             });
         }
     }

@@ -21,7 +21,7 @@ public class MTNDew extends ItemFood{
     @Override
     public ItemStack onEaten(ItemStack stack, World world, EntityPlayer player) {
         super.onEaten(stack, world, player);
-        return new ItemStack(ItemHandler.freedomBucket);
+        return new ItemStack(ItemHandler.freedomComponent, 1, 2);
     }
 
     @Override
