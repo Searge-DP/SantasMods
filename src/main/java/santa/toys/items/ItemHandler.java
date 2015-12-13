@@ -7,57 +7,48 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import santa.toys.Config;
 
-/**
- * Created by elijahfoster-wysocki on 7/28/14.
- */
 public class ItemHandler {
     public static Item match;
     public static Item enderBlaster;
     public static Item netherBlaster;
-    //public static Item saplingBlaster;
+//    public static Item saplingBlaster;
 
-    public static void meet(){
+    public static void initializeItems() {
         if (Config.enableMatch) {
             match = new Match();
         }
 
         if (Config.enableEnderBlaster) {
             enderBlaster = new EnderBlaster();
-        }
-
-        if (Config.enableNetherBlaster){
-            if (Config.enableEnderBlaster){
+            if (Config.enableNetherBlaster) {
                 netherBlaster = new NetherStarBlaster();
             }
         }
 /*
-        if (Config.enableSaplingBlaster){
+        if (Config.enableSaplingBlaster) {
             saplingBlaster = new SaplingBlaster();
         }
 */
     }
 
-    public static void date(){
+    public static void registerItems() {
         if (Config.enableMatch) {
             GameRegistry.registerItem(match, ItemInfo.MATCH_KEY);
         }
         if (Config.enableEnderBlaster) {
             GameRegistry.registerItem(enderBlaster, ItemInfo.ENDER_KEY);
-        }
-        if (Config.enableNetherBlaster){
-            if (Config.enableEnderBlaster){
+            if (Config.enableNetherBlaster) {
                 GameRegistry.registerItem(netherBlaster, ItemInfo.NETHER_KEY);
             }
         }
 /*
-        if (Config.enableSaplingBlaster){
+        if (Config.enableSaplingBlaster) {
             GameRegistry.registerItem(saplingBlaster, ItemInfo.SAPLING_KEY);
         }
 */
     }
 
-    public static void useMove(){
-
+    public static void addRecipes(){
         if (Config.enableMatch) {
             GameRegistry.addRecipe(new ItemStack(match, 1), new Object[]{
                     "X",
@@ -73,17 +64,17 @@ public class ItemHandler {
                     "YYX",
                     'X', Items.iron_ingot, 'Z', Items.diamond, 'E', Items.ender_pearl, 'F', Blocks.sticky_piston, 'G', Blocks.stone_button, 'Y', Blocks.obsidian
             });
-        }
-        if (Config.enableNetherBlaster) {
-            GameRegistry.addRecipe(new ItemStack(netherBlaster, 1), new Object[]{
-                    " X ",
-                    "XZX",
-                    " X ",
-                    'X', Items.nether_star, 'Z', enderBlaster
-            });
+            if (Config.enableNetherBlaster) {
+                GameRegistry.addRecipe(new ItemStack(netherBlaster, 1), new Object[]{
+                  " X ",
+                  "XZX",
+                  " X ",
+                  'X', Items.nether_star, 'Z', enderBlaster
+                });
+            }
         }
 /*
-        if (Config.enableSaplingBlaster){
+        if (Config.enableSaplingBlaster) {
             GameRegistry.addRecipe(new ItemStack(saplingBlaster, 1), new Object[]{
                     "XFZ",
                     "XGE",
@@ -93,6 +84,5 @@ public class ItemHandler {
         }
 */
     }
-
 }
 

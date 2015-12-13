@@ -1,6 +1,5 @@
 package santa.freedom.items;
 
-import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.EnumAction;
 import net.minecraft.item.ItemFood;
@@ -9,12 +8,8 @@ import santa.freedom.Freedom;
 
 import java.util.List;
 
-/**
- * Created by elijahfoster-wysocki on 7/20/14.
- */
 public class FreedomBread extends ItemFood {
-
-    public FreedomBread(int hunger, float saturation, boolean wolfFood){
+    public FreedomBread(int hunger, float saturation, boolean wolfFood) {
         super(hunger, saturation, wolfFood);
         this.setMaxStackSize(1);
         this.setTextureName("santafreedom:freedombread");
@@ -23,17 +18,17 @@ public class FreedomBread extends ItemFood {
         this.setCreativeTab(Freedom.tabFreedom);
     }
 
-    public int getMaxItemUseDuration(ItemStack par1ItemStack){
+    public int getMaxItemUseDuration(ItemStack stack) {
         return 32;
     }
 
-    public EnumAction getItemUseAction(ItemStack par1ItemStack){
+    public EnumAction getItemUseAction(ItemStack stack) {
         return EnumAction.eat;
     }
 
     @Override
-    public void addInformation(ItemStack par1ItemStack, EntityPlayer par2EntityPlayer, List par3List, boolean par4){
-        par3List.add("What does it taste like? America.");
+    public void addInformation(ItemStack stack, EntityPlayer player, List list, boolean par4) {
+        list.add("What does it taste like? America.");
     }
 
 }

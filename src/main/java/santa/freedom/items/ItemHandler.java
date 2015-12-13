@@ -7,11 +7,7 @@ import net.minecraft.item.ItemFood;
 import net.minecraft.item.ItemStack;
 import santa.freedom.Config;
 
-/**
- * Created by elijahfoster-wysocki on 7/20/14.
- */
 public class ItemHandler {
-
     public static Item flag;
     public static Item freedomBucket;
     public static Item americanFlavor;
@@ -20,8 +16,7 @@ public class ItemHandler {
     public static ItemFood freedomBread;
     public static ItemFood freedomPie;
 
-    public static void meet(){
-
+    public static void initializeItems() {
         flag = new Flag();
         freedomBucket = new FreedomBucket();
         americanFlavor = new AmericanFlavoring();
@@ -31,7 +26,7 @@ public class ItemHandler {
         freedomPie = new FreedomPie(10, 1, false);
     }
 
-    public static void date(){
+    public static void registerItems() {
         GameRegistry.registerItem(flag, ItemInfo.FLAG_KEY);
         GameRegistry.registerItem(freedomBucket, ItemInfo.BUCKET_KEY);
         GameRegistry.registerItem(americanFlavor, ItemInfo.FLAVOR_KEY);
@@ -53,8 +48,7 @@ public class ItemHandler {
         }
     }
 
-    public static void useMove(){
-
+    public static void addRecipes() {
         GameRegistry.addRecipe(new ItemStack(flag, 1), new Object[]{
                 "XYY",
                 "ZZZ",
@@ -99,7 +93,5 @@ public class ItemHandler {
                     new ItemStack(Items.pumpkin_pie), new ItemStack(americanFlavor)
             });
         }
-
     }
-
 }

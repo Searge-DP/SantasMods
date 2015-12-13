@@ -9,16 +9,13 @@ import net.minecraftforge.oredict.OreDictionary;
 import net.minecraftforge.oredict.ShapedOreRecipe;
 import santa.toys.Config;
 
-/**
- * Created by elijahfoster-wysocki on 8/18/14.
- */
 public class BlockHandler {
     public static Block giveADamn;
     public static Block glowstone;
     public static Block sandSpiced;
-    //public static Block muffler;
+//    public static Block muffler;
 
-    public static void meet() {
+    public static void initializeBlocks() {
         if (Config.enableGiveADamn) {
             giveADamn = new GiveADamn();
         }
@@ -36,10 +33,9 @@ public class BlockHandler {
             muffler = new Muffler();
         }
         */
-
     }
 
-    public static void date() {
+    public static void registerBlocks() {
         if (Config.enableGiveADamn) {
             GameRegistry.registerBlock(giveADamn, BlockInfo.DAMN_KEY);
         }
@@ -60,7 +56,7 @@ public class BlockHandler {
     }
 
 
-    public static void useMove(){
+    public static void addRecipes(){
         if (Config.enableGiveADamn) {
             GameRegistry.addRecipe(new ItemStack(giveADamn, 1), new Object[] {
               "X ",
@@ -92,7 +88,5 @@ public class BlockHandler {
             GameRegistry.addRecipe(new ItemStack(muffler, 1), new Object[]{"XXX", "XXX", "XXX", Character.valueOf('X'), Blocks.wool});
         }
         */
-
     }
-
 }

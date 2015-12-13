@@ -11,13 +11,9 @@ import net.minecraft.world.World;
 import santa.toys.SantasToys;
 import santa.toys.blocks.tileentity.TileEntityMuffler;
 
-/**
- * Created by elijahfoster-wysocki on 9/28/14.
- */
 public class Muffler /*extends Block*/ {
-
-    /* this block is wip
-    public Muffler(){
+    /*
+    public Muffler() {
         super(Material.cloth);
         this.setCreativeTab(SantasToys.tabSantasToys);
         this.setHardness(0.5F);
@@ -25,14 +21,12 @@ public class Muffler /*extends Block*/ {
         this.setBlockName(BlockInfo.MUFFLER_UNLOCALIZED_NAME);
     }
 
-    public boolean hasTileEntity(int meta){
+    public boolean hasTileEntity(int meta) {
         return true;
     }
 
     public TileEntity createTileEntity(World world, int meta){
-            return new TileEntityMuffler();
-
+        return new TileEntityMuffler();
     }
     */
-
 }

@@ -1,7 +1,5 @@
 package santa.toys.items;
 
-import net.minecraft.block.Block;
-import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
@@ -11,12 +9,8 @@ import santa.toys.SantasToys;
 
 import java.util.List;
 
-/**
- * Created by elijahfoster-wysocki on 7/28/14.
- */
 public class Match extends Item {
-
-    public Match(){
+    public Match() {
         super();
         this.maxStackSize = 32;
         this.setCreativeTab(SantasToys.tabSantasToys);
@@ -24,61 +18,46 @@ public class Match extends Item {
         this.setTextureName("santastoys:match");
     }
 
-    public boolean onItemUse(ItemStack par1ItemStack, EntityPlayer par2EntityPlayer, World par3World, int par4, int par5, int par6, int par7, float par8, float par9, float par10)
-    {
-        if (par3World.isRemote)
-        {
+    @Override
+    public boolean onItemUse(ItemStack stack, EntityPlayer player, World world, int x, int y, int z, int dir, float par8, float par9, float par10) {
+        if (world.isRemote) {
             return true;
-        }
-        else
-        {
-            if (par7 == 0)
-            {
-                --par5;
+        } else {
+            if (dir == 0) {
+                --y;
             }
 
-            if (par7 == 1)
-            {
-                ++par5;
+            if (dir == 1) {
+                ++y;
             }
 
-            if (par7 == 2)
-            {
-                --par6;
+            if (dir == 2) {
+                --z;
             }
 
-            if (par7 == 3)
-            {
-                ++par6;
+            if (dir == 3) {
+                ++z;
             }
 
-            if (par7 == 4)
-            {
-                --par4;
+            if (dir == 4) {
+                --x;
             }
 
-            if (par7 == 5)
-            {
-                ++par4;
+            if (dir == 5) {
+                ++x;
             }
 
-            if (!par2EntityPlayer.canPlayerEdit(par4, par5, par6, par7, par1ItemStack))
-            {
+            if (!player.canPlayerEdit(x, y, z, dir, stack)) {
                 return false;
-            }
-            else
-            {
-
-
-                if (par3World.isAirBlock(par4, par5, par6))
-                {
-                    par3World.playSoundEffect((double)par4 + 0.5D, (double)par5 + 0.5D, (double)par6 + 0.5D, "fire.ignite", 1.0F, itemRand.nextFloat() * 0.4F + 0.8F);
-                    par3World.setBlock(par4, par5, par6, Blocks.fire);
+            } else {
+                if (world.isAirBlock(x, y, z)) {
+                    world.playSoundEffect((double) x + 0.5D, (double) y + 0.5D, (double) z + 0.5D,
+                      "fire.ignite", 1.0F, itemRand.nextFloat() * 0.4F + 0.8F);
+                    world.setBlock(x, y, z, Blocks.fire);
                 }
 
-                if (!par2EntityPlayer.capabilities.isCreativeMode)
-                {
-                    --par1ItemStack.stackSize;
+                if (!player.capabilities.isCreativeMode) {
+                    --stack.stackSize;
                 }
 
                 return true;
@@ -87,8 +66,7 @@ public class Match extends Item {
     }
 
     @Override
-    public void addInformation(ItemStack par1ItemStack, EntityPlayer par2EntityPlayer, List par3List, boolean par4){
-        par3List.add("Fire Charges are for losers.");
+    public void addInformation(ItemStack stack, EntityPlayer player, List list, boolean par4){
+        list.add("Fire Charges are for losers.");
     }
-
 }

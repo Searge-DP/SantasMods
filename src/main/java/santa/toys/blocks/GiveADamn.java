@@ -11,11 +11,8 @@ import net.minecraft.util.IIcon;
 
 import santa.toys.SantasToys;
 
-/**
- * Created by elijahfoster-wysocki on 8/18/14.
- */
-public class GiveADamn extends BlockRotatedPillar{
-    public GiveADamn(){
+public class GiveADamn extends BlockRotatedPillar {
+    public GiveADamn() {
         super(Material.ground);
         this.setBlockName(BlockInfo.DAMN_UNLOCALIZED_NAME);
         this.setCreativeTab(SantasToys.tabSantasToys);
@@ -26,14 +23,15 @@ public class GiveADamn extends BlockRotatedPillar{
 
     @SideOnly(Side.CLIENT)
     public static IIcon frontIcon;
+
     @SideOnly(Side.CLIENT)
     public static IIcon elseIcon;
 
     @Override
     @SideOnly(Side.CLIENT)
-    public void registerBlockIcons(IIconRegister icon){
-        frontIcon = icon.registerIcon("santastoys:damn_front");
-        elseIcon = icon.registerIcon("santastoys:damn_else");
+    public void registerBlockIcons(IIconRegister ir) {
+        frontIcon = ir.registerIcon("santastoys:damn_front");
+        elseIcon = ir.registerIcon("santastoys:damn_else");
     }
 
     @Override
@@ -42,8 +40,7 @@ public class GiveADamn extends BlockRotatedPillar{
     }
 
     @Override
-    protected IIcon getTopIcon(int i){
+    protected IIcon getTopIcon(int i) {
         return frontIcon;
     }
-
 }

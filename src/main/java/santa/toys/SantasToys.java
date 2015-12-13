@@ -13,9 +13,6 @@ import santa.toys.proxies.Client;
 import santa.toys.proxies.Common;
 import santa.toys.world.SantasToysGenerator;
 
-/**
- * Created by elijahfoster-wysocki on 7/28/14.
- */
 @Mod(modid = "santastoys", name = "Santa's Toys", version = "0.4")
 public class SantasToys {
 
@@ -24,42 +21,29 @@ public class SantasToys {
 
     @SidedProxy(clientSide="santa.toys.proxies.Client", serverSide="santa.toys.proxies.Common")
     public static Common proxy;
-    public static Client proxyClient;
     public static CreativeTabs tabSantasToys = new SantasToysTab("Santa's Toys");
 
     @Mod.EventHandler
-    void foreplay(FMLPreInitializationEvent event){
-
+    void preInit(FMLPreInitializationEvent event) {
         Config.load(event);
 
-        BlockHandler.meet();
-        BlockHandler.date();
-        BlockHandler.useMove();
+        BlockHandler.initializeBlocks();
+        BlockHandler.registerBlocks();
+        BlockHandler.addRecipes();
 
         GameRegistry.registerWorldGenerator(new SantasToysGenerator(), 1);
-
     }
 
     @Mod.EventHandler
-    void intercourse(FMLInitializationEvent event){
-
-        ItemHandler.meet();
-        ItemHandler.useMove();
-        ItemHandler.date();
+    void init(FMLInitializationEvent event) {
+        ItemHandler.initializeItems();
+        ItemHandler.registerItems();
+        ItemHandler.addRecipes();
 
         proxy.initRenderers();
-        proxy.initSounds(); //I don't actually have sounds, but in case I do in the future, there's this already there.
-    }
-
-
-
-    @Mod.EventHandler
-    void cuddling(FMLPostInitializationEvent event){
-
     }
 
     /* TODO
-    Make a config file that can be used to disable each individual feature. (Will come in 0.4)
     Make the dispenser shoot the entities rather than the item itself (Will come in 0.5)
     Powered Carts, takes solid fuel to go faster than normal carts. same speed as normal carts if it has no fuel.(0.5)
      */

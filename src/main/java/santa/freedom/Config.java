@@ -8,18 +8,14 @@ import org.apache.commons.io.FileUtils;
 import java.io.File;
 import java.io.IOException;
 
-/**
- * @author SatanicSanta
- */
 public class Config {
-
     public static boolean consoleSpam;
     public static boolean enableBread;
     public static boolean enablePie;
     public static boolean enableFriedChicken;
     public static boolean enableDew;
 
-    public static void load(FMLPreInitializationEvent event){
+    public static void load(FMLPreInitializationEvent event) {
         File configDir = ReflectionHelper.getPrivateValue(FMLPreInitializationEvent.class, event, 2);
         File oldFile = new File(configDir, "Freedom.cfg");
 

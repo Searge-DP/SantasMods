@@ -1,6 +1,5 @@
 package santa.toys.items;
 
-import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
@@ -11,12 +10,8 @@ import santa.toys.entity.EntityEnderBlast;
 
 import java.util.List;
 
-/**
- * Created by elijahfoster-wysocki on 7/28/14.
- */
 public class EnderBlaster extends Item {
-
-    public EnderBlaster(){
+    public EnderBlaster() {
         super();
         this.maxStackSize = 1;
         this.setCreativeTab(SantasToys.tabSantasToys);
@@ -25,17 +20,15 @@ public class EnderBlaster extends Item {
     }
 
     @Override
-    public ItemStack onItemRightClick(ItemStack par1ItemStack, World par2World,EntityPlayer par3EntityPlayer) {
-        if(par3EntityPlayer.capabilities.isCreativeMode||par3EntityPlayer.inventory.hasItem(Items.ender_pearl))
-        {
-            par2World.spawnEntityInWorld(new EntityEnderBlast(par2World, par3EntityPlayer));
+    public ItemStack onItemRightClick(ItemStack stack, World world, EntityPlayer player) {
+        if (player.capabilities.isCreativeMode || player.inventory.hasItem(Items.ender_pearl)) {
+            world.spawnEntityInWorld(new EntityEnderBlast(world, player));
         }
-        return par1ItemStack;
+        return stack;
     }
 
     @Override
-    public void addInformation(ItemStack par1ItemStack, EntityPlayer par2EntityPlayer, List par3List, boolean par4){
-        par3List.add("Used to kill cows because cows.");
+    public void addInformation(ItemStack stack, EntityPlayer player, List list, boolean par4){
+        list.add("Used to kill cows because cows.");
     }
-
 }

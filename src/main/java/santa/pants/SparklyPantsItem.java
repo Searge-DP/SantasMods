@@ -11,11 +11,7 @@ import net.minecraft.item.ItemStack;
 
 import java.util.List;
 
-/**
- * Created by elijahfoster-wysocki on 7/20/14.
- */
 public class SparklyPantsItem extends ItemArmor {
-
     public SparklyPantsItem(ArmorMaterial par2ArmorMaterial, int par2, int par3) {
         super(par2ArmorMaterial, par2, par3);
         this.setUnlocalizedName(ItemInfo.PANTS_UNLOCALIZED_NAME);
@@ -23,33 +19,32 @@ public class SparklyPantsItem extends ItemArmor {
     }
 
     @Override
-    public void addInformation(ItemStack par1ItemStack, EntityPlayer par2EntityPlayer, List par3List, boolean par4){
-        par3List.add("So sparkly, you're practically a pop star!");
+    public void addInformation(ItemStack stack, EntityPlayer player, List list, boolean par4) {
+        list.add("So sparkly, you're practically a pop star!");
     }
 
     @SideOnly(Side.CLIENT)
-    public void registerIcons(IIconRegister par1RegisterIcon){
-        this.itemIcon = par1RegisterIcon.registerIcon("sparklypants:pants");
+    public void registerIcons(IIconRegister ir) {
+        this.itemIcon = ir.registerIcon("sparklypants:pants");
     }
 
     @Override
-    public String getArmorTexture(ItemStack stack, Entity entity, int slot, String type){
+    public String getArmorTexture(ItemStack stack, Entity entity, int slot, String type) {
         return "sparklypants:textures/models/armor/pants2.png";
     }
 
     @Override
-    public boolean hasEffect(ItemStack par1){
+    public boolean hasEffect(ItemStack stack, int renderPass) {
         return true;
     }
 
     @Override
-    public ArmorMaterial getArmorMaterial(){
+    public ArmorMaterial getArmorMaterial() {
         return ArmorMaterial.GOLD;
     }
 
     @Override
-    public boolean getIsRepairable(ItemStack itemstack1, ItemStack itemstack2)
-    {
+    public boolean getIsRepairable(ItemStack itemstack1, ItemStack itemstack2) {
         return false;
     }
 }
