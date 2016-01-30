@@ -14,13 +14,8 @@ import santa.decor.SantasDecor;
 import java.util.List;
 
 public class Quartz extends Block {
-    @SideOnly(Side.CLIENT)
     private IIcon[] topTexture = new IIcon[BlockHandler.familiesQuartz.size()];
-
-    @SideOnly(Side.CLIENT)
     private IIcon[] bottomTexture = new IIcon[BlockHandler.familiesQuartz.size()];
-
-    @SideOnly(Side.CLIENT)
     private IIcon[] sideTexture = new IIcon[BlockHandler.familiesQuartz.size()];
 
     public Quartz() {

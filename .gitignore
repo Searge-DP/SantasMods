@@ -1,6 +1,5 @@
 .classpath
 .gradle/
-.idea/
 .project
 .settings/
 CREDITS-fml.txt
@@ -10,9 +9,6 @@ MinecraftForge-License.txt
 README.txt
 eclipse/
 forge-1.7.10-10.13.0.1180-changelog.txt
-*.iml
-*.ipr
-*.iws
 gradle/
 gradlew
 gradlew.bat
@@ -21,3 +17,4 @@ SantasMods.iml
 libs/
 src/api/
 out/
+classes/

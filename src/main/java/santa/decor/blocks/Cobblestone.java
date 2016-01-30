@@ -14,7 +14,6 @@ import santa.decor.SantasDecor;
 import java.util.List;
 
 public class Cobblestone extends Block {
-    @SideOnly(Side.CLIENT)
     private IIcon[] texture = new IIcon[BlockHandler.familiesMain.size()];
 
     public Cobblestone() {

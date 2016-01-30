@@ -14,7 +14,6 @@ import santa.decor.SantasDecor;
 import java.util.List;
 
 public class Chiseled extends Block {
-    @SideOnly(Side.CLIENT)
     private IIcon[] texture = new IIcon[BlockHandler.familiesMain.size()];;
 
     public Chiseled() {

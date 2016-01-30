@@ -17,10 +17,7 @@ import java.util.HashMap;
 import java.util.List;
 
 public class Log extends Block {
-    @SideOnly(Side.CLIENT)
     private IIcon[] sideTexture = new IIcon[BlockHandler.familiesMain.size()];
-
-    @SideOnly(Side.CLIENT)
     private IIcon[] topTexture = new IIcon[BlockHandler.familiesMain.size()];
 
     public Log() {

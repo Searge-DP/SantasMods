@@ -14,7 +14,6 @@ import santa.decor.SantasDecor;
 import java.util.List;
 
 public class Plank extends Block {
-    @SideOnly(Side.CLIENT)
     private IIcon[] texture = new IIcon[BlockHandler.familiesMain.size()];
 
     public Plank() {
